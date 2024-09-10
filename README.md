@@ -4,7 +4,7 @@
 
 Tech Stack
 
-<img src="https://img.shields.io/badge/Kotlin-7FA8FF.svg?style=for-the-badge&logo=kotlin&logoColor=#7F52FF" />
+<img src="https://img.shields.io/badge/Kotlin-7F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=#7F52FF" />
 
 Tools
 
