@@ -6,12 +6,12 @@ Tech Stack
 
 <img src="https://img.shields.io/badge/Kotlin-7F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=FFFFFF" />
 <img src="https://img.shields.io/badge/C++-00599C.svg?style=for-the-badge&logo=cplusplus&logoColor=FFFFFF" />
-<img src="https://img.shields.io/badge/JAVA-00599C.svg?style=for-the-badge&logo=JAVA&logoColor=FFFFFF" />
+<img src="https://img.shields.io/badge/JAVA-00599C.svg?style=for-the-badge&logo=javascript&logoColor=FFFFFF" />
 
 
 Tools
 
-<img src="https://img.shields.io/badge/Candroidstudio-3DDC84.svg?style=for-the-badge&logo=androidstudio&logoColor=FFFFFF" />
+<img src="https://img.shields.io/badge/androidstudio-3DDC84.svg?style=for-the-badge&logo=androidstudio&logoColor=FFFFFF" />
 
 
 [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=UiHyeon-Kim&count_private=true&show_icons=true&theme=github_dark_dimmed)](https://github.com/anuraghazra/github-readme-stats)
