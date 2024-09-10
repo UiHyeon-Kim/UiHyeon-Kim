@@ -1,6 +1,6 @@
 ## Hi there 👋
 
-<img src="https://img.shields.io/badge/react-20232a.svg?style=for-the-badge&logo=kotlin&logoColor=#7F52FF" />
+<img src="https://img.shields.io/badge/Kotlin-20232a.svg?style=for-the-badge&logo=kotlin&logoColor=#7F52FF" />
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=25&pause=1000&color=7FA8FF&center=%EA%B1%B0%EC%A7%93&vCenter=%EA%B1%B0%EC%A7%93&repeat=%EC%A7%84%EC%8B%A4&random=%EA%B1%B0%EC%A7%93&width=435&lines=Android+Deveoloper)](https://git.io/typing-svg)
 [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=UiHyeon-Kim&count_private=true&show_icons=true&theme=github_dark_dimmed)](https://github.com/anuraghazra/github-readme-stats)
