@@ -6,7 +6,7 @@ Tech Stack
 
 <img src="https://img.shields.io/badge/Kotlin-7F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=FFFFFF" />
 <img src="https://img.shields.io/badge/C++-00599C.svg?style=for-the-badge&logo=cplusplus&logoColor=FFFFFF" />
-<img src="https://img.shields.io/badge/Java-00599C.svg?style=for-the-badge&logo=Java&logoColor=FFFFFF" />
+<img src="https://img.shields.io/badge/JAVA-00599C.svg?style=for-the-badge&logo=JAVA&logoColor=FFFFFF" />
 
 
 Tools
