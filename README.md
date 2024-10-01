@@ -14,7 +14,6 @@ Tools
 <img src="https://img.shields.io/badge/git-F05033.svg?style=flat-square&logo=git&logoColor=white" /> <img src="https://img.shields.io/badge/github-181717.svg?style=flat-square&logo=github&logoColor=white" /> 
 <a href="https://uihyeonkim.notion.site/UiHyeon-Kim-c278eb5c79e149d4a2cf6cfa653c2d62?pvs=4" target= "_black"><img src="https://img.shields.io/badge/Notion-F3F3F3.svg?style=flat-square&logo=notion&logoColor=black" /></a> 
 
-contact
 
 
 [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=UiHyeon-Kim&count_private=true&show_icons=true&theme=github_dark_dimmed)](https://github.com/anuraghazra/github-readme-stats)
