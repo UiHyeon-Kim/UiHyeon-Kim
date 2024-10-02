@@ -1,7 +1,8 @@
-![header](https://capsule-render.vercel.app/api?type=transparent&text=UiHyeon-Kim&fontSize=100&fontColor=7FA8FF)
-<div align="center">
+![header](https://capsule-render.vercel.app/api?type=transparent&text=UiHyeon-Kim&fontSize=90&fontColor=7FA8FF)
 
-  [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=25&pause=1000&color=7FA8FF&center=%EA%B1%B0%EC%A7%93&vCenter=%EA%B1%B0%EC%A7%93&repeat=%EC%A7%84%EC%8B%A4&random=%EA%B1%B0%EC%A7%93&width=435&lines=Android+Deveoloper)](https://git.io/typing-svg)
+<div align="center">
+  
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=25&pause=1000&color=7FA8FF&center=true&vCenter=true&repeat=%EC%A7%84%EC%8B%A4&random=%EA%B1%B0%EC%A7%93&width=435&lines=Android+Deveoloper)](https://git.io/typing-svg)
 </div>
 
 <h3 align="center">Tech Stack</h3>
