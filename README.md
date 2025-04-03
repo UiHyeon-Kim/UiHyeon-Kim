@@ -1,46 +1,55 @@
-![header](https://capsule-render.vercel.app/api?type=transparent&text=UiHyeon-Kim&fontSize=90&fontColor=7FA8FF)
-
+<!-- 헤더 영역 -->
 <div align="center">
-  
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=25&pause=1000&color=7FA8FF&center=true&vCenter=true&repeat=%EC%A7%84%EC%8B%A4&random=%EA%B1%B0%EC%A7%93&width=435&lines=Android+Deveoloper)](https://git.io/typing-svg)
+  <img src="https://capsule-render.vercel.app/api?type=transparent&text=UiHyeon-Kim&fontSize=90&fontColor=7FA8FF" alt="UiHyeon-Kim Header">
 </div>
 
+<!-- Android Developer 소개 -->
+<div align="center">
+  <a href="https://git.io/typing-svg">
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=25&pause=1000&color=7FA8FF&center=true&vCenter=true&repeat=%EC%A7%84%EC%8B%A4&random=%EA%B1%B0%EC%A7%93&width=435&lines=Android+Deveoloper" alt="Android Developer">
+  </a>
+</div>
+
+<!-- Tech Stack -->
 <h3 align="center">Tech Stack</h3>
-<p align="center">
-  <img src="https://img.shields.io/badge/Kotlin-7F52FF.svg?style=flat-square&logo=kotlin&logoColor=FFFFFF" /> <img src="https://img.shields.io/badge/C++-00599C.svg?style=flat-square&logo=cplusplus&logoColor=FFFFFF" /> <img src="https://img.shields.io/badge/Java-ED8B00.svg?style=flat-square&logo=penjdk&logoColor=000000" />
-</p>
-
-<p align="center">
-<img src="https://img.shields.io/badge/Android-3DDC84.svg?style=flat-square&logo=android&logoColor=FFFFFF" /> <img src="https://img.shields.io/badge/intellijidea-000000.svg?style=flat-square&logo=intellijidea&logoColor=FFFFFF" /> <img src="https://img.shields.io/badge/figma-F24E1E.svg?style=flat-square&logo=figma&logoColor=FFFFFF" /> <img src="https://img.shields.io/badge/sqlite-003B57.svg?style=flat-square&logo=sqlite&logoColor=FFFFFF" /> <img src="https://img.shields.io/badge/mysql-4479A1.svg?style=flat-square&logo=mysql&logoColor=FFFFFF" /> <img src="https://img.shields.io/badge/VSCode-22ABF3.svg?style=flat-square&logo=visual-studio-code&logoColor=FFFFFF" />
-</p>
-<!-- <img src="https://img.shields.io/badge/git-F05033.svg?style=flat-square&logo=git&logoColor=white" /> <img src="https://img.shields.io/badge/github-181717.svg?style=flat-square&logo=github&logoColor=white" /> 
-<a href="https://uihyeonkim.notion.site/UiHyeon-Kim-c278eb5c79e149d4a2cf6cfa653c2d62?pvs=4" target= "_black"><img src="https://img.shields.io/badge/Notion-F3F3F3.svg?style=flat-square&logo=notion&logoColor=black" /></a> -->
-
-
 <div align="center">
-  
-[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=UiHyeon-Kim&count_private=true&show_icons=true&theme=github_dark_dimmed)](https://github.com/anuraghazra/github-readme-stats)
+  <p>
+    <img src="https://img.shields.io/badge/Kotlin-7F52FF.svg?style=flat-square&logo=kotlin&logoColor=FFFFFF" alt="Kotlin" />
+    <img src="https://img.shields.io/badge/C++-00599C.svg?style=flat-square&logo=cplusplus&logoColor=FFFFFF" alt="C++" />
+    <img src="https://img.shields.io/badge/Java-ED8B00.svg?style=flat-square&logo=penjdk&logoColor=000000" alt="Java" />
+  </p>
+  <p>
+    <img src="https://img.shields.io/badge/Android-3DDC84.svg?style=flat-square&logo=android&logoColor=FFFFFF" alt="Android" />
+    <img src="https://img.shields.io/badge/intellijidea-000000.svg?style=flat-square&logo=intellijidea&logoColor=FFFFFF" alt="IntelliJ IDEA" />
+    <img src="https://img.shields.io/badge/figma-F24E1E.svg?style=flat-square&logo=figma&logoColor=FFFFFF" alt="Figma" />
+    <img src="https://img.shields.io/badge/sqlite-003B57.svg?style=flat-square&logo=sqlite&logoColor=FFFFFF" alt="SQLite" />
+    <img src="https://img.shields.io/badge/mysql-4479A1.svg?style=flat-square&logo=mysql&logoColor=FFFFFF" alt="MySQL" />
+    <img src="https://img.shields.io/badge/VSCode-22ABF3.svg?style=flat-square&logo=visual-studio-code&logoColor=FFFFFF" alt="VSCode" />
+  </p>
 </div>
 
-<!-- [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=UiHyeon-Kim&layout=donut&theme=github_dark_dimmed)](https://github.com/anuraghazra/github-readme-stats) -->
+<!-- GitHub Stats -->
 <div align="center">
+  <a href="https://github.com/anuraghazra/github-readme-stats">
+    <img src="https://github-readme-stats.vercel.app/api?username=UiHyeon-Kim&count_private=true&show_icons=true&theme=github_dark_dimmed" alt="GitHub Stats">
+  </a>
+</div>
 
-[![Solved.ac
-프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=hyunkim6790)](https://solved.ac/hyunkim6790)
+<!-- Solved.ac Profile -->
+<div align="center">
+  <a href="https://solved.ac/hyunkim6790">
+    <img src="http://mazassumnida.wtf/api/v2/generate_badge?boj=hyunkim6790" alt="Solved.ac 프로필">
+  </a>
 </div>
 
 
-<!--
-**UiHyeon-Kim/UiHyeon-Kim** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+<!-- 사이즈 조절한 리드미 스탯 -->
+<!-- <a href="https://github.com/anuraghazra/github-readme-stats">
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=UiHyeon-Kim&layout=donut&show_icons=true&theme=material-palenight&hide_border=true&bg_color=20232a&icon_color=58A6FF&text_color=fff&title_color=58A6FF&count_private=true&exclude_repo=Face-Transfer-Application" width=38% />
+</a>    
+<a href="https://github.com/anuraghazra/github-readme-stats">
+  <img src="https://github-readme-stats.vercel.app/api?username=UiHyeon-Kim&show_icons=true&theme=material-palenight&hide_border=true&bg_color=20232a&icon_color=58A6FF&text_color=fff&title_color=58A6FF&count_private=true" width=56% />
+</a>
+<a href="https://github.com/ashutosh00710/github-readme-activity-graph">
+    <img src="https://github-readme-activity-graph.vercel.app/graph?username=UiHyeon-Kim&theme=react-dark&bg_color=20232a&hide_border=true&line=58A6FF&color=58A6FF" width=94%/>
+</a> -->
