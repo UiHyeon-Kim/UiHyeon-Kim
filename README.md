@@ -14,17 +14,27 @@
 <h3 align="center">Tech Stack</h3>
 <div align="center">
   <p>
-    <img src="https://img.shields.io/badge/Kotlin-7F52FF.svg?style=flat-square&logo=kotlin&logoColor=FFFFFF" alt="Kotlin" />
-    <img src="https://img.shields.io/badge/Java-ED8B00.svg?style=flat-square&logo=penjdk&logoColor=000000" alt="Java" />
-    <img src="https://img.shields.io/badge/C++-00599C.svg?style=flat-square&logo=cplusplus&logoColor=FFFFFF" alt="C++" />
+    <img src="https://img.shields.io/badge/Kotlin-7F52FF.svg?style=flat&logo=kotlin&logoColor=FFFFFF" />
+    <img src="https://img.shields.io/badge/Java-ED8B00.svg?style=flat&logo=Java&logoColor=000000" />
+    <img src="https://img.shields.io/badge/Dart-0175C2.svg?style=flat&logo=dart&logoColor=FFFFFF" />
+    <img src="https://img.shields.io/badge/C++-00599C.svg?style=flat&logo=cplusplus&logoColor=FFFFFF" />
   </p>
   <p>
-    <img src="https://img.shields.io/badge/Android-3DDC84.svg?style=flat-square&logo=android&logoColor=FFFFFF" alt="Android" />
-    <img src="https://img.shields.io/badge/intellijidea-000000.svg?style=flat-square&logo=intellijidea&logoColor=FFFFFF" alt="IntelliJ IDEA" />
-    <img src="https://img.shields.io/badge/figma-F24E1E.svg?style=flat-square&logo=figma&logoColor=FFFFFF" alt="Figma" />
-    <img src="https://img.shields.io/badge/sqlite-003B57.svg?style=flat-square&logo=sqlite&logoColor=FFFFFF" alt="SQLite" />
-    <img src="https://img.shields.io/badge/mysql-4479A1.svg?style=flat-square&logo=mysql&logoColor=FFFFFF" alt="MySQL" />
-    <img src="https://img.shields.io/badge/VSCode-22ABF3.svg?style=flat-square&logo=visual-studio-code&logoColor=FFFFFF" alt="VSCode" />
+    <img src="https://img.shields.io/badge/Android-3DDC84.svg?style=flat&logo=android&logoColor=FFFFFF" />
+    <img src="https://img.shields.io/badge/Jetpack Compose-4285F4.svg?style=flat&logo=jetpackcompose&logoColor=FFFFFF" />
+    <img src="https://img.shields.io/badge/Flutter-02569B.svg?style=flat&logo=flutter&logoColor=FFFFFF" />
+  </p>
+  <p>
+    <img src="https://img.shields.io/badge/Firebase-FF7139.svg?style=flat&logo=firebase&logoColor=FFFFFF" />
+    <img src="https://img.shields.io/badge/Swagger-85EA2D.svg?style=flat&logo=swagger&logoColor=FFFFFF" />
+    <img src="https://img.shields.io/badge/Amazon AWS-232F3E.svg?style=flat&logo=amazonaws&logoColor=FFFFFF" />
+    <img src="https://img.shields.io/badge/MySQL-4479A1.svg?style=flat&logo=mysql&logoColor=FFFFFF" />
+  </p>
+  <p>
+    <img src="https://img.shields.io/badge/Git-F05032.svg?style=flat&logo=git&logoColor=FFFFFF" />
+    <img src="https://img.shields.io/badge/Github-181717.svg?style=flat&logo=github&logoColor=FFFFFF" />
+    <img src="https://img.shields.io/badge/Notion-000000.svg?style=flat&logo=notion&logoColor=FFFFFF" />
+    <img src="https://img.shields.io/badge/Figma-F24E1E.svg?style=flat&logo=figma&logoColor=FFFFFF" />
   </p>
 </div>
 
