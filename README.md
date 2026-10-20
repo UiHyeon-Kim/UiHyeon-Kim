@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&amp;height=150&amp;color=0%3A0F172A%2C55%3A075985%2C100%3A22D3EE&amp;section=header&amp;text=UiHyeon+Kim&amp;fontSize=54&amp;fontColor=FFFFFF&amp;fontAlignY=42" width="100%" alt="UiHyeon Kim — Android Developer">
+  <img src="https://capsule-render.vercel.app/api?type=waving&amp;height=150&amp;color=0%3A0F172A%2C55%3A075985%2C100%3A22D3EE&amp;section=header&amp;text=UiHyeon+Kim&amp;fontSize=54&amp;fontColor=FFFFFF&amp;fontAlignY=42" width="100%" alt="UiHyeon Kim - Android Developer">
 </p>
 
 <h1 align="center">김의현 · Android Developer</h1>
@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-  <a href="https://uihyeon-kim.github.io/UiHyeon-Kim/"><img src="assets/android-entry.svg" width="24" height="24" alt="안드로이드"> 내 폰 열어보기 ↗</a>
+  <a href="https://uihyeon-kim.github.io/UiHyeon-Kim/"><img src="assets/open-phone.svg" width="176" height="32" alt="내 폰 열어보기 ↗"></a>
 </p>
 
 <h2>Engineering Focus</h2>
@@ -42,13 +42,14 @@
 
 <h2>Experience</h2>
 
-<p><b>NOW &nbsp; SSAFY 16기</b></p>
+<p><b>NOW &nbsp; SSAFY 16기</b><br>
+현재는 Android 앱의 상태·저장 흐름과 카메라·지도 입력을 다듬고 있습니다</p>
 
 <p><b>2026 &nbsp; Rodi · Android 개발 기여</b><br>
 위치 상태·제품 UI와 검증·빌드 흐름을 함께 다듬고 있습니다<br>
 <a href="https://github.com/Central-MakeUs/Rodi-Android/pull/87">위치 미확보 시 홈 로딩 개선</a> · <a href="https://github.com/Central-MakeUs/Rodi-Android/pull/188">CI 검증 작업</a></p>
 
-<p><b>2025.07 — 09 &nbsp; 구름한장 · 팀 프로젝트</b><br>
+<p><b>2025.07 - 09 &nbsp; 구름한장 · 팀 프로젝트</b><br>
 화면 구현과 함께 Git 협업 규칙·문서화·코드 리뷰에 참여했습니다<br>
 <a href="https://github.com/LIKELION-Android-Bootcamp-4th/FinalProject-GureumPage-HIHIHIHI#담당-역할">팀 문서의 담당 역할</a></p>
 
@@ -56,8 +57,8 @@
 
 <p>카메라와 위치 같은 실제 입력이 앱의 상태로 이어지는 과정을 실험합니다</p>
 <ul>
-  <li><b>PoseUp</b> — CameraX·MediaPipe 자세 분석과 운동 진행 흐름</li>
-  <li><b>고정 경로 안내 PoC</b> — 지도·위치·경로 진행 상태의 연결</li>
+  <li><b>PoseUp</b> - CameraX·MediaPipe 자세 분석과 운동 진행 흐름</li>
+  <li><b>고정 경로 안내 PoC</b> - 지도·위치·경로 진행 상태의 연결</li>
 </ul>
 <p><sub>진행 중인 실험이며 관련 소스는 비공개입니다</sub></p>
 
@@ -65,12 +66,22 @@
 
 <p><b>Android &amp; UI</b><br>
   <img src="https://skillicons.dev/icons?i=kotlin,androidstudio&amp;theme=light" height="42" alt="Kotlin, Android Studio">
-  <br>Jetpack Compose · CameraX · MediaPipe
+  <br>Jetpack Compose · Navigation Compose · Navigation 3
+  <br>CameraX · MediaPipe
 </p>
 
-<p><b>Data &amp; Collaboration</b><br>
+<p><b>Data &amp; Architecture</b><br>
+  Coroutines · Flow · Room · DataStore
+  <br>Retrofit · OkHttp · Hilt · Coil
+</p>
+
+<p><b>Testing &amp; Delivery</b><br>
+  JUnit · MockK · Gradle (Kotlin DSL) · GitHub Actions
+</p>
+
+<p><b>Services &amp; Collaboration</b><br>
   <img src="https://skillicons.dev/icons?i=firebase,git,figma&amp;theme=light" height="42" alt="Firebase, Git, Figma">
-  <br>Coroutines · Flow · Room · DataStore
+  <br>Firebase FCM · Git · GitHub · Figma
 </p>
 
 <h2>Learning</h2>
