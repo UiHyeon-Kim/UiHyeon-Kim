@@ -104,12 +104,11 @@ JUnit · MockK · Firebase FCM</sub></p>
 <h2>Activity</h2>
 
 <p align="center">
-  <img src="assets/contribution-calendar-3d.svg" width="900" alt="UiHyeon-Kim의 2025-10-21부터 2026-10-20까지 공개 프로필 기여를 나타낸 정적 3D 캘린더">
+  <img src="assets/contribution-calendar-3d.svg" width="900" alt="UiHyeon-Kim의 최근 365일 기여를 자동 갱신하는 3D 위젯">
 </p>
 <p align="center">
   <a href="https://streak-stats.demolab.com/?user=UiHyeon-Kim&amp;background=F5F8FB&amp;border=D9E3EC&amp;stroke=D9E3EC&amp;ring=6E9BAF&amp;fire=6E9BAF&amp;currStreakNum=38576D&amp;sideNums=38576D&amp;currStreakLabel=526575&amp;sideLabels=526575&amp;dates=748796&amp;border_radius=12&amp;card_width=900&amp;card_height=170"><picture><source media="(max-width: 600px)" srcset="https://streak-stats.demolab.com/?user=UiHyeon-Kim&amp;background=F5F8FB&amp;border=D9E3EC&amp;stroke=D9E3EC&amp;ring=6E9BAF&amp;fire=6E9BAF&amp;currStreakNum=38576D&amp;sideNums=38576D&amp;currStreakLabel=526575&amp;sideLabels=526575&amp;dates=748796&amp;border_radius=12"><img src="https://streak-stats.demolab.com/?user=UiHyeon-Kim&amp;background=F5F8FB&amp;border=D9E3EC&amp;stroke=D9E3EC&amp;ring=6E9BAF&amp;fire=6E9BAF&amp;currStreakNum=38576D&amp;sideNums=38576D&amp;currStreakLabel=526575&amp;sideLabels=526575&amp;dates=748796&amp;border_radius=12&amp;card_width=900&amp;card_height=170" width="900" alt="UiHyeon-Kim의 전체 기여와 현재·최장 연속 기여"></picture></a>
 </p>
-<p><sub>2026-10-20 08:10 UTC 기준 공개 프로필의 365일 기여 데이터로 만든 정적 이미지입니다. 자동 갱신은 아직 활성화하지 않았습니다.</sub></p>
 <!--
 <p><a href="https://github.com/UiHyeon-Kim/Coding-Problems">알고리즘 풀이 기록</a></p>
 -->

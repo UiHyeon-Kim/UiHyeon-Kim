@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="900" height="414" viewBox="0 0 900 414" role="img" aria-labelledby="title desc">
 <title id="title">UiHyeon-Kim public contribution calendar</title>
-<desc id="desc">365 observed daily cells, 2025-10-21 to 2026-10-20. Review snapshot fetched 2026-10-20T08:10:22.128294+00:00. Automatic regeneration is not active. MIT-derived calendar-only geometry, no language, radar or total panel.</desc>
+<desc id="desc">365 observed daily cells, 2025-10-21 to 2026-10-20. Automatically refreshed from the public profile calendar at 2026-10-20T15:11:24.070274+00:00. MIT-derived calendar-only geometry, no language, radar or total panel.</desc>
 <rect x=".5" y=".5" width="899" height="413" rx="12" fill="#F5F8FB" stroke="#D9E3EC"/>
 <g font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif">
 <text x="28" y="35" fill="#38576D" font-size="19" font-weight="600">Contribution skyline</text>
-<text x="28" y="58" fill="#748796" font-size="12">UiHyeon-Kim · 2025-10-21 — 2026-10-20</text>
+<text x="28" y="58" fill="#748796" font-size="12">UiHyeon-Kim · 2025-10-21 - 2026-10-20</text>
 <g id="calendar" transform="translate(34.4818 16.3853) scale(0.956245 0.592872)">
 <g data-date="2025-10-21" data-count="0" data-level="0" transform="translate(70.3125 126.0987)"><title>2025-10-21: 0 contributions</title>
 <polygon points="0.0000,0.0000 12.6562,7.3071 12.6562,10.3071 0.0000,3.0000" fill="#bec5ca"/>
@@ -1837,4 +1837,4 @@
 <rect x="92" y="377" width="11" height="11" rx="2" fill="#8DAFC2"/>
 <rect x="108" y="377" width="11" height="11" rx="2" fill="#628DA5"/>
 <rect x="124" y="377" width="11" height="11" rx="2" fill="#385F79"/>
-<text x="145" y="387" fill="#748796" font-size="11">More</text><text x="872" y="387" text-anchor="end" fill="#748796" font-size="11">Captured 2026-10-20 08:10 UTC · review snapshot</text></g></svg>
+<text x="145" y="387" fill="#748796" font-size="11">More</text><text x="872" y="387" text-anchor="end" fill="#748796" font-size="11">Updated 2026-10-20 15:11 UTC</text></g></svg>
