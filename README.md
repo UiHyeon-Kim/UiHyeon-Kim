@@ -1,80 +1,81 @@
-<!-- 헤더 영역 -->
-<div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=transparent&text=UiHyeon-Kim&fontSize=90&fontColor=7FA8FF" alt="UiHyeon-Kim Header">
-</div>
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&amp;height=150&amp;color=0%3A0F172A%2C55%3A075985%2C100%3A22D3EE&amp;section=header&amp;text=UiHyeon+Kim&amp;fontSize=54&amp;fontColor=FFFFFF&amp;fontAlignY=42" width="100%" alt="UiHyeon Kim — Android Developer">
+</p>
 
-<!-- Android Developer 소개 -->
-<div align="center">
-  <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=25&pause=1000&color=7FA8FF&center=true&vCenter=true&repeat=%EC%A7%84%EC%8B%A4&random=%EA%B1%B0%EC%A7%93&width=435&lines=Android+Deveoloper" alt="Android Developer">  
-  </a>
-</div>
+<h1 align="center">김의현 · Android Developer</h1>
 
-<!-- Tech Stack -->
-<h3 align="center">Tech Stack</h3>
-<div align="center">
-  <p>
-    <img src="https://img.shields.io/badge/Kotlin-7F52FF.svg?style=flat&logo=kotlin&logoColor=FFFFFF" />
-    <img src="https://img.shields.io/badge/Java-ED8B00.svg?style=flat&logo=Java&logoColor=000000" />
-    <img src="https://img.shields.io/badge/Dart-0175C2.svg?style=flat&logo=dart&logoColor=FFFFFF" />
-    <img src="https://img.shields.io/badge/C++-00599C.svg?style=flat&logo=cplusplus&logoColor=FFFFFF" />
-  </p>
-  <p>
-    <img src="https://img.shields.io/badge/Android-3DDC84.svg?style=flat&logo=android&logoColor=FFFFFF" />
-    <img src="https://img.shields.io/badge/Jetpack Compose-4285F4.svg?style=flat&logo=jetpackcompose&logoColor=FFFFFF" />
-    <img src="https://img.shields.io/badge/Flutter-02569B.svg?style=flat&logo=flutter&logoColor=FFFFFF" />
-  </p>
-  <p>
-    <img src="https://img.shields.io/badge/Firebase-FF7139.svg?style=flat&logo=firebase&logoColor=FFFFFF" />
-    <img src="https://img.shields.io/badge/Swagger-85EA2D.svg?style=flat&logo=swagger&logoColor=FFFFFF" />
-    <img src="https://img.shields.io/badge/Amazon AWS-232F3E.svg?style=flat&logo=amazonaws&logoColor=FFFFFF" />
-    <img src="https://img.shields.io/badge/MySQL-4479A1.svg?style=flat&logo=mysql&logoColor=FFFFFF" />
-  </p>
-  <p>
-    <img src="https://img.shields.io/badge/Git-F05032.svg?style=flat&logo=git&logoColor=FFFFFF" />
-    <img src="https://img.shields.io/badge/Github-181717.svg?style=flat&logo=github&logoColor=FFFFFF" />
-    <img src="https://img.shields.io/badge/Notion-000000.svg?style=flat&logo=notion&logoColor=FFFFFF" />
-    <img src="https://img.shields.io/badge/Figma-F24E1E.svg?style=flat&logo=figma&logoColor=FFFFFF" />
-  </p>
-</div>
+<p align="center">
+  앱에서 만난 문제를, 다음 앱에서도 쓸 수 있는 코드로 정리합니다<br>
+  <b>Kotlin · Jetpack Compose</b> &nbsp; / &nbsp; SSAFY 16기
+</p>
 
-<!-- GitHub Stats --> 
-<!-- <a href="https://github.com/anuraghazra/github-readme-stats">
-  <img src="https://github-readme-stats.vercel.app/api?username=UiHyeon-Kim&count_private=true&show_icons=true&theme=github_dark_dimmed" 
-    alt="GitHub Stats">
-</a> -->
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&amp;size=18&amp;pause=1800&amp;color=0891B2&amp;center=true&amp;vCenter=true&amp;width=460&amp;height=42&amp;lines=Android+UI+%26+State%3BCamera+%26+Pose+Estimation%3BMaps+%26+Navigation%3BReusable+Compose+APIs" width="460" alt="관심 분야: Android UI와 상태, 카메라 자세 인식, 지도와 내비게이션, 재사용 Compose API">
+</p>
 
-<!-- Solved.ac Profile -->
-<div align="center">
-  <a href="https://solved.ac/hyunkim6790">
-    <img src="http://mazassumnida.wtf/api/v2/generate_badge?boj=hyunkim6790" alt="Solved.ac 프로필" style="width: auto; height: 300">
-  </a>
-</div>
+<p align="center">
+  <a href="https://uihyeon-kim.github.io/UiHyeon-Kim/"><img src="assets/android-entry.svg" width="24" height="24" alt="안드로이드"> 내 폰 열어보기 ↗</a>
+</p>
 
-<!-- git animal 1type -->
-<!-- <a href="https://www.gitanimals.org/en_US?utm_medium=image&utm_source=UiHyeon-Kim&utm_content=line">
-  <img src="https://render.gitanimals.org/lines/UiHyeon-Kim?pet-id=695281911866261093" width="300" height="180" />
-</a> -->
+<h2>Engineering Focus</h2>
 
-<!--  -->
-<!-- <a href="https://github.com/anuraghazra/github-readme-stats">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=UiHyeon-Kim&layout=donut&theme=github_dark_dimmed" alt="Top Languages" style="width: 50%; height: auto;">
-</a> -->
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>📱 사용자 흐름을 명확하게</h3>
+      <p>공통 디자인 시스템부터<br>입력 조건과 예외 상태까지</p>
+      <ul>
+        <li><b>구름한장</b>의 공통 테마·온보딩·통계·알림 구현</li>
+        <li><b>Rodi</b>에서 위치를 기다리는 상태와 사용할 수 없는 상태를 분리해 홈 로딩 문제 수정</li>
+      </ul>
+    </td>
+    <td width="50%" valign="top">
+      <h3>🧩 다시 쓸 수 있는 경계를</h3>
+      <p>앱에서 시작한 기능을<br>재사용 가능한 API와 검증 흐름으로</p>
+      <ul>
+        <li>구름한장의 마인드맵에서 출발한 <a href="https://github.com/UiHyeon-Kim/compose-mindmap"><b>compose-mindmap</b></a></li>
+        <li>트리 레이아웃·편집·viewport API, Rodi 테스트·CI·빌드 설정 개선</li>
+      </ul>
+    </td>
+  </tr>
+</table>
 
-<!-- git animal farm type -->
-<!-- <div align="center">
-  <a href="https://www.gitanimals.org/en_US?utm_medium=image&utm_source=UiHyeon-Kim&utm_content=farm">
-    <img src="https://render.gitanimals.org/farms/UiHyeon-Kim" width="550" height="300"/>
-  </a>
-</div> -->
+<h2>Experience</h2>
 
-<!-- 사이즈 조절한 리드미 스탯 -->
-<!-- <a href="https://github.com/anuraghazra/github-readme-stats">
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=UiHyeon-Kim&layout=donut&show_icons=true&theme=material-palenight&hide_border=true&bg_color=20232a&icon_color=58A6FF&text_color=fff&title_color=58A6FF&count_private=true&exclude_repo=Face-Transfer-Application" width=38% />
-</a>    
-<a href="https://github.com/anuraghazra/github-readme-stats">
-  <img src="https://github-readme-stats.vercel.app/api?username=UiHyeon-Kim&show_icons=true&theme=material-palenight&hide_border=true&bg_color=20232a&icon_color=58A6FF&text_color=fff&title_color=58A6FF&count_private=true" width=56% />
-</a>
-<a href="https://github.com/ashutosh00710/github-readme-activity-graph">
-    <img src="https://github-readme-activity-graph.vercel.app/graph?username=UiHyeon-Kim&theme=react-dark&bg_color=20232a&hide_border=true&line=58A6FF&color=58A6FF" width=94%/>
-</a> -->
+<p><b>NOW &nbsp; SSAFY 16기</b></p>
+
+<p><b>2026 &nbsp; Rodi · Android 개발 기여</b><br>
+위치 상태·제품 UI와 검증·빌드 흐름을 함께 다듬고 있습니다<br>
+<a href="https://github.com/Central-MakeUs/Rodi-Android/pull/87">위치 미확보 시 홈 로딩 개선</a> · <a href="https://github.com/Central-MakeUs/Rodi-Android/pull/188">CI 검증 작업</a></p>
+
+<p><b>2025.07 — 09 &nbsp; 구름한장 · 팀 프로젝트</b><br>
+화면 구현과 함께 Git 협업 규칙·문서화·코드 리뷰에 참여했습니다<br>
+<a href="https://github.com/LIKELION-Android-Bootcamp-4th/FinalProject-GureumPage-HIHIHIHI#담당-역할">팀 문서의 담당 역할</a></p>
+
+<h2>Now Exploring</h2>
+
+<p>카메라와 위치 같은 실제 입력이 앱의 상태로 이어지는 과정을 실험합니다</p>
+<ul>
+  <li><b>PoseUp</b> — CameraX·MediaPipe 자세 분석과 운동 진행 흐름</li>
+  <li><b>고정 경로 안내 PoC</b> — 지도·위치·경로 진행 상태의 연결</li>
+</ul>
+<p><sub>진행 중인 실험이며 관련 소스는 비공개입니다</sub></p>
+
+<h2>Toolbox</h2>
+
+<p><b>Android &amp; UI</b><br>
+  <img src="https://skillicons.dev/icons?i=kotlin,androidstudio&amp;theme=light" height="42" alt="Kotlin, Android Studio">
+  <br>Jetpack Compose · CameraX · MediaPipe
+</p>
+
+<p><b>Data &amp; Collaboration</b><br>
+  <img src="https://skillicons.dev/icons?i=firebase,git,figma&amp;theme=light" height="42" alt="Firebase, Git, Figma">
+  <br>Coroutines · Flow · Room · DataStore
+</p>
+
+<h2>Learning</h2>
+
+<p>
+  <a href="https://solved.ac/hyunkim6790"><img src="https://mazassumnida.wtf/api/mini/generate_badge?boj=hyunkim6790" height="24" alt="hyunkim6790의 solved.ac 등급 배지"></a>
+  &nbsp; <a href="https://github.com/UiHyeon-Kim/Coding-Problems">알고리즘 풀이 기록</a>
+</p>
