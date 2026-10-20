@@ -65,7 +65,7 @@
 <h2>Toolbox</h2>
 
 <p><b>Android &amp; UI</b><br>
-  <img src="https://skillicons.dev/icons?i=kotlin,androidstudio&amp;theme=light" height="42" alt="Kotlin, Android Studio">
+  <img src="https://skillicons.dev/icons?i=java,kotlin,androidstudio&amp;theme=light" height="42" alt="Java, Kotlin, Android Studio">
   <br>Jetpack Compose · Navigation Compose · Navigation 3
   <br>CameraX · MediaPipe
 </p>
