@@ -1,10 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="176" height="32" viewBox="0 0 176 32" role="img" aria-labelledby="title">
   <title id="title">내 폰 열어보기 ↗</title>
-  <rect x="0.5" y="0.5" width="175" height="31" rx="15.5" fill="#eaf6ee" stroke="#b6d8c3"/>
+  <style>
+    :root { color: #075985; }
+    @media (prefers-color-scheme: dark) { :root { color: #22d3ee; } }
+  </style>
+  <defs>
+    <mask id="eyes"><rect width="24" height="24" fill="white"/><circle cx="8" cy="12" r="1.1" fill="black"/><circle cx="16" cy="12" r="1.1" fill="black"/></mask>
+  </defs>
+  <rect x="0.5" y="0.5" width="175" height="31" rx="15.5" fill="none" stroke="currentColor" stroke-opacity="0.7"/>
   <g transform="translate(8 5.5)">
-    <g stroke="#2ea66c" stroke-width="1.7" stroke-linecap="round"><path d="m6 6-2-3m14 3 2-3"/></g>
-    <path d="M3 14a9 9 0 0 1 18 0v4H3Z" fill="#3ddc84"/>
-    <g fill="#163e31"><circle cx="8" cy="12" r="1.1"/><circle cx="16" cy="12" r="1.1"/></g>
+    <g stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="m6 6-2-3m14 3 2-3"/></g>
+    <path d="M3 14a9 9 0 0 1 18 0v4H3Z" fill="currentColor" mask="url(#eyes)"/>
   </g>
-  <text x="41" y="16" dominant-baseline="central" fill="#20583d" font-family="system-ui,-apple-system,BlinkMacSystemFont,Apple SD Gothic Neo,Noto Sans KR,sans-serif" font-size="14" font-weight="600">내 폰 열어보기 ↗</text>
+  <text x="41" y="16" dominant-baseline="central" fill="currentColor" font-family="system-ui,-apple-system,BlinkMacSystemFont,Apple SD Gothic Neo,Noto Sans KR,sans-serif" font-size="14" font-weight="600">내 폰 열어보기 ↗</text>
 </svg>

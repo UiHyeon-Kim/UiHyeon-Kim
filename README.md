@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-  <a href="https://uihyeon-kim.github.io/UiHyeon-Kim/"><img src="assets/open-phone.svg" width="176" height="32" alt="내 폰 열어보기 ↗"></a>
+  <a href="https://uihyeon-kim.github.io/UiHyeon-Kim/"><img src="assets/open-phone.svg?v=2" width="176" height="32" alt="내 폰 열어보기 ↗"></a>
 </p>
 
 <h2>Engineering Focus</h2>
