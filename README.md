@@ -14,79 +14,102 @@
 </p>
 
 <p align="center">
-  <a href="https://uihyeon-kim.github.io/UiHyeon-Kim/"><img src="assets/open-phone.svg?v=2" width="176" height="32" alt="내 폰 열어보기 ↗"></a>
+  <a href="https://uihyeon-kim.github.io/UiHyeon-Kim/"><img src="assets/open-phone.svg" width="138" height="28" alt="내 폰 열어보기 ↗"></a>
 </p>
 
-<h2>Engineering Focus</h2>
+<h2>Selected Projects</h2>
 
-<table>
+<table width="100%">
+  <colgroup><col width="50%"><col width="50%"></colgroup>
   <tr>
     <td width="50%" valign="top">
-      <h3>📱 사용자 흐름을 명확하게</h3>
-      <p>공통 디자인 시스템부터<br>입력 조건과 예외 상태까지</p>
+      <h3><a href="https://github.com/Central-MakeUs/Rodi-Android">🚗 Rodi</a></h3>
+      <p><b>초보 운전자를 위한 운전 코스 추천 앱</b>입니다. 수준에 맞는 연습 장소와 코스를 찾고, 경로 안내와 실제 운전 연습으로 이어지도록 돕습니다.</p>
+      <p><b>담당 구현·개선</b></p>
       <ul>
-        <li><b>구름한장</b>의 공통 테마·온보딩·통계·알림 구현</li>
-        <li><b>Rodi</b>에서 위치를 기다리는 상태와 사용할 수 없는 상태를 분리해 홈 로딩 문제 수정</li>
+        <li>위치 대기·미확보 상태를 분리해 홈 영구 로딩 개선</li>
+        <li>코스 경로 기반 진행률·도착 판정과 방문 확인 흐름 연결</li>
+        <li>상태·경계 조건 테스트와 CI·빌드 검증 흐름 정비</li>
       </ul>
+      <p><a href="https://github.com/Central-MakeUs/Rodi-Android/pull/87">위치 미확보 처리</a> · <a href="https://github.com/Central-MakeUs/Rodi-Android/pull/108">진행률·도착 판정</a></p>
     </td>
     <td width="50%" valign="top">
-      <h3>🧩 다시 쓸 수 있는 경계를</h3>
-      <p>앱에서 시작한 기능을<br>재사용 가능한 API와 검증 흐름으로</p>
+      <h3>💪 PoseUp</h3>
+      <p>스마트폰으로 푸쉬업을 연습하는 사용자를 위한 운동 코칭 앱입니다. 카메라로 자세를 분석하고, 횟수·세트·휴식과 운동 기록을 안내합니다.</p>
+      <p><b>담당 구현·개선</b></p>
       <ul>
-        <li>구름한장의 마인드맵에서 출발한 <a href="https://github.com/UiHyeon-Kim/compose-mindmap"><b>compose-mindmap</b></a></li>
-        <li>트리 레이아웃·편집·viewport API, Rodi 테스트·CI·빌드 설정 개선</li>
+        <li>빠른 동작에서 발생하는 카운트 누락 판정 보정</li>
+        <li>세트 목표·준비·휴식 상태에 맞춘 화면과 음성 안내</li>
+        <li>카메라 종료·화면 이탈 시 늦은 음성 요청과 콜백 무효화</li>
       </ul>
+      <p><a href="https://uihyeon-kim.github.io/UiHyeon-Kim/#/project/poseup">PoseUp 프로젝트 소개</a> · <sub>소스 비공개</sub></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3><a href="https://github.com/UiHyeon-Kim/Pickle-Android">🥒 Pickle</a></h3>
+      <p>소비 기록을 공유하며 의견을 나누고 싶은 사용자를 위한 가계부 앱입니다. 월별 소비 내역·통계를 확인하고, 친구에게 소비 심판을 요청할 수 있습니다.</p>
+      <p><b>담당 구현</b></p>
+      <ul>
+        <li>Clean Architecture·멀티모듈 기반 초기 구조 설계</li>
+        <li>Google·Kakao 로그인, 공통 토큰 갱신과 암호화 저장</li>
+        <li>소비 심판·초대 화면과 배심원 정보 응답 매핑 구현</li>
+      </ul>
+      <p><a href="https://github.com/UiHyeon-Kim/Pickle-Android#engineering-highlights">인증 처리 구현</a> · <a href="https://github.com/UiHyeon-Kim/Pickle-Android/commit/c5e943e34c5c3f34853b8887ff1ebc21a636158d">배심원 응답 매핑</a></p>
+    </td>
+    <td width="50%" valign="top">
+      <h3><a href="https://github.com/LIKELION-Android-Bootcamp-4th/FinalProject-GureumPage-HIHIHIHI">☁️ 구름한장</a></h3>
+      <p>읽은 책과 떠오른 생각을 함께 정리하려는 독자를 위한 독서 기록 앱입니다. 독서 기록·마인드맵·통계로 읽은 내용과 독서 습관을 돌아볼 수 있습니다.</p>
+      <p><b>담당 구현</b></p>
+      <ul>
+        <li>공통 테마·디자인 시스템과 온보딩 화면 구축</li>
+        <li>마인드맵 편집·저장 시 최종 상태 비교로 변경 연산 계산</li>
+        <li>독서 통계 화면, 로컬 알림·FCM 푸시 알림 연동</li>
+      </ul>
+      <p><a href="https://github.com/UiHyeon-Kim/GureumPage/commit/19c3733131ef21b03ee250438888bdfd187a09b4">마인드맵 저장 구현</a> · <a href="https://github.com/LIKELION-Android-Bootcamp-4th/FinalProject-GureumPage-HIHIHIHI#담당-역할">팀 문서의 담당 역할</a></p>
     </td>
   </tr>
 </table>
 
 <h2>Experience</h2>
 
-<p><b>NOW &nbsp; SSAFY 16기</b><br>
-현재는 Android 앱의 상태·저장 흐름과 카메라·지도 입력을 다듬고 있습니다</p>
-
-<p><b>2026 &nbsp; Rodi · Android 개발 기여</b><br>
-위치 상태·제품 UI와 검증·빌드 흐름을 함께 다듬고 있습니다<br>
-<a href="https://github.com/Central-MakeUs/Rodi-Android/pull/87">위치 미확보 시 홈 로딩 개선</a> · <a href="https://github.com/Central-MakeUs/Rodi-Android/pull/188">CI 검증 작업</a></p>
-
-<p><b>2025.07 - 09 &nbsp; 구름한장 · 팀 프로젝트</b><br>
-화면 구현과 함께 Git 협업 규칙·문서화·코드 리뷰에 참여했습니다<br>
-<a href="https://github.com/LIKELION-Android-Bootcamp-4th/FinalProject-GureumPage-HIHIHIHI#담당-역할">팀 문서의 담당 역할</a></p>
-
-<h2>Now Exploring</h2>
-
-<p>카메라와 위치 같은 실제 입력이 앱의 상태로 이어지는 과정을 실험합니다</p>
 <ul>
-  <li><b>PoseUp</b> - CameraX·MediaPipe 자세 분석과 운동 진행 흐름</li>
-  <li><b>고정 경로 안내 PoC</b> - 지도·위치·경로 진행 상태의 연결</li>
+  <li><b>2026.07 - 현재 · SSAFY 16기</b> - Java / Spring 기반 백엔드 개발 교육 참여</li>
+  <li><b>2026.05 - 2026.09 · CMC</b> - Rodi 팀 프로젝트 Android 개발</li>
+  <li><b>2026.05 - 2026.06 · compose-mindmap</b> - 개인 오픈소스 라이브러리 제작·공개</li>
+  <li><b>2026.04 - 2026.06 · OSSCA</b> - 체험형 프로그램 수료</li>
+  <li><b>2026.01 - 2026.02 · DND</b> - Pickle 팀 프로젝트 Android 개발</li>
+  <li><b>2025.03 - 2025.09 · 멋쟁이사자처럼 Android 스쿨 4기</b> - Android 개발 교육 참여</li>
+  <li><b>2024.12 - 2025.03 · Kotlin·Android 개인 학습</b> - 언어 기초와 Android 앱 개발 학습</li>
 </ul>
-<p><sub>진행 중인 실험이며 관련 소스는 비공개입니다</sub></p>
 
 <h2>Toolbox</h2>
 
 <p><b>Android &amp; UI</b><br>
-  <img src="https://skillicons.dev/icons?i=java,kotlin,androidstudio&amp;theme=light" height="42" alt="Java, Kotlin, Android Studio">
-  <br>Jetpack Compose · Navigation Compose · Navigation 3
-  <br>CameraX · MediaPipe
+  <img src="assets/stack-android.svg" width="190" height="40" alt="Android, Kotlin, Java, Jetpack Compose">
 </p>
-
-<p><b>Data &amp; Architecture</b><br>
-  Coroutines · Flow · Room · DataStore
-  <br>Retrofit · OkHttp · Hilt · Coil
-</p>
-
-<p><b>Testing &amp; Delivery</b><br>
-  JUnit · MockK · Gradle (Kotlin DSL) · GitHub Actions
-</p>
-
 <p><b>Services &amp; Collaboration</b><br>
-  <img src="https://skillicons.dev/icons?i=firebase,git,figma&amp;theme=light" height="42" alt="Firebase, Git, Figma">
-  <br>Firebase FCM · Git · GitHub · Figma
+  <img src="assets/stack-services-collaboration.svg" width="140" height="40" alt="Firebase, Git, Figma">
+</p>
+<p><sub>Build &amp; CI: Gradle · GitHub Actions</sub></p>
+<p><sub>Navigation Compose · Navigation 3 · CameraX · MediaPipe<br>
+Coroutines · Flow · Room · DataStore · Retrofit · OkHttp · Hilt · Coil<br>
+JUnit · MockK · Firebase FCM</sub></p>
+
+<p><b>Learning</b><br>
+  <img src="assets/stack-learning.svg" width="40" height="40" alt="Spring - 학습 중">
+  <sub>SSAFY 16기 · Java / Spring 기반 백엔드 개발 학습 중</sub>
 </p>
 
-<h2>Learning</h2>
+<h2>Activity</h2>
 
-<p>
-  <a href="https://solved.ac/hyunkim6790"><img src="https://mazassumnida.wtf/api/mini/generate_badge?boj=hyunkim6790" height="24" alt="hyunkim6790의 solved.ac 등급 배지"></a>
-  &nbsp; <a href="https://github.com/UiHyeon-Kim/Coding-Problems">알고리즘 풀이 기록</a>
+<p align="center">
+  <img src="assets/contribution-calendar-3d.svg" width="900" alt="UiHyeon-Kim의 2025-10-21부터 2026-10-20까지 공개 프로필 기여를 나타낸 정적 3D 캘린더">
 </p>
+<p align="center">
+  <a href="https://streak-stats.demolab.com/?user=UiHyeon-Kim&amp;background=F5F8FB&amp;border=D9E3EC&amp;stroke=D9E3EC&amp;ring=6E9BAF&amp;fire=6E9BAF&amp;currStreakNum=38576D&amp;sideNums=38576D&amp;currStreakLabel=526575&amp;sideLabels=526575&amp;dates=748796&amp;border_radius=12&amp;card_width=900&amp;card_height=170"><picture><source media="(max-width: 600px)" srcset="https://streak-stats.demolab.com/?user=UiHyeon-Kim&amp;background=F5F8FB&amp;border=D9E3EC&amp;stroke=D9E3EC&amp;ring=6E9BAF&amp;fire=6E9BAF&amp;currStreakNum=38576D&amp;sideNums=38576D&amp;currStreakLabel=526575&amp;sideLabels=526575&amp;dates=748796&amp;border_radius=12"><img src="https://streak-stats.demolab.com/?user=UiHyeon-Kim&amp;background=F5F8FB&amp;border=D9E3EC&amp;stroke=D9E3EC&amp;ring=6E9BAF&amp;fire=6E9BAF&amp;currStreakNum=38576D&amp;sideNums=38576D&amp;currStreakLabel=526575&amp;sideLabels=526575&amp;dates=748796&amp;border_radius=12&amp;card_width=900&amp;card_height=170" width="900" alt="UiHyeon-Kim의 전체 기여와 현재·최장 연속 기여"></picture></a>
+</p>
+<p><sub>2026-10-20 08:10 UTC 기준 공개 프로필의 365일 기여 데이터로 만든 정적 이미지입니다. 자동 갱신은 아직 활성화하지 않았습니다.</sub></p>
+<!--
+<p><a href="https://github.com/UiHyeon-Kim/Coding-Problems">알고리즘 풀이 기록</a></p>
+-->
