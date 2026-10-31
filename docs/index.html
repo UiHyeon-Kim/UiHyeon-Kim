@@ -119,6 +119,9 @@ main.layout{flex:1;display:flex;flex-wrap:wrap;align-items:center;gap:32px 48px}
 .card-s{font-size:12px;line-height:1.55;color:var(--app-muted);text-wrap:pretty}
 .link{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:0 16px;min-height:48px;border-radius:14px;background:#fff;border:1px solid #D5DED8;text-decoration:none;font-size:13px;color:var(--app-ink)}
 .link:hover{border-color:var(--green-ink);color:var(--app-ink)}
+.sel{user-select:all;-webkit-user-select:all}
+.copy{height:32px;padding:0 12px;border-radius:99px;border:1px solid #C2CEC6;background:#fff;font-size:12px;color:var(--app-ink)}
+.copy:hover{border-color:var(--green-ink)}
 .row{display:flex;justify-content:space-between;gap:12px;font-size:12px;line-height:1.5;padding:8px 0;border-bottom:1px solid #DDE6E0}
 .row span:first-child{color:var(--app-muted);flex:none;font-family:"JetBrains Mono",monospace;font-size:11px}
 .row span:last-child{text-align:right}
@@ -229,7 +232,7 @@ noscript .ns{max-width:760px;margin:24px auto;padding:24px;background:#fff;borde
     </main>
 
     <footer>
-      <span>© 김의현 · <a href="mailto:hyunkim6790@gmail.com">hyunkim6790@gmail.com</a></span>
+      <span>© 김의현 · <span class="sel">hyunkim6790@gmail.com</span></span>
       <span>키보드: Tab 이동 · Enter 열기 · Esc 뒤로</span>
     </footer>
   </div>
@@ -425,7 +428,7 @@ function aboutBody() {
     WAYS.map(w => '<div class="tonal"><div class="tonal-k">' + esc(w[0]) + '</div><div class="tonal-v">' + esc(w[1]) + '</div></div>').join('') +
     '<p class="sec">활동</p><div>' + metaRows(ACTIVITY) + '</div>' +
     '<a class="link" href="https://github.com/UiHyeon-Kim" target="_blank" rel="noopener noreferrer">GitHub · UiHyeon-Kim<span aria-hidden="true">↗</span></a>' +
-    '<a class="link" href="mailto:hyunkim6790@gmail.com">hyunkim6790@gmail.com<span aria-hidden="true">✉</span></a>';
+    '<div class="link"><span class="sel">hyunkim6790@gmail.com</span><button type="button" class="copy" data-action="copy" data-copy="hyunkim6790@gmail.com" aria-label="이메일 주소 복사">복사</button></div>';
 }
 function stackBody() {
   const items = TECHS.filter(t => t.g === state.filter);
@@ -543,6 +546,11 @@ document.addEventListener('click', e => {
     state.frame = b.dataset.frame || 'good';
     if (state.plain) { window.open(IMG + FRAMES[state.frame][0] + '.webp', '_blank', 'noopener'); return; }
     state.landscape = true; render(false); el('screen').querySelector('.land-x')?.focus();
+  }
+  if (a === 'copy') {
+    const done = t => { b.textContent = t; setTimeout(() => { b.textContent = '복사'; }, 1500); };
+    const fallback = () => { const r = document.createRange(); r.selectNodeContents(b.previousElementSibling); const sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r); done('선택됨'); };
+    try { navigator.clipboard.writeText(b.dataset.copy).then(() => done('복사됨'), fallback); } catch (err) { fallback(); }
   }
   if (a === 'portrait') { state.landscape = false; render(false); el('screen').querySelector('.land-cta')?.focus(); }
   if (a === 'frame') { state.frame = b.dataset.frame; render(false); el('screen').querySelector('.land-seg [aria-pressed="true"]')?.focus(); }
