@@ -71,6 +71,11 @@
   </tr>
 </table>
 
+<h2>AI Workflow</h2>
+
+<p>Android 앱을 개발하며 AI를 구현 보조, 교차 리뷰, 작업 기록에 활용하고 있습니다. AI-Vault로 프로젝트 맥락을 관리하고, Agent Queue에서 relay로 작업 인계 방식을 발전시켰습니다. 프로젝트 지침과 스킬, 회의 기록 자동화 등 실제 적용 과정과 검증 사례를 포트폴리오에 정리했습니다.</p>
+<p><a href="https://uihyeon-kim.github.io/UiHyeon-Kim/#/ai">AI 활용 방식과 적용 사례 보기 ↗</a></p>
+
 <h2>Experience</h2>
 
 <ul>
