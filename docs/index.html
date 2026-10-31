@@ -127,6 +127,31 @@ main.layout{flex:1;display:flex;flex-wrap:wrap;align-items:center;gap:32px 48px}
 .flow li::before{content:counter(f);position:absolute;left:0;top:0;width:26px;height:26px;border-radius:50%;background:var(--chip);color:#0B4A2A;font:500 12px/26px "JetBrains Mono",monospace;text-align:center}
 .flow li:not(:last-child)::after{content:"";position:absolute;left:12.5px;top:28px;bottom:2px;width:1px;background:#B9CBBF}
 .flow li:last-child{padding-bottom:0}
+.fig{margin:0;display:flex;flex-direction:column;gap:10px;background:#fff;border:1px solid #DDE6E0;border-radius:16px;padding:14px}
+.fig-svg{display:block;width:100%;height:auto;font-family:"Noto Sans KR",sans-serif}
+.fig-svg .t-k{font-size:10.5px;font-weight:700;fill:var(--green-ink)}
+.fig-svg .t-s{font-size:10px;fill:var(--app-muted)}
+.fig-svg .route{fill:none;stroke:#C9D4CD;stroke-width:6;stroke-linejoin:round}
+.fig-svg .radius{fill:rgba(220,120,60,.12);stroke:#C2703A;stroke-width:1.2;stroke-dasharray:3 3}
+.fig-svg .pin{fill:#101814}
+.fig-svg .start{fill:#fff;stroke:#101814;stroke-width:1.5}
+.fig-svg .window{fill:none;stroke:rgba(31,168,98,.22);stroke-width:14;stroke-linecap:round;stroke-linejoin:round}
+.fig-svg .progress{fill:none;stroke:var(--green);stroke-width:6;stroke-linecap:round;stroke-linejoin:round}
+.fig-svg .band{fill:#EEF2EF}
+.fig-svg .curve{fill:none;stroke:#101814;stroke-width:2}
+.fig-svg .br-before{fill:none;stroke:#C2703A;stroke-width:1.4}
+.fig-svg .br-after{fill:none;stroke:var(--green-ink);stroke-width:1.8}
+.fig-pics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.fig-pics figure{margin:0}
+.fig-pics img{display:block;width:100%;height:auto;border-radius:10px;border:1px solid #DDE6E0}
+.fig-pics figcaption{font-size:11px;color:var(--app-muted);text-align:center;margin-top:4px}
+.cmp{display:flex;flex-direction:column;gap:8px}
+.cmp-box{border-radius:12px;padding:10px 12px;background:#F4F6F5;border:1px solid #E1E6E3}
+.cmp-box.after{background:var(--tonal);border-color:#BFDCC9}
+.cmp-k{font-size:12px;color:var(--app-ink)}
+.cmp-k b{font-family:"JetBrains Mono",monospace;font-size:10px;font-weight:500;letter-spacing:.04em;color:var(--app-muted);margin-right:4px}
+.cmp-box.after .cmp-k b{color:var(--green-ink)}
+.cmp ul{margin:6px 0 0;padding-left:16px;font-size:12px;line-height:1.6;color:var(--app-muted)}
 .sel{user-select:all;-webkit-user-select:all}
 .copy{height:32px;padding:0 12px;border-radius:99px;border:1px solid #C2CEC6;background:#fff;font-size:12px;color:var(--app-ink)}
 .copy:hover{border-color:var(--green-ink)}
@@ -268,6 +293,7 @@ const PROJECTS = [
   { id: 'rodi', title: 'Rodi', kind: 'CMC · Android 1인 · Google Play', summary: '초보 운전자가 연습할 길을 찾고, 실제 주행 연습까지 이어가는 앱.',
     body: '왕복 코스에서 출발하자마자 도착 판정이 나는 걸 보고, ‘지점에 도착했는가’가 아니라 ‘경로를 따라 이동했는가’로 판정하자고 팀에 제안했습니다. 기본 바텀시트의 한계는 기획이 고를 수 있는 말로 설명한 뒤 직접 만든 시트로 바꿨고, 팀원마다 다르게 그리던 코스 경로는 앱과 같은 기준으로 그리는 내부 도구로 맞췄습니다.',
     meta: [['기간', '2026.05 – 2026.09'], ['역할', 'Android 1인 (팀: 기획 · 디자인 · iOS · 백엔드)']],
+    gallery: [['rodi-home', '홈: 지도와 추천 코스 목록'], ['rodi-detail', '코스 상세: 경로와 연습 시작'], ['rodi-course-map', '코스 등록: 지도에서 경로 그리기'], ['rodi-course-form', '코스 등록: 기본 정보 입력']],
     tags: ['위치·지도', 'Foreground Service', 'Compose', 'UI 테스트'], notes: ['policy', 'tradeoff', 'routetool', 'emoji'],
     links: [['PR #108 경로 진행 추적', 'https://github.com/Central-MakeUs/Rodi-Android/pull/108'], ['PR #77 바텀시트', 'https://github.com/Central-MakeUs/Rodi-Android/pull/77'], ['레포지토리', 'https://github.com/Central-MakeUs/Rodi-Android'], ['Google Play', 'https://play.google.com/store/apps/details?id=com.dororong.rodi']] },
   { id: 'gureum', title: '구름한장', kind: '멋쟁이사자처럼 · 4인 팀 부팀장', summary: '책을 읽으며 떠오른 생각을 마인드맵·필사·통계로 정리하는 독서 기록 앱.',
@@ -282,11 +308,12 @@ const PROJECTS = [
   { id: 'pickle', title: 'Pickle', kind: 'DND · Android 2인', summary: '소비 기록을 친구와 공유하고 서로 ‘심판’해 주는 가계부 앱.',
     body: '화면 하나를 그리려고 여러 API를 조합하던 문제를 팀에 꺼내, 화면에 맞는 응답으로 묶자고 제안했습니다. 최종 결정은 백엔드에 맡겼고, 심판 응답에 가계부·배심원 정보가 함께 오게 됐습니다. 여러 요청이 동시에 401을 받아도 토큰 갱신은 한 번만 일어나도록 직렬화했습니다.',
     meta: [['기간', '2026.01 – 2026.02'], ['역할', '로그인 · 디자인 시스템 · 설정 · 소비 심판']],
+    gallery: [['pickle-login', '로그인: Kakao · Google'], ['pickle-home', '홈: 월별 소비 캘린더'], ['pickle-ledger', '가계부 등록: 금액과 카테고리'], ['pickle-mypage', '마이페이지: 지출 통계']],
     tags: ['API 협업', '인증', 'Coroutines'], notes: ['response'],
     links: [['레포지토리', 'https://github.com/UiHyeon-Kim/Pickle-Android'], ['배심원 응답 매핑 커밋', 'https://github.com/UiHyeon-Kim/Pickle-Android/commit/c5e943e34c5c3f34853b8887ff1ebc21a636158d']] },
   { id: 'mindmap', title: 'compose-mindmap', kind: '개인 오픈소스 · 0.1.1', summary: '직접 찾다 포기했던 Android 마인드맵 라이브러리를 만들었다.',
     body: '구름한장 때 쓸 만한 Android 마인드맵 라이브러리가 없어 직접 만들어 공개했습니다. 데이터는 앱이 관리하고 라이브러리는 그리기만 하도록 방향을 잡았습니다. 두 방향 트리 레이아웃, 세 가지 연결선, 드래그 편집, 되돌리기, 핀치 줌을 지원합니다.',
-    meta: [['기간', '2026.05 – 2026.06']], tags: ['Compose', 'Canvas', '오픈소스'], notes: [],
+    meta: [['기간', '2026.05 – 2026.06']], gallery: [['mindmap-edit.gif', '노드 추가와 편집 동작'], ['mindmap-sample', '샘플 앱: 트리 레이아웃과 조작 버튼']], tags: ['Compose', 'Canvas', '오픈소스'], notes: [],
     links: [['레포지토리', 'https://github.com/UiHyeon-Kim/compose-mindmap']] },
   { id: 'prography', title: '이미지 탐색 앱', kind: '개인 · 성장 기록', summary: '동아리 지원 과제로 시작해, 과제가 끝난 뒤에도 계속 다듬은 이미지 탐색 앱.',
     body: '기기 두 대 중 하나에서만 저장한 이미지가 갤러리에 안 보여, 코드 대신 OS 버전 차이를 의심해 Scoped Storage 문제를 찾았습니다. API 사용량을 보고 캐시를 넣되 제공자의 캐시 규칙을 따랐고, 중첩 스크롤 측정 오류를 풀며 Compose의 측정 원리를 파고들었습니다.',
@@ -294,48 +321,48 @@ const PROJECTS = [
     links: [['레포지토리', 'https://github.com/UiHyeon-Kim/PrographyProject']] }
 ];
 const NOTES = [
-  { id: 'policy', project: 'rodi', title: '코드보다 먼저 바꿔야 했던 것은 정책이었다', caption: 'Rodi · 왕복 코스 도착 판정',
+  { id: 'policy', project: 'rodi', fig: { svg: 'policy' }, title: '코드보다 먼저 바꿔야 했던 것은 정책이었다', caption: 'Rodi · 왕복 코스 도착 판정',
     lead: '왕복 코스에서는\n출발하자마자 ‘도착’이었다.',
     body: '차가 없어 직접 걸으며 임의 코스를 테스트하다, 출발지와 도착지가 같은 코스에서 시작과 동시에 도착 판정이 나는 걸 발견했습니다. 당시 정책은 ‘도착 지점에 들어왔는가’만 봤기 때문입니다. 지점 도착이 아니라 경로를 따라 이동했는지를 봐야 한다고 판단해 팀 회의에 정책 변경을 제안했고, 코스 경로 위의 진행 위치를 앞으로만 추적하는 방식으로 바꿨습니다.',
     team: '완료 기준(코스의 40%, 최대 5km)은 GPS 오차와 배터리를 고려한 iOS 개발자의 제안을 기획이 결정했고, 저는 팀 결정을 따랐습니다.',
     limit: '도보로 테스트해서, 차량 속도에서의 GPS 튐은 아직 검증하지 못했습니다.',
     links: [['PR #108', 'https://github.com/Central-MakeUs/Rodi-Android/pull/108']] },
-  { id: 'direction', project: 'poseup', title: '각도가 아니라 방향으로 세기로 했다', caption: 'PoseUp · 슬로우 푸시업 판정',
+  { id: 'direction', project: 'poseup', fig: { svg: 'direction' }, title: '각도가 아니라 방향으로 세기로 했다', caption: 'PoseUp · 슬로우 푸시업 판정',
     lead: '천천히 했는데\n‘너무 빠르다’고 했다.',
     body: '직접 슬로우 푸시업을 하다 음성 안내가 상황과 다른 말을 하는 걸 발견했습니다. 로그를 넣어 보니 2~3초 걸린 하강이 1초도 안 되게 측정되고 있었습니다. 고정 각도 구간이 하강의 시작과 끝을 놓쳤기 때문입니다. 슬로우 푸시업은 천천히 내려가다 방향을 바꿔 올라오는 동작이라, 정점에서 내려가기 시작한 때와 방향을 바꾼 때를 기준으로 하강 전체를 재도록 바꿨습니다. 기준 시간은 직접, 그리고 친구와 함께 해 보며 정했습니다.',
     shot: 'slow',
     limit: '검증은 저와 친구 두 명뿐이고, 방향 전환을 여러 프레임에 걸쳐 확인하느라 판정이 조금 늦어지는 점은 당시 고려하지 못했습니다.',
     links: [] },
-  { id: 'snapshot', project: 'gureum', title: '노드 하나가 아니라 트리 전체를 기억하게 했다', caption: '구름한장 · 마인드맵 되돌리기',
+  { id: 'snapshot', project: 'gureum', fig: { cmp: [['Before', '동작 단위 되돌리기', ['지운 노드 하나만 다시 붙임', '자식 없이 복구되거나 앱이 종료됨']], ['After', '트리 전체 스냅샷', ['편집 직전 트리를 통째로 복원', '편집이 끝나면 바뀐 노드만 서버로']]] }, title: '노드 하나가 아니라 트리 전체를 기억하게 했다', caption: '구름한장 · 마인드맵 되돌리기',
     lead: '되돌리기를 눌렀더니\n자식 노드가 사라졌다.',
     body: '처음엔 브라우저의 뒤로·앞으로처럼 동작 단위로 되돌리기를 만들었습니다. 그런데 부모와 자식이 얽힌 트리라, 지운 노드를 되살리면 자식 없이 복구되거나 앱이 종료되는 경우가 있었습니다. 같은 날 방식을 바꿔, 편집 직전의 트리 전체를 깊은 복사한 스냅샷으로 되돌리게 했습니다. 화면의 되돌리기와 서버 저장은 다른 문제로 나눠, 편집 모드가 끝날 때 바뀐 노드만 서버에 보냅니다.',
     links: [['PR #93', 'https://github.com/LIKELION-Android-Bootcamp-4th/FinalProject-GureumPage-HIHIHIHI/pull/93']] },
-  { id: 'tradeoff', project: 'rodi', title: '기획이 고를 수 있게 trade‑off를 설명했다', caption: 'Rodi · 지도 위 바텀시트',
+  { id: 'tradeoff', project: 'rodi', fig: { pics: [['rodi-sheet-collapsed', '접힌 시트'], ['rodi-sheet-expanded', '펼친 시트']], cmp: [['Before', '기본 바텀시트', ['목록 스크롤과 시트 드래그가 같은 손가락 움직임을 다툼']], ['After', '직접 만든 시트', ['헤더를 끌면 시트가 움직임', '목록은 시트와 따로 스크롤']]] }, title: '기획이 고를 수 있게 trade‑off를 설명했다', caption: 'Rodi · 지도 위 바텀시트',
     lead: '목록을 살리면 시트가 튀고,\n시트를 살리면 목록이 멈췄다.',
     body: '지도 위 코스 목록은 기본 바텀시트 안의 스크롤이라, 목록 스크롤과 시트 드래그를 둘 다 부드럽게 만들 수 없었습니다. 구현 초기에 이 한계를 알렸지만 그대로 가기로 했고, 나중에 기획이 동작을 물었을 때 무엇을 얻고 잃는지 다시 설명하며 바꿀 수 있다고 제안했습니다. 변경 요청을 받은 뒤, 헤더만 시트를 끌고 목록은 따로 스크롤하는 시트를 직접 만들었습니다.',
     limit: '다시 한다면 처음부터 이 방식을 먼저 제안하겠습니다. 사용하기 편한 게 우선이라고 생각하기 때문입니다.',
     links: [['PR #77', 'https://github.com/Central-MakeUs/Rodi-Android/pull/77']] },
-  { id: 'routetool', project: 'rodi', title: '앱이 그리는 방식에 데이터를 맞췄다', caption: 'Rodi · 팀 코스 정리 도구',
+  { id: 'routetool', project: 'rodi', fig: { chain: ['도구로 바뀐 코스 제작 흐름', ['지도에서 경로를 그리고 고치기', '앱과 같은 길찾기 기준으로 계산', '파일로 내보내기', '팀원 모두 같은 기준으로 코스 제작']] }, title: '앱이 그리는 방식에 데이터를 맞췄다', caption: 'Rodi · 팀 코스 정리 도구',
     lead: '같은 코스인데\n앱에서는 다른 길이 그려졌다.',
     body: '팀원들이 각자 다른 지도와 길찾기로 코스를 그리다 보니, 같은 코스도 앱에서는 다른 경로로 그려졌습니다. 저도 코스를 모으며 여러 사이트를 오가는 비효율을 겪었습니다. Android 담당 밖의 일이었지만, 앱과 같은 길찾기 기준으로 경로를 그리고 고치며 파일로 내보내는 내부 도구를 만들어 팀에 배포했습니다.',
     limit: '도구 저장소는 아직 비공개입니다.',
     links: [] },
-  { id: 'response', project: 'pickle', title: '화면마다 API를 조합하는 대신, 화면에 맞는 응답을 요청했다', caption: 'Pickle · 백엔드와 응답 조정',
+  { id: 'response', project: 'pickle', fig: { cmp: [['Before', '화면이 직접 조합', ['내 프로필', '상대 프로필', '서로 요청한 심판', '심판 결과']], ['After', '화면에 맞는 응답', ['심판 응답 안에 가계부 정보', '심판 응답 안에 배심원 정보']]] }, title: '화면마다 API를 조합하는 대신, 화면에 맞는 응답을 요청했다', caption: 'Pickle · 백엔드와 응답 조정',
     lead: '화면 하나에\nAPI 여러 개.',
     body: '심판 화면 하나를 그리려면 내 프로필, 상대 프로필, 서로 요청한 심판, 결과를 따로 받아 조합해야 했습니다. 같은 팀 Android 개발자와 먼저 이야기한 뒤 백엔드에 화면에 맞게, 다시 쓸 수 있게 묶어 달라고 제안했고, 어느 선까지 묶을지는 함께 맞추고 최종 결정은 백엔드에 맡겼습니다. 지금은 심판 응답에 가계부와 배심원 정보가 함께 옵니다.',
     limit: '다시 한다면 디자인을 함께 보며 응답 형태를 처음부터 같이 정하겠습니다.',
     links: [['배심원 응답 매핑 커밋', 'https://github.com/UiHyeon-Kim/Pickle-Android/commit/c5e943e34c5c3f34853b8887ff1ebc21a636158d']] },
-  { id: 'osversion', project: 'prography', title: '코드가 아니라 OS 버전을 의심했다', caption: '이미지 탐색 앱 · 갤러리 저장',
+  { id: 'osversion', project: 'prography', fig: { cmp: [['Android 10+', 'MediaStore로 저장', ['저장 중 표시(IS_PENDING)를 걸고 쓰기', '다 쓰면 갤러리에 공개']], ['Android 9 이하', '기존 방식', ['저장소 경로에 직접 저장']]] }, title: '코드가 아니라 OS 버전을 의심했다', caption: '이미지 탐색 앱 · 갤러리 저장',
     lead: '저장은 성공했는데\n한 기기에서만 안 보였다.',
     body: '이미지 다운로드는 성공인데 두 기기 중 하나에서만 갤러리에 보이지 않았습니다. 한쪽에서는 되니 코드보다 기기 차이를 먼저 의심했고, Android 버전이 다르다는 걸 확인해 Android 10부터 바뀐 저장소 정책(Scoped Storage)이 원인임을 찾았습니다. 10 이상은 MediaStore로, 9 이하는 기존 방식으로 저장하도록 나눴습니다.',
     limit: '검증은 기기 두 대뿐이고, 다운로드 도중 실패했을 때 임시 항목을 지우는 처리는 아직 없습니다.',
     links: [['레포지토리', 'https://github.com/UiHyeon-Kim/PrographyProject']] },
-  { id: 'emoji', project: 'rodi', title: '이모지 하나는 정말 1글자일까?', caption: 'Rodi · 입력 글자 수 단위',
+  { id: 'emoji', project: 'rodi', fig: { cmp: [['Before', '단위가 두 개', ['😀 하나 = 보이는 글자 1, UTF‑16 2칸', '화면은 30/30, 저장 전에 UTF‑16으로 다시 자름', '15개만 남음']], ['After', '보이는 글자로 통일', ['화면과 저장 검증이 같은 기준', '30개 그대로 저장']]] }, title: '이모지 하나는 정말 1글자일까?', caption: 'Rodi · 입력 글자 수 단위',
     lead: '30 / 30으로 보였는데\n저장하면 15개만 남았다.',
     body: '이모지 30개를 입력하면 화면에는 30 / 30으로 보였지만, 저장하고 나면 절반만 남았습니다. 화면은 사람이 보는 글자 단위로 셌고, 저장 전 검증은 UTF‑16 코드 단위로 다시 잘랐기 때문입니다. 이모지는 UTF‑16에서 두 칸을 차지해 두 번 깎인 셈이었습니다. 입력 길이를 사람이 보는 글자 기준으로 통일하고 Android의 BreakIterator로 세도록 바꿨습니다. 이 코드는 순수 Kotlin 모듈이 아니라 Android에 의존할 수 있는 UI 모듈에 두었습니다.',
     check: '이모지 30개가 그대로 저장되는 테스트를 추가했습니다.',
     links: [['PR #91', 'https://github.com/Central-MakeUs/Rodi-Android/pull/91']] },
-  { id: 'cache', project: 'prography', title: 'API 사용량 그래프를 보고 캐시를 설계했다', caption: '이미지 탐색 앱 · 이미지 캐시',
+  { id: 'cache', project: 'prography', fig: { chain: ['이미지를 찾는 순서', ['메모리 캐시', '디스크 캐시', '둘 다 없을 때만 네트워크']] }, title: 'API 사용량 그래프를 보고 캐시를 설계했다', caption: '이미지 탐색 앱 · 이미지 캐시',
     lead: '더 오래 캐시할 수 있었지만,\n제공자의 규칙을 따랐다.',
     body: 'Unsplash API 사용량이 계속 차오르는 걸 보고 원인을 찾았습니다. 사진은 자주 바뀌지 않는데, 화면에 들어올 때마다 전부 새로 불러오고 있었습니다. 실제 출시한 앱이었다면 사용자가 조금만 늘어도 비용이 커질 구조라 이미지 캐시와 HTTP 캐시를 넣었습니다. 처음엔 캐시 시간을 6시간으로 강제했지만, API 제공자의 캐시 가이드보다 길게 늘린 것이어서 출시하지 않을 앱이라도 규칙을 따르는 게 맞다고 보고 강제 캐시를 뺐습니다. 이미지 요청에는 API 키가 붙지 않도록 클라이언트도 나눴습니다.',
     links: [['레포지토리', 'https://github.com/UiHyeon-Kim/PrographyProject']] }
@@ -494,6 +521,7 @@ function notesBody() {
 }
 function projectBody(p) {
   let h = '<span class="eyebrow">' + esc(p.kind) + '</span><p class="lead">' + esc(p.summary) + '</p>';
+  if (p.gallery) h += gallery(p.gallery, p.title + ' 화면 모음');
   if (p.shots) h += landButton('good') + '<div class="shots" tabindex="0" aria-label="PoseUp 화면 모음">' + SHOTS.map(s => '<img class="shot" src="' + IMG + s[0] + '.webp" alt="' + esc(s[1]) + '" width="540" height="1118" loading="lazy">').join('') + '</div>';
   h += '<div class="chips">' + p.tags.map(t => '<span class="mchip">' + esc(t) + '</span>').join('') + '</div>';
   h += '<p class="txt">' + esc(p.body) + '</p><div>' + metaRows(p.meta) + '</div>';
@@ -501,10 +529,40 @@ function projectBody(p) {
   h += p.links.map(extLink).join('');
   return h;
 }
+const SHOT = f => 'assets/shots/' + (f.indexOf('.') > 0 ? f : f + '.webp');
+const gallery = (list, label) => '<div class="shots" tabindex="0" aria-label="' + esc(label) + '">' + list.map(g => '<img class="shot" src="' + SHOT(g[0]) + '" alt="' + esc(g[1]) + '" loading="lazy">').join('') + '</div>';
+const SVGS = {
+  policy: '<svg class="fig-svg" viewBox="0 0 268 168" role="img" aria-label="Before: 출발지와 도착지가 같은 코스에서 도착 반경만 보면 출발하자마자 도착으로 판정됨. After: 코스 경로를 따라 진행한 위치를 앞쪽 일부 구간만 확인하며 추적함.">' +
+    '<text x="64" y="12" class="t-k" text-anchor="middle">Before · 지점 도착</text><text x="204" y="12" class="t-k" text-anchor="middle">After · 경로 진행</text>' +
+    '<path d="M24 128V44q0-16 16-16h48q16 0 16 16v68q0 16-16 16Z" class="route"/>' +
+    '<circle cx="24" cy="128" r="20" class="radius"/><circle cx="24" cy="128" r="5" class="pin"/>' +
+    '<text x="64" y="160" class="t-s" text-anchor="middle">출발하자마자 ‘도착’</text>' +
+    '<path d="M164 128V44q0-16 16-16h48q16 0 16 16v68q0 16-16 16Z" class="route"/>' +
+    '<path d="M164 112V44q0-16 16-16h38" class="window"/>' +
+    '<path d="M164 128V44q0-16 16-16h14" class="progress"/><circle cx="194" cy="28" r="5" class="pin"/><circle cx="164" cy="128" r="4" class="start"/>' +
+    '<text x="204" y="74" class="t-s" text-anchor="middle">앞쪽 일부만</text><text x="204" y="88" class="t-s" text-anchor="middle">확인하며 추적</text>' +
+    '<text x="204" y="160" class="t-s" text-anchor="middle">경로를 따라가야 완료</text></svg>',
+  direction: '<svg class="fig-svg" viewBox="0 0 268 168" role="img" aria-label="개념도. 팔꿈치 각도가 시간에 따라 내려갔다 올라오는 곡선. Before는 150도에서 100도 사이 고정 구간만 재서 하강의 일부만 측정됨. After는 내려가기 시작한 정점부터 방향이 바뀌는 최저점까지 전체 하강을 잼.">' +
+    '<text x="2" y="10" class="t-s">팔꿈치 각도</text><text x="266" y="10" class="t-s" text-anchor="end">개념도</text>' +
+    '<rect x="34" y="40" width="226" height="50" class="band"/><text x="30" y="43" class="t-s" text-anchor="end">150°</text><text x="30" y="93" class="t-s" text-anchor="end">100°</text>' +
+    '<path d="M34 22H74C110 24 150 80 184 102C190 106 196 106 200 104C210 96 225 60 236 22H260" class="curve"/>' +
+    '<path d="M108 116v6h50v-6" class="br-before"/><text x="133" y="134" class="t-s" text-anchor="middle">Before: 고정 구간만</text>' +
+    '<path d="M74 144v6h122v-6" class="br-after"/><text x="135" y="163" class="t-k" text-anchor="middle">After: 정점부터 방향 전환까지</text></svg>'
+};
+function figureHTML(f) {
+  if (!f) return '';
+  let h = '<figure class="fig">';
+  if (f.svg) h += SVGS[f.svg];
+  if (f.pics) h += '<div class="fig-pics">' + f.pics.map(p => '<figure><img src="' + SHOT(p[0]) + '" alt="' + esc(p[1]) + '" loading="lazy"><figcaption>' + esc(p[1]) + '</figcaption></figure>').join('') + '</div>';
+  if (f.cmp) h += '<div class="cmp">' + f.cmp.map((c, i) => '<div class="cmp-box' + (i ? ' after' : '') + '"><div class="cmp-k"><b>' + esc(c[0]) + '</b> ' + esc(c[1]) + '</div><ul>' + c[2].map(x => '<li>' + esc(x) + '</li>').join('') + '</ul></div>').join('') + '</div>';
+  if (f.chain) h += '<div class="cmp-k" style="margin-bottom:8px">' + esc(f.chain[0]) + '</div><ol class="flow">' + f.chain[1].map(x => '<li>' + esc(x) + '</li>').join('') + '</ol>';
+  return h + '</figure>';
+}
 function noteBody(n) {
   const p = byId(PROJECTS, n.project);
   let h = '<span class="eyebrow">' + esc(n.caption) + '</span><h3 class="h">' + esc(n.title) + '</h3><p class="lead" style="white-space:pre-line">' + esc(n.lead) + '</p>';
   if (n.shot) h += landButton(n.shot);
+  h += figureHTML(n.fig);
   h += '<p class="txt">' + esc(n.body) + '</p>';
   if (n.team) h += '<div class="tonal"><div class="tonal-k">팀의 결정</div><div class="tonal-v">' + esc(n.team) + '</div></div>';
   if (n.check) h += '<div class="tonal"><div class="tonal-k">확인한 것</div><div class="tonal-v">' + esc(n.check) + '</div></div>';
