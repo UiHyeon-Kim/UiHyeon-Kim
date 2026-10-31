@@ -364,7 +364,7 @@ const AI = [
     detail: 'Obsidian 기반 AI-Vault와 Basic Memory를 활용해 프로젝트의 결정사항, 검증 근거, 남은 작업을 정리합니다. Claude와 Codex가 이전 작업을 이어갈 때 필요한 맥락을 참고할 수 있도록 구성했습니다. 코드와 프로젝트 문서를 기준으로 삼고, Vault에는 선택 이유와 시행착오를 남깁니다.',
     role: [['활용', 'Obsidian · Basic Memory'], ['구성', 'Vault 구조와 기록 규칙']],
     flowLabel: '기록 한 건의 구성', flow: ['문제', '선택한 방식', '검증 결과', '다음 작업'] },
-  { id: 'relay', name: 'Agent Queue → relay · AI 작업 인계', use: 'Claude와 Codex 사이의 구현, 리뷰, 수정 작업을 연결한 과정',
+  { id: 'relay', name: 'Claude · Codex 작업 연계', tools: 'Agent Queue → relay', use: 'Claude와 Codex 사이의 구현, 리뷰, 수정 작업을 연결한 과정',
     detail: '처음에는 Agent Queue와 인계 문서를 중심으로 작업 범위와 진행 상태를 전달했습니다. 이후 relay 스킬을 활용하는 방식으로 발전시키며 구현 결과를 다른 에이전트가 검토하고, 수정과 재검증으로 이어지는 흐름을 구성했습니다. AI 간 의견이 다르거나 요구사항이 충돌하면 범위를 다시 정하고, 최종 반영 여부를 판단합니다.',
     role: [['구성', '인계 흐름 (Agent Queue → relay)'], ['활용', 'relay 스킬'], ['직접 판단', '범위 조정과 최종 반영']],
     evolve: [['처음', 'Agent Queue와 인계 문서로 범위와 진행 상태 전달'], ['지금', 'relay 스킬로 구현 → 리뷰 → 수정 → 재검증 연결']],
@@ -478,7 +478,7 @@ function stackBody(r) {
   return h;
 }
 function aiBody(a) {
-  let h = '<span class="tech-hero" aria-hidden="true">' + aiIcon(a.id) + '</span><span class="eyebrow">AI 활용</span><p class="lead">' + esc(a.use) + '</p>';
+  let h = '<span class="tech-hero" aria-hidden="true">' + aiIcon(a.id) + '</span><span class="eyebrow">AI 활용' + (a.tools ? ' · ' + esc(a.tools) : '') + '</span><p class="lead">' + esc(a.use) + '</p>';
   h += '<p class="txt">' + esc(a.detail) + '</p>';
   h += '<p class="sec">내가 한 일</p><div>' + metaRows(a.role) + '</div>';
   if (a.evolve) h += '<p class="sec">발전 과정</p><div>' + metaRows(a.evolve) + '</div>';
