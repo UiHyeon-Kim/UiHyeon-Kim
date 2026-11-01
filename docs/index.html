@@ -203,7 +203,6 @@ main.layout{flex:1;display:flex;flex-wrap:wrap;align-items:center;gap:32px 48px}
 .plain .shots{margin:0;padding:2px 0}
 .plain .shot{width:150px}
 .plain .land-cta{max-width:520px}
-.plain-nav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
 
 footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:12px;font-size:12px;color:var(--muted)}
 footer a{color:var(--muted)}
@@ -659,7 +658,7 @@ function render(focus) {
   document.querySelectorAll('.pill[data-tab]').forEach(a => { if (a.dataset.tab === r.tab) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
   const s = screenHTML(r);
   if (state.plain) {
-    el('plain').innerHTML = '<nav class="plain-nav" aria-label="목록 메뉴">' + Object.keys(TABS).map(k => '<a class="pill" href="#/' + k + '"' + (k === r.tab ? ' aria-current="page"' : '') + '>' + TABS[k] + '</a>').join('') + '</nav>' + s.bar + s.body;
+    el('plain').innerHTML = s.bar + s.body;
     el('screen').innerHTML = '';
   } else {
     const nav = '<nav class="nav" aria-label="앱 탭">' + Object.keys(TABS).map(k => '<a class="nv" href="#/' + k + '"' + (k === r.tab ? ' aria-current="page"' : '') + '><span class="ind">' + icon(ICONS[k]) + '</span>' + { about: '나', stack: '스택', projects: '프로젝트', notes: '기록' }[k] + '</a>').join('') + '</nav>';
