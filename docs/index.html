@@ -25,7 +25,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid 
 .skip:focus{top:12px}
 
 /* page */
-.page{position:relative;min-height:100vh;overflow:hidden;background:radial-gradient(ellipse 60% 75% at 70% 46%,#FFFFFF 0%,#EEF3F4 42%,#D6DFE2 100%)}
+.page{position:relative;min-height:100vh;overflow:hidden;overflow:clip;background:radial-gradient(ellipse 60% 75% at 70% 46%,#FFFFFF 0%,#EEF3F4 42%,#D6DFE2 100%)}
 .wrap{position:relative;z-index:2;max-width:1320px;margin:0 auto;padding:28px 48px;min-height:100vh;display:flex;flex-direction:column}
 .top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
 .logo{background:none;border:0;padding:0;min-height:44px;font-size:18px;font-weight:700;letter-spacing:-.02em;text-decoration:none;color:var(--ink);display:inline-flex;align-items:center}
@@ -213,6 +213,8 @@ noscript .ns{max-width:760px;margin:24px auto;padding:24px;background:#fff;borde
 @keyframes shadow{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(.88);opacity:.65}}
 @keyframes enter{from{opacity:0;transform:translateX(16px)}to{opacity:1;transform:none}}
 @keyframes fade{from{opacity:0}to{opacity:1}}
+main.layout.is-plain{align-items:flex-start}
+@media (min-width:1001px){main.layout.is-plain .intro{position:sticky;top:24px;margin-top:24px}}
 @media (max-width:1000px){.wrap{padding:20px 20px 24px}.obj,.dots{display:none}main.layout{padding-top:12px}.intro{flex-basis:100%}}
 @media (max-width:520px){.intro h1{font-size:44px}.stats{gap:8px}.stat{padding:14px}.stat b{font-size:22px}.plain{padding:22px 18px 28px;border-radius:22px}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
@@ -673,6 +675,7 @@ function render(focus) {
 function setMode(plain) {
   state.plain = plain; state.landscape = false;
   el('stage').hidden = plain; el('plain').hidden = !plain;
+  document.querySelector('main.layout').classList.toggle('is-plain', plain);
   const b = el('mode'); b.textContent = plain ? '폰 모양으로 돌아가기' : '폰 대신 목록으로 보기'; b.setAttribute('aria-pressed', String(plain));
   render(true);
 }
