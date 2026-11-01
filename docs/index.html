@@ -1,53 +1,725 @@
 <!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="color-scheme" content="light dark"><meta name="referrer" content="no-referrer">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; connect-src 'none'; font-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
-<title>UiHyeon · Pocket Profile</title>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://github.com https://avatars.githubusercontent.com; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="description" content="Android 개발자 김의현의 포트폴리오. Rodi, 구름한장, PoseUp 등 프로젝트와 개발 기록을 폰 화면으로 둘러보세요.">
+<title>김의현 · Android Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Roboto:wght@400;500;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{color-scheme:light;--ink:#162831;--muted:#5d6f79;--paper:#f2f4ef;--line:#d8e0dc;--green:#137663;--phone:#102a30;--surface:#f8faf7;--accent:#baf4c9}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.65 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI",sans-serif}button,a{-webkit-tap-highlight-color:transparent}button{font:inherit}button,a{touch-action:manipulation}a{color:var(--green);text-underline-offset:4px}button:focus-visible,a:focus-visible{outline:3px solid #e59035;outline-offset:5px}button{cursor:pointer}[hidden]{display:none!important}.skip{position:fixed;left:15px;top:-90px;background:#fff;padding:12px;z-index:10}.skip:focus{top:10px}.layout{max-width:1120px;margin:auto;display:grid;grid-template-columns:1fr 430px;gap:86px;padding:55px 40px 45px;align-items:center;min-height:100vh}.eyebrow{font:12px/1.4 ui-monospace,monospace;letter-spacing:.16em;color:var(--green);text-transform:uppercase}.intro h1{font-size:clamp(34px,4vw,52px);line-height:1.18;letter-spacing:-.05em;margin:18px 0 24px}.intro h1 span{display:block;color:var(--green)}.lead{font-size:17px;max-width:400px;color:#415b63}.intro .rule{height:1px;background:var(--line);width:65px;margin:26px 0}.intro p{max-width:420px}.small{font-size:12px;color:var(--muted)}.mode-button{margin-top:20px;padding:11px 16px;background:transparent;border:1px solid #b9c8c0;border-radius:99px;color:var(--ink);font-weight:650}.keys{display:flex;gap:10px;flex-wrap:wrap;margin:25px 0 12px;font-size:12px;color:var(--muted)}kbd{border:1px solid #c4cec7;border-radius:4px;padding:2px 6px;box-shadow:0 2px 0 #d6ded8;background:#fafcf9}.footer-note{font-size:11px;color:var(--muted);margin-top:36px}.phone{position:relative;background:#12212b;padding:9px;border-radius:47px;box-shadow:0 25px 65px #254b4b25,0 0 0 1px #59716d;max-width:410px;width:100%;margin:auto}.screen{height:760px;border-radius:39px;overflow:hidden;background:var(--surface);display:flex;flex-direction:column;position:relative}.status{height:45px;flex:none;display:flex;justify-content:space-between;align-items:center;padding:9px 25px 0;color:#cce8df;background:var(--phone);font:10px ui-monospace,monospace;letter-spacing:.07em}.status .island{width:76px;height:19px;border-radius:20px;background:#0b171f}.signal{letter-spacing:2px}.phone-content{flex:1;overflow:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#8daaa2 transparent}.phone-nav{height:58px;flex:none;display:flex;align-items:center;justify-content:space-around;background:#eef3ed;border-top:1px solid #dce5dc}.phone-nav button,.phone-nav a{color:#324d4c;border:0;background:none;text-decoration:none;display:flex;align-items:center;justify-content:center;width:66px;height:44px;border-radius:20px}.phone-nav button:disabled{opacity:.3;cursor:default}.phone-nav svg{width:20px;height:20px}.home{min-height:100%;padding:24px 23px 28px;background:radial-gradient(ellipse at 100% 0%,#397e6a 0%,transparent 57%),radial-gradient(ellipse at 0% 100%,#4a7991 0%,transparent 62%),#102c33;color:#eaf5ed;position:relative}.home h2{font-size:38px;line-height:1.2;letter-spacing:-.05em;margin:8px 0 10px;outline-offset:5px}.home .kicker{font:10px/1.5 ui-monospace,monospace;letter-spacing:.16em;color:#b4d8c9;margin:0 0 24px}.home .subtitle{font-size:13px;color:#cae1d6;margin:0}.home-widget{border:1px solid #e2f3e72b;border-radius:23px;background:#deffeb0d;padding:17px 18px;margin:30px 0 35px;box-shadow:inset 0 1px 0 #ffffff10}.home-widget span{font:10px ui-monospace,monospace;color:#a7d7c3;letter-spacing:.13em}.home-widget p{font-size:15px;line-height:1.6;margin:8px 0 0;letter-spacing:-.03em}.home-widget b{font-weight:650;color:#c6f3be}.app-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 20px;list-style:none;padding:0;margin:0}.app-link{text-decoration:none;color:inherit;display:flex;flex-direction:column;align-items:center;gap:9px;border-radius:20px;padding:3px}.app-icon{width:66px;height:66px;border-radius:21px;display:grid;place-items:center;box-shadow:inset 0 1px 0 #ffffff66,0 8px 20px #001c2124;transition:transform .16s}.app-link:hover .app-icon{transform:translateY(-4px)}.app-icon svg{width:30px;height:30px}.mint{background:#c6f2bd;color:#275f46}.blue{background:#bcdbf2;color:#285271}.purple{background:#dfd1f3;color:#5e3e78}.amber{background:#f4dfae;color:#7e5c29}.coral{background:#f2c8b6;color:#814f39}.app-label{font-size:12px}.home-bottom{font:10px ui-monospace,monospace;text-align:center;color:#b8d8cf;margin:35px 0 0;letter-spacing:.15em}.page{padding:22px 23px 32px;min-height:100%;background:var(--surface)}.page h2{font-size:27px;line-height:1.25;letter-spacing:-.04em;margin:5px 0 15px}.page h3{font-size:16px;margin:24px 0 9px}.page p{margin:10px 0 16px;font-size:14px;color:#3f585e}.overline{font:10px/1.5 ui-monospace,monospace;color:var(--green);letter-spacing:.12em;text-transform:uppercase;margin:0 0 14px}.page .intro-copy{font-size:18px;line-height:1.6;color:var(--ink);letter-spacing:-.04em}.pill-row{display:flex;gap:6px;flex-wrap:wrap}.pill{font-size:10px;padding:4px 8px;border:1px solid #d5e2d9;border-radius:99px;color:#41615a;background:#edf4ed}.row-link{display:flex;gap:13px;align-items:center;border-bottom:1px solid #dde5dc;padding:17px 0;text-decoration:none;color:inherit}.mini-icon{width:43px;height:43px;flex:none;display:grid;place-items:center;border-radius:14px}.mini-icon svg{width:23px;height:23px}.row-text{flex:1;min-width:0}.row-text strong{font-size:14px;line-height:1.4;display:block}.row-text small{display:block;font-size:11px;color:var(--muted);margin-top:5px;line-height:1.5}.chevron{color:#738e84}.project-hero{margin:20px 0}.project-hero .app-icon{width:76px;height:76px}.evidence{padding:14px 15px;border:1px solid #d6e2d9;border-radius:15px;margin-top:25px}.evidence span{font:10px ui-monospace,monospace;color:var(--muted);letter-spacing:.1em}.evidence a{display:block;font-size:12px;margin-top:9px}.fact{border-left:2px solid #99bdab;padding:4px 0 4px 15px;margin:24px 0}.fact strong{font-size:12px;display:block}.fact p{font-size:13px;margin:5px 0}.tech-mark{font:bold 18px ui-monospace,monospace;width:42px;height:42px;border:1px solid #d0e0d2;background:#edf6e9;color:#397052;border-radius:14px;display:grid;place-items:center;flex:none}.section-label{font-size:11px;font-weight:700;color:var(--green);letter-spacing:.07em;margin:23px 0 0}.subtle-panel{background:#edf2eb;border-radius:16px;padding:15px;margin-top:22px}.subtle-panel h3{margin:0 0 9px}.subtle-panel p{font-size:12px;margin-bottom:0}.code-note{white-space:pre-wrap;background:#172f34;color:#c2e5d5;border-radius:15px;font:12px/1.8 ui-monospace,monospace;padding:17px;overflow:auto}.plain{grid-column:1/-1;max-width:850px;width:100%;margin:auto;background:#fafcf8;border:1px solid var(--line);border-radius:24px;padding:25px}.plain-nav{display:flex;gap:15px;flex-wrap:wrap;padding-bottom:20px;border-bottom:1px solid var(--line);font-size:14px}.plain #list-content{margin-top:25px}.plain .page{padding:0;max-width:650px}.plain .row-link{max-width:650px}.plain .page h2{font-size:32px}.plain-home ul{list-style:none;padding:0}.plain-home a{display:block;padding:12px 0}.plain-home small{display:block;color:var(--muted);font-size:13px}.layout.list-mode{grid-template-columns:1fr;align-items:start}.list-mode .intro{max-width:850px;width:100%;margin:auto}.list-mode .intro h1{font-size:30px;margin-bottom:10px}.list-mode .intro h1 span{display:inline}.list-mode .intro .rule,.list-mode .intro .keys,.list-mode .intro .long-copy,.list-mode .footer-note{display:none}.list-mode .intro .lead{font-size:15px;max-width:none}.list-mode .intro .mode-button{margin-top:8px}.layout.list-mode{gap:25px;padding-top:35px}.noscript{max-width:800px;margin:30px auto;padding:20px;background:#fff;border:1px solid var(--line)}@media(max-width:850px){.layout{gap:30px;padding:28px 20px;grid-template-columns:1fr}.intro{max-width:410px;margin:auto}.intro h1{font-size:33px;margin-bottom:15px}.intro .long-copy,.intro .rule,.keys,.footer-note{display:none}.lead{font-size:15px}.mode-button{margin:8px 0 5px}.phone{max-width:390px}.screen{height:735px}}@media(max-width:400px){.layout{padding:23px 12px}.phone{padding:7px;border-radius:37px}.screen{border-radius:31px;height:710px}.home,.page{padding-left:20px;padding-right:20px}.home h2{font-size:34px}.app-grid{gap:25px 12px}.plain{padding:20px}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}@media(forced-colors:active){.app-icon,.mini-icon,.tech-mark,.home-widget,.phone{border:1px solid CanvasText}.home{background:Canvas;color:CanvasText}}
-</style></head><body><a class="skip" href="#content-start">콘텐츠로 이동</a>
-<div class="layout" id="layout"><header class="intro"><div class="eyebrow">UiHyeon / pocket profile</div><h1>소개를 읽고,<span>앱을 열어 더 가까이.</span></h1><p class="lead">Android 개발자 김의현의 작업을<br>작은 앱 서랍에서 둘러보세요.</p><div class="rule"></div><p class="long-copy">기술 이름을 누르면 실제 프로젝트와 사용 사례로 이어집니다. 작업 기록에서는 무엇을 고쳤는지 한 걸음 더 들어갑니다.</p><button class="mode-button" id="mode-toggle" aria-pressed="false">폰 대신 목록으로 보기</button><div class="keys"><span><kbd>Tab</kbd> 이동</span><span><kbd>Enter</kbd> 열기</span><span><kbd>Esc</kbd> 뒤로</span></div></header>
-<main class="phone" id="phone" aria-label="폰 모양 프로필"><div class="screen"><div class="status" aria-hidden="true"><span>UIHYEON</span><span class="island"></span><span class="signal">▂▄▆ ▰</span></div><div class="phone-content" id="phone-content"></div><nav class="phone-nav" aria-label="폰 탐색"><button id="back" aria-label="이전 화면"></button><a href="#/home" id="home-button" aria-label="홈 화면"></a><button id="list-button" aria-label="일반 목록으로 보기"></button></nav></div></main>
-<main class="plain" id="plain" hidden aria-label="일반 목록 프로필"><nav class="plain-nav" aria-label="프로필 메뉴"><a href="#/home">홈</a><a href="#/about">나</a><a href="#/stack">기술 스택</a><a href="#/projects">프로젝트</a><a href="#/notes">개발 기록</a></nav><div id="list-content"></div><p><a href="#/home">홈으로 돌아가기</a></p></main></div>
-<noscript><section class="noscript"><h2>김의현 · Android Developer</h2><p>Kotlin · Jetpack Compose · SSAFY 16기</p><p>구름한장의 공통 테마·화면·알림, Rodi의 위치 상태 개선, compose-mindmap의 재사용 API를 다룹니다.</p><p><a href="https://github.com/UiHyeon-Kim">공개 GitHub 프로필</a> · <a href="https://github.com/Central-MakeUs/Rodi-Android/pull/87">Rodi 위치 상태 PR</a> · <a href="https://github.com/UiHyeon-Kim/compose-mindmap">compose-mindmap</a></p><p>앱 화면 전환에는 JavaScript가 필요합니다. 이 요약과 공개 링크는 JavaScript 없이 읽을 수 있습니다.</p></section></noscript>
+:root{--ink:#0F172A;--muted:#475569;--green:#1FA862;--green-ink:#146C43;--tonal:#E6EFE9;--chip:#C6F3D8;--app-bg:#F5F9F6;--app-ink:#101814;--app-muted:#4A5850}
+*{box-sizing:border-box}
+html{color-scheme:light}
+body{margin:0;background:#D6DFE2;word-break:keep-all;overflow-wrap:break-word;color:var(--ink);font-family:"Noto Sans KR","Apple SD Gothic Neo",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:var(--green-ink)}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--green-ink);outline-offset:3px}
+[hidden]{display:none!important}
+.ub{font-family:"Unbounded","Noto Sans KR",sans-serif}
+.mono{font-family:"JetBrains Mono",ui-monospace,monospace}
+.skip{position:fixed;left:16px;top:-80px;z-index:20;background:#fff;padding:12px 16px;border-radius:12px}
+.skip:focus{top:12px}
+
+/* page */
+.page{position:relative;min-height:100vh;overflow:hidden;background:radial-gradient(ellipse 60% 75% at 70% 46%,#FFFFFF 0%,#EEF3F4 42%,#D6DFE2 100%)}
+.wrap{position:relative;z-index:2;max-width:1320px;margin:0 auto;padding:28px 48px;min-height:100vh;display:flex;flex-direction:column}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.logo{background:none;border:0;padding:0;min-height:44px;font-size:18px;font-weight:700;letter-spacing:-.02em;text-decoration:none;color:var(--ink);display:inline-flex;align-items:center}
+.logo span{color:var(--green)}
+.pills{display:flex;gap:8px;flex-wrap:wrap}
+.pill{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 18px;border-radius:99px;font-size:13px;text-decoration:none;color:var(--ink);border:1px solid rgba(255,255,255,.95);background:rgba(255,255,255,.55);box-shadow:0 4px 14px -8px rgba(15,23,42,.3);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);transition:background .2s,color .2s}
+.pill:hover{background:#fff;color:var(--ink)}
+.pill[aria-current="page"]{background:var(--ink);color:#F8FAFC;border-color:var(--ink)}
+main.layout{flex:1;display:flex;flex-wrap:wrap;align-items:center;gap:32px 48px}
+.intro{flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:24px}
+.badge{display:inline-flex;align-self:flex-start;align-items:center;gap:8px;padding:8px 14px;border-radius:99px;background:rgba(255,255,255,.65);border:1px solid #fff;font-size:13px;color:#334155}
+.badge i{width:8px;height:8px;border-radius:50%;background:var(--green)}
+.intro h1{margin:0;font-size:clamp(46px,5.6vw,82px);line-height:1.02;font-weight:700;letter-spacing:-.045em}
+.intro h1 span{color:var(--green)}
+.intro .lead-copy{margin:0;max-width:440px;font-size:18px;line-height:1.7;color:#334155;text-wrap:pretty}
+.ctas{display:flex;gap:12px;flex-wrap:wrap}
+.cta{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 26px;border-radius:99px;border:0;background:var(--ink);color:#F8FAFC;font-weight:700;font-size:15px;text-decoration:none;box-shadow:0 18px 30px -14px rgba(15,23,42,.7)}
+.cta:hover{color:#F8FAFC;background:#1E293B}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;max-width:480px;margin-top:4px}
+.stat{display:block;background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.95);border-radius:22px;padding:16px 18px;text-align:left;text-decoration:none;color:var(--ink);box-shadow:0 18px 40px -26px rgba(15,23,42,.5);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);transition:transform .25s}
+.stat:hover{transform:translateY(-4px);color:var(--ink)}
+.stat b{display:block;font-family:"Unbounded",sans-serif;font-size:28px}
+.stat span{display:block;font-size:12px;color:var(--muted);margin-top:4px}
+.mode{align-self:flex-start;background:none;border:0;padding:8px 0;min-height:44px;font-size:13px;color:var(--muted);text-decoration:underline;text-underline-offset:4px}
+
+/* stage */
+.stage{flex:1 1 620px;min-width:0;position:relative;height:calc(860px * var(--fit,1))}
+.stage-inner{position:absolute;left:50%;top:0;width:640px;height:860px;margin-left:-320px;transform:scale(var(--fit,1));transform-origin:50% 0}
+.spot{position:absolute;left:10px;top:80px;width:620px;height:620px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.95) 0%,rgba(255,255,255,.4) 55%,transparent 72%)}
+.dots{position:absolute;left:10px;top:80px;width:620px;height:620px;border-radius:50%;background-image:radial-gradient(rgba(15,23,42,.16) 1px,transparent 1.3px);background-size:20px 20px;-webkit-mask-image:radial-gradient(circle,transparent 30%,#000 52%,transparent 72%);mask-image:radial-gradient(circle,transparent 30%,#000 52%,transparent 72%)}
+.obj{position:absolute;animation:bob 8s ease-in-out infinite}
+.orb-g{border-radius:50%;background:radial-gradient(circle at 32% 28%,#E3FFEE 0%,#6BEDA6 26%,#1FA862 60%,#0A5732 100%);box-shadow:0 34px 44px -24px rgba(10,87,50,.6)}
+.orb-n{border-radius:50%;background:radial-gradient(circle at 32% 28%,#A9B6CC 0%,#3B4A63 38%,#0F172A 78%);box-shadow:0 26px 36px -20px rgba(15,23,42,.6)}
+.torus{border-radius:50%;border:24px solid transparent;background:conic-gradient(from 210deg,#1E293B,#94A3B8,#1E293B,#020617,#1E293B) border-box;-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 24px),#000 calc(100% - 23px));mask:radial-gradient(farthest-side,transparent calc(100% - 24px),#000 calc(100% - 23px))}
+.capsule{border-radius:99px;background:linear-gradient(100deg,#0A5732 0%,#3DDC84 44%,#D3FBE4 54%,#1FA862 100%);box-shadow:0 26px 36px -20px rgba(10,87,50,.55)}
+.disc{position:absolute;left:130px;top:728px;width:380px;height:76px;border-radius:50%;background:radial-gradient(ellipse at 50% 35%,#FFFFFF 0%,#E8EEF0 60%,#CBD5DA 100%);box-shadow:0 22px 30px -18px rgba(15,23,42,.35),inset 0 -3px 8px rgba(15,23,42,.08)}
+.disc-shadow{position:absolute;left:195px;top:748px;width:250px;height:30px;border-radius:50%;background:radial-gradient(ellipse,rgba(15,23,42,.38),transparent 70%);filter:blur(6px);animation:shadow 7s ease-in-out infinite}
+
+/* device */
+.float{position:absolute;left:140px;top:24px;animation:float 7s ease-in-out infinite}
+.rig{position:relative;width:360px;height:748px;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.frame{position:absolute;inset:0;border-radius:48px;background:linear-gradient(115deg,#97A3AB 0%,#EEF2F4 20%,#B6C0C6 40%,#F6F8F9 56%,#A4AFB6 80%,#DDE3E6 100%);box-shadow:0 50px 70px -40px rgba(15,23,42,.7),0 14px 26px -16px rgba(15,23,42,.4)}
+.key{position:absolute;right:-3px;width:4px;border-radius:0 3px 3px 0;background:linear-gradient(90deg,#8E9AA2,#D3DADE)}
+.bezel{position:absolute;inset:3px;border-radius:45px;background:#0A0F14;padding:7px}
+.glare{position:absolute;inset:10px;border-radius:38px;pointer-events:none;background:linear-gradient(118deg,transparent 30%,rgba(255,255,255,.2) 44%,rgba(255,255,255,.04) 52%,transparent 64%);background-size:260% 100%;background-position:50% 0;transition:background-position .5s}
+
+/* app UI (shared by phone + list mode) */
+.screen{position:relative;width:100%;height:100%;border-radius:38px;overflow:hidden;background:var(--app-bg);color:var(--app-ink);font-family:"Roboto","Noto Sans KR",sans-serif;display:flex;flex-direction:column}
+.cam{position:absolute;top:11px;left:50%;width:11px;height:11px;margin-left:-5.5px;border-radius:50%;background:#05080B;z-index:3}
+.bar{flex:none;height:96px;padding:36px 20px 0;display:flex;align-items:center;justify-content:space-between;gap:4px}
+.bar.detail{padding-left:9px;justify-content:flex-start}
+.bar-title{font-size:22px;font-weight:500;letter-spacing:-.01em;margin:0;outline:none}
+.bar-title:focus,.bar-title:focus-visible{outline:none}
+.bar.detail .bar-title{font-size:16px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.avatar{position:relative;width:36px;height:36px;flex:none;border-radius:50%;display:grid;place-items:center;background:#0F172A;color:#3DDC84;font-family:"JetBrains Mono",monospace;font-size:11px;text-decoration:none;box-shadow:0 0 0 2px var(--app-bg),0 0 0 3px #C2CEC6;transition:box-shadow .2s}
+.avatar:hover{box-shadow:0 0 0 2px var(--app-bg),0 0 0 3px var(--green)}
+.avatar img{position:absolute;inset:0;width:100%;height:100%;border-radius:50%;object-fit:cover}
+.avatar .go{position:absolute;right:-4px;bottom:-4px;width:17px;height:17px;border-radius:50%;background:var(--green-ink);color:#fff;display:grid;place-items:center;box-shadow:0 0 0 2px var(--app-bg)}
+.back{width:44px;height:44px;flex:none;border:0;background:none;border-radius:50%;display:grid;place-items:center}
+.back:hover{background:var(--tonal)}
+.body{flex:1;overflow:auto;scrollbar-width:none;padding:4px 20px 28px;display:flex;flex-direction:column;gap:12px;animation:enter .35s cubic-bezier(.2,.8,.2,1)}
+.body::-webkit-scrollbar{display:none}
+.body>*{flex-shrink:0}
+.eyebrow{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.06em;color:var(--green-ink)}
+.h{margin:0;font-size:22px;line-height:1.3;font-weight:700;letter-spacing:-.01em;text-wrap:balance}
+.lead{margin:0;font-size:15px;line-height:1.6;text-wrap:pretty}
+.txt{margin:0;font-size:13px;line-height:1.7;color:var(--app-muted);text-wrap:pretty}
+.hero{border-radius:20px;padding:18px 18px 22px;background:#0F172A;color:#F8FAFC;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-50px;top:-50px;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,rgba(61,220,132,.45),transparent 70%)}
+.hero>*{position:relative;z-index:1}
+.tonal{border-radius:16px;padding:14px 16px 18px;background:var(--tonal)}
+.tonal-k{font-size:11px;font-weight:700;color:var(--green-ink)}
+.tonal-v{font-size:13px;line-height:1.6;margin-top:4px;text-wrap:pretty}
+.sec{margin:8px 0 -4px;font-size:12px;font-weight:700;color:var(--app-muted)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.fchip{height:32px;padding:0 14px;border-radius:8px;border:1px solid #C2CEC6;background:transparent;font-size:12px;color:#2F3D35}
+.fchip{display:inline-flex;align-items:center;text-decoration:none}
+.fchip[aria-current="page"],.fchip[aria-pressed="true"]{background:var(--chip);border-color:var(--chip);color:#052E19;font-weight:500}
+.mchip{display:inline-flex;align-items:center;height:26px;padding:0 10px;border-radius:8px;border:1px solid #C2CEC6;background:#fff;font-size:11px;color:#2F3D35}
+.list{display:flex;flex-direction:column;margin:0 -12px}
+.li{display:flex;align-items:center;gap:14px;width:100%;background:none;border:0;padding:10px 12px;text-align:left;min-height:60px;border-radius:14px;text-decoration:none;color:inherit;transition:background .15s}
+.li:hover{background:var(--tonal);color:inherit}
+.li-lead{width:40px;height:40px;flex:none;border-radius:12px;display:grid;place-items:center;background:var(--chip);color:#0B4A2A;font-family:"JetBrains Mono",monospace;font-size:13px;font-weight:500}
+.li-lead svg{width:22px;height:22px}
+.tech-hero{width:56px;height:56px;border-radius:16px;display:grid;place-items:center;background:var(--chip);color:#0B4A2A}
+.tech-hero svg{width:30px;height:30px}
+.li-t{display:block;font-size:14px;font-weight:500;text-wrap:pretty}
+.li-s{display:block;font-size:12px;color:var(--app-muted);margin-top:2px;line-height:1.45;text-wrap:pretty}
+.card{display:flex;flex-direction:column;gap:6px;width:100%;text-align:left;text-decoration:none;color:inherit;background:#fff;border-radius:18px;padding:16px 16px 20px;box-shadow:0 1px 2px rgba(16,24,20,.08),0 2px 8px -2px rgba(16,24,20,.08);transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-2px);color:inherit;box-shadow:0 2px 4px rgba(16,24,20,.08),0 10px 20px -8px rgba(16,24,20,.2)}
+.card-t{font-size:16px;font-weight:700}
+.card-s{font-size:12px;line-height:1.55;color:var(--app-muted);text-wrap:pretty}
+.link{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:0 16px;min-height:48px;border-radius:14px;background:#fff;border:1px solid #D5DED8;text-decoration:none;font-size:13px;color:var(--app-ink)}
+.link:hover{border-color:var(--green-ink);color:var(--app-ink)}
+.more{display:inline-block;margin-top:8px;font-size:12px;font-weight:500;color:var(--green-ink);text-decoration:none;padding:6px 0}
+.more:hover{text-decoration:underline}
+.flow{list-style:none;margin:0;padding:0;counter-reset:f;display:flex;flex-direction:column}
+.flow li{position:relative;counter-increment:f;padding:0 0 16px 38px;font-size:13px;line-height:26px}
+.flow li::before{content:counter(f);position:absolute;left:0;top:0;width:26px;height:26px;border-radius:50%;background:var(--chip);color:#0B4A2A;font:500 12px/26px "JetBrains Mono",monospace;text-align:center}
+.flow li:not(:last-child)::after{content:"";position:absolute;left:12.5px;top:28px;bottom:2px;width:1px;background:#B9CBBF}
+.flow li:last-child{padding-bottom:0}
+.fig{margin:0;display:flex;flex-direction:column;gap:10px;background:#fff;border:1px solid #DDE6E0;border-radius:16px;padding:14px}
+.fig-svg{display:block;width:100%;height:auto;font-family:"Noto Sans KR",sans-serif}
+.fig-svg .t-k{font-size:10.5px;font-weight:700;fill:var(--green-ink)}
+.fig-svg .t-s{font-size:10px;fill:var(--app-muted)}
+.fig-svg .route{fill:none;stroke:#C9D4CD;stroke-width:6;stroke-linejoin:round}
+.fig-svg .radius{fill:rgba(220,120,60,.12);stroke:#C2703A;stroke-width:1.2;stroke-dasharray:3 3}
+.fig-svg .pin{fill:#101814}
+.fig-svg .start{fill:#fff;stroke:#101814;stroke-width:1.5}
+.fig-svg .window{fill:none;stroke:rgba(31,168,98,.22);stroke-width:14;stroke-linecap:round;stroke-linejoin:round}
+.fig-svg .progress{fill:none;stroke:var(--green);stroke-width:6;stroke-linecap:round;stroke-linejoin:round}
+.fig-svg .band{fill:#EEF2EF}
+.fig-svg .curve{fill:none;stroke:#101814;stroke-width:2}
+.fig-svg .br-before{fill:none;stroke:#C2703A;stroke-width:1.4}
+.fig-svg .br-after{fill:none;stroke:var(--green-ink);stroke-width:1.8}
+.fig-pics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.fig-pics figure{margin:0}
+.fig-pics img{display:block;width:100%;height:auto;border-radius:10px;border:1px solid #DDE6E0}
+.fig-pics figcaption{font-size:11px;line-height:1.45;color:var(--app-muted);text-align:center;margin-top:4px;word-break:keep-all}
+.fig-pics.three{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.fig-pics.wide{grid-template-columns:minmax(0,1fr)}
+.fig-pics.one{grid-template-columns:minmax(0,150px);justify-content:center}
+.zoom{position:relative;display:block;border-radius:10px}
+.zoom-tag{position:absolute;right:6px;bottom:6px;height:24px;padding:0 9px;border-radius:99px;background:rgba(245,249,246,.94);color:var(--app-ink);font-size:10.5px;font-weight:500;line-height:24px}
+.zoom:hover .zoom-tag{background:var(--chip)}
+.fig-note{margin:0;font-size:11px;line-height:1.55;color:var(--app-muted);word-break:keep-all;text-wrap:pretty}
+.shots + .fig-note{margin-top:-4px}
+.cmp{display:flex;flex-direction:column;gap:8px}
+.cmp-box{border-radius:12px;padding:10px 12px;background:#F4F6F5;border:1px solid #E1E6E3}
+.cmp-box.after{background:var(--tonal);border-color:#BFDCC9}
+.cmp-k{font-size:12px;color:var(--app-ink)}
+.cmp-k b{font-family:"JetBrains Mono",monospace;font-size:10px;font-weight:500;letter-spacing:.04em;color:var(--app-muted);margin-right:4px}
+.cmp-box.after .cmp-k b{color:var(--green-ink)}
+.cmp ul{margin:6px 0 0;padding-left:16px;font-size:12px;line-height:1.6;color:var(--app-muted)}
+.sel{user-select:all;-webkit-user-select:all}
+.copy{height:32px;padding:0 12px;border-radius:99px;border:1px solid #C2CEC6;background:#fff;font-size:12px;color:var(--app-ink)}
+.copy:hover{border-color:var(--green-ink)}
+.row{display:flex;justify-content:space-between;gap:12px;font-size:12px;line-height:1.5;padding:8px 0;border-bottom:1px solid #DDE6E0}
+.row span:first-child{color:var(--app-muted);flex:none;font-family:"JetBrains Mono",monospace;font-size:11px}
+.row span:last-child{text-align:right}
+.land-cta{position:relative;display:block;width:100%;padding:0;border:0;border-radius:14px;overflow:hidden;background:#0B0B0B;box-shadow:0 1px 2px rgba(16,24,20,.1),0 6px 14px -8px rgba(16,24,20,.4)}
+.land-cta img{display:block;width:100%;height:auto}
+.land-tag{position:absolute;right:8px;bottom:8px;display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 10px;border-radius:99px;background:rgba(245,249,246,.94);color:var(--app-ink);font-size:11px;font-weight:500}
+.land-cta:hover .land-tag{background:var(--chip)}
+.shots{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:0 -20px;padding:2px 20px 4px}
+.shots::-webkit-scrollbar{display:none}
+.shot{flex:none;width:116px;height:auto;border-radius:12px;box-shadow:0 1px 2px rgba(16,24,20,.12),0 4px 10px -6px rgba(16,24,20,.35)}
+.code{white-space:pre-wrap;margin:0;padding:14px 16px;border-radius:14px;background:#0F172A;color:var(--chip);font-family:"JetBrains Mono",monospace;font-size:11.5px;line-height:1.8}
+.nav{flex:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));padding:10px 8px 6px;background:#EBF2ED}
+.nv{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:11px;color:var(--app-muted);min-height:52px;text-decoration:none}
+.nv .ind{width:56px;height:30px;border-radius:99px;display:grid;place-items:center;transition:background .2s}
+.nv[aria-current="page"]{color:var(--app-ink);font-weight:700}
+.nv[aria-current="page"] .ind{background:var(--chip);color:#052E19}
+.gesture{height:20px;flex:none;display:flex;align-items:center;justify-content:center;background:#EBF2ED}
+.gesture span{width:96px;height:4px;border-radius:2px;background:var(--app-ink);opacity:.5}
+
+/* landscape viewer */
+.land{position:absolute;left:50%;top:50%;width:728px;height:340px;margin:-170px 0 0 -364px;transform:rotate(90deg);background:#0B0B0B;z-index:6;animation:fade .4s ease .25s both}
+.land img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.land-x{position:absolute;right:10px;top:10px;width:40px;height:40px;border:0;border-radius:50%;background:rgba(255,255,255,.12);color:#F8FAFC;display:grid;place-items:center}
+.land-x:hover{background:rgba(255,255,255,.22)}
+.land-open{position:absolute;left:12px;bottom:12px;height:32px;padding:0 12px;border-radius:99px;background:rgba(255,255,255,.08);color:#CBD5E1;font-size:11px;line-height:32px;text-decoration:none}
+.land-open:hover{background:rgba(255,255,255,.18);color:#F8FAFC}
+.land-seg{position:absolute;right:12px;bottom:12px;display:flex;gap:4px;padding:4px;border-radius:99px;background:rgba(255,255,255,.08)}
+.land-seg button{height:32px;padding:0 12px;border:0;border-radius:99px;background:none;color:#CBD5E1;font-size:11px}
+.land-seg button[aria-pressed="true"]{background:var(--chip);color:#052E19;font-weight:500}
+
+/* list mode */
+.plain{flex:1;width:100%;max-width:760px;margin:24px auto 0;background:var(--app-bg);color:var(--app-ink);border-radius:28px;padding:28px 32px 36px;box-shadow:0 30px 60px -40px rgba(15,23,42,.5);font-family:"Roboto","Noto Sans KR",sans-serif}
+.plain .bar{height:auto;padding:0 0 12px}
+.plain .bar-title{font-size:28px;font-weight:700}
+.plain .body{padding:0;overflow:visible;animation:none}
+.plain .lead{font-size:17px}
+.plain .txt{font-size:15px}
+.plain .shots{margin:0;padding:2px 0}
+.plain .shot{width:150px}
+.plain .land-cta{max-width:520px}
+.plain-nav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+
+footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:12px;font-size:12px;color:var(--muted)}
+footer a{color:var(--muted)}
+noscript .ns{max-width:760px;margin:24px auto;padding:24px;background:#fff;border-radius:20px;line-height:1.7}
+
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes shadow{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(.88);opacity:.65}}
+@keyframes enter{from{opacity:0;transform:translateX(16px)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@media (max-width:1000px){.wrap{padding:20px 20px 24px}.obj,.dots{display:none}main.layout{padding-top:12px}.intro{flex-basis:100%}}
+@media (max-width:520px){.intro h1{font-size:44px}.stats{gap:8px}.stat{padding:14px}.stat b{font-size:22px}.plain{padding:22px 18px 28px;border-radius:22px}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#app-title">본문으로 이동</a>
+<div class="page" id="page">
+  <div class="wrap">
+    <header class="top">
+      <a class="logo ub" href="#/about" aria-label="처음으로">uihyeon<span>●</span></a>
+      <nav class="pills" aria-label="섹션">
+        <a class="pill" href="#/about" data-tab="about">About</a>
+        <a class="pill" href="#/stack" data-tab="stack">Stack</a>
+        <a class="pill" href="#/projects" data-tab="projects">Projects</a>
+        <a class="pill" href="#/notes" data-tab="notes">Notes</a>
+      </nav>
+    </header>
+
+    <main class="layout" id="layout">
+      <section class="intro" aria-label="소개">
+        <div class="badge"><i aria-hidden="true"></i>Android Developer · SSAFY 16기</div>
+        <h1 class="ub">Hi, I’m<br>UiHyeon<span>.</span></h1>
+        <p class="lead-copy">직접 써 보며 찾은 문제를, 팀이 고를 수 있는 선택지로 만듭니다.</p>
+        <div class="ctas">
+          <a class="cta" href="#/projects">프로젝트 보기 →</a>
+          <a class="pill" href="https://github.com/UiHyeon-Kim" target="_blank" rel="noopener noreferrer" style="min-height:52px;padding:0 22px">GitHub ↗</a>
+        </div>
+        <div class="stats" id="stats"></div>
+        <button class="mode" id="mode" aria-pressed="false">폰 대신 목록으로 보기</button>
+      </section>
+
+      <section class="stage" id="stage" aria-label="폰 모양 포트폴리오">
+        <div class="stage-inner">
+          <div class="spot" aria-hidden="true"></div>
+          <div class="dots" aria-hidden="true"></div>
+          <div class="obj orb-g" aria-hidden="true" style="width:124px;height:124px;left:2%;top:150px"></div>
+          <div class="obj orb-n" aria-hidden="true" style="width:64px;height:64px;right:7%;top:96px;animation-delay:-3s"></div>
+          <div class="obj torus" aria-hidden="true" style="width:148px;height:148px;right:0;top:452px;animation-delay:-5s;animation-direction:reverse"></div>
+          <div class="obj" aria-hidden="true" style="left:4%;top:548px;animation-delay:-2s"><div class="capsule" style="width:132px;height:46px;transform:rotate(-28deg)"></div></div>
+          <div class="disc" aria-hidden="true"></div>
+          <div class="disc-shadow" aria-hidden="true"></div>
+          <div class="float">
+            <div class="rig" id="rig">
+              <div class="frame">
+                <span class="key" style="top:180px;height:64px" aria-hidden="true"></span>
+                <span class="key" style="top:268px;height:104px" aria-hidden="true"></span>
+                <div class="bezel">
+                  <div class="screen" id="screen"></div>
+                </div>
+              </div>
+              <div class="glare" id="glare" aria-hidden="true"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="plain" id="plain" hidden aria-label="목록 보기"></section>
+    </main>
+
+    <footer>
+      <span>© 김의현 · <span class="sel">hyunkim6790@gmail.com</span></span>
+      <span>키보드: Tab 이동 · Enter 열기 · Esc 뒤로</span>
+    </footer>
+  </div>
+</div>
+
+<noscript>
+  <section class="ns">
+    <h1>김의현 · Android Developer</h1>
+    <p>Kotlin · Jetpack Compose · SSAFY 16기. 직접 써 보며 찾은 문제를, 팀이 고를 수 있는 선택지로 만듭니다.</p>
+    <ul>
+      <li><a href="https://github.com/Central-MakeUs/Rodi-Android">Rodi</a> — 초보 운전자 주행 연습 앱, Android 1인 담당</li>
+      <li><a href="https://github.com/LIKELION-Android-Bootcamp-4th/FinalProject-GureumPage-HIHIHIHI">구름한장</a> — 독서 기록 앱, 4인 팀 부팀장 · 마인드맵 담당</li>
+      <li>PoseUp — 카메라 자세 분석 푸시업 코칭 앱 (소스 비공개)</li>
+      <li><a href="https://github.com/UiHyeon-Kim/Pickle-Android">Pickle</a> · <a href="https://github.com/UiHyeon-Kim/compose-mindmap">compose-mindmap</a> · <a href="https://github.com/UiHyeon-Kim/PrographyProject">이미지 탐색 앱</a></li>
+    </ul>
+    <p><a href="https://github.com/UiHyeon-Kim">GitHub</a> · <a href="mailto:hyunkim6790@gmail.com">hyunkim6790@gmail.com</a></p>
+    <p>폰 화면 전환에는 JavaScript가 필요합니다.</p>
+  </section>
+</noscript>
+
 <script>
 'use strict';
-const DATA={"projects": [{"id": "rodi", "title": "Rodi", "kind": "팀 앱 · Android 기여", "symbol": "route", "color": "mint", "summary": "위치를 기다릴 때와 사용할 수 없을 때, 화면이 어떻게 반응해야 할까.", "body": "위치 대기 상태와 위치 사용 불가 상태를 구분해 홈 화면의 로딩 문제를 수정한 공개 PR이 있습니다. 테스트·CI·빌드 흐름 개선에도 참여했습니다.", "tags": ["Compose", "상태 모델링", "CI"], "evidence": [["위치 상태 개선 PR", "https://github.com/Central-MakeUs/Rodi-Android/pull/87"], ["CI 검증 작업", "https://github.com/Central-MakeUs/Rodi-Android/pull/188"]]}, {"id": "gureum", "title": "구름한장", "kind": "팀 프로젝트", "symbol": "cloud", "color": "blue", "summary": "공통 테마에서 마인드맵·통계·알림까지.", "body": "공통 테마와 디자인 시스템, 온보딩·마인드맵·통계·책 상세 UI, 로컬 알림과 FCM 알림 기능을 담당했습니다. Git 협업 규칙과 문서화·코드 리뷰에도 참여했습니다.", "tags": ["Compose", "FCM", "디자인 시스템"], "evidence": [["팀 문서의 담당 역할", "https://github.com/LIKELION-Android-Bootcamp-4th/FinalProject-GureumPage-HIHIHIHI#담당-역할"]]}, {"id": "mindmap", "title": "compose-mindmap", "kind": "Compose 라이브러리", "symbol": "tree", "color": "purple", "summary": "앱에서 만든 마인드맵을 재사용 가능한 API로.", "body": "구름한장의 마인드맵 경험에서 출발했습니다. 트리 레이아웃, 노드·엣지 렌더링, 편집과 viewport 제어를 나누어 특정 앱 UI에 묶이지 않는 API로 정리하고 있습니다.", "tags": ["Compose", "API 설계", "Viewport"], "evidence": [["라이브러리와 예제", "https://github.com/UiHyeon-Kim/compose-mindmap"]]}, {"id": "prography", "title": "이미지 탐색 앱", "kind": "PrographyProject", "symbol": "image", "color": "amber", "summary": "이미지 탐색·저장·북마크를 연결한 Android 앱.", "body": "Retrofit·OkHttp 통신, Coil 이미지 캐시, Room 북마크와 Coroutines·Flow·Hilt를 사용하는 이미지 탐색 앱입니다.", "tags": ["Retrofit", "Coil", "Room"], "evidence": [["공개 프로젝트", "https://github.com/UiHyeon-Kim/PrographyProject"]]}, {"id": "poseup", "title": "PoseUp", "kind": "진행 중 · 비공개 실험", "symbol": "pose", "color": "coral", "summary": "카메라 입력을 자세 분석과 운동 상태로 연결.", "body": "CameraX·MediaPipe 자세 분석과 운동 진행 흐름을 실험하고 있습니다. 운동 세션과 진행 상태를 다루는 Room·DataStore 코드가 있습니다.", "tags": ["CameraX", "MediaPipe", "Room"], "evidence": []}, {"id": "navigation", "title": "고정 경로 안내 PoC", "kind": "진행 중 · 비공개 실험", "symbol": "route", "color": "mint", "summary": "지도·위치·경로 진행 상태의 연결을 실험.", "body": "고정된 경로를 따라 위치와 진행 상태를 연결하는 실험입니다.", "tags": ["지도", "위치", "상태"], "evidence": []}], "techs": [{"id": "compose", "name": "Kotlin · Compose", "mark": "K", "group": "android", "use": "공통 디자인 시스템과 화면, 재사용 UI API", "project": "구름한장 · compose-mindmap", "detail": "화면 구현과 공통 테마에서 출발해, 마인드맵의 레이아웃·편집·viewport API를 분리하는 작업으로 이어집니다.", "links": [["compose-mindmap", "https://github.com/UiHyeon-Kim/compose-mindmap"]]}, {"id": "flow", "name": "Coroutines · Flow", "mark": "≋", "group": "android", "use": "비동기 데이터와 화면 상태 연결", "project": "Rodi · 이미지 탐색 앱", "detail": "비동기 데이터와 화면 상태를 Coroutines·Flow로 연결합니다.", "links": [["Rodi 구조와 상태 흐름", "https://github.com/Central-MakeUs/Rodi-Android#ui-state-flow"]]}, {"id": "hilt", "name": "Hilt", "mark": "H", "group": "android", "use": "Repository와 네트워크 의존성 주입", "project": "이미지 탐색 앱", "detail": "NetworkModule과 AppModule에서 네트워크 객체와 이미지 로더의 의존성을 구성합니다.", "links": [["프로젝트와 기술 구성", "https://github.com/UiHyeon-Kim/PrographyProject"]]}, {"id": "network", "name": "Retrofit · OkHttp", "mark": "↔", "group": "android", "use": "API 통신과 네트워크 구성", "project": "이미지 탐색 앱 · 구름한장", "detail": "이미지 API와 도서 검색 API 통신에 Retrofit·OkHttp를 사용합니다.", "links": [["이미지 탐색 앱", "https://github.com/UiHyeon-Kim/PrographyProject"]]}, {"id": "local", "name": "Room · DataStore", "mark": "D", "group": "android", "use": "북마크·운동 기록과 진행 상태 저장", "project": "이미지 탐색 앱 · PoseUp", "detail": "이미지 북마크에는 Room, 운동 세션과 챌린지 상태에는 Room과 DataStore를 구분해 사용합니다.", "links": [["공개 북마크 사용 사례", "https://github.com/UiHyeon-Kim/PrographyProject"]]}, {"id": "coil", "name": "Coil", "mark": "C", "group": "android", "use": "이미지 로딩과 메모리·디스크 캐시", "project": "이미지 탐색 앱", "detail": "ImageLoader에 메모리·디스크 캐시를 구성해 이미지 로딩을 다룹니다.", "links": [["공개 사용 사례", "https://github.com/UiHyeon-Kim/PrographyProject"]]}, {"id": "camera", "name": "CameraX · MediaPipe", "mark": "◎", "group": "android", "use": "카메라 프레임과 자세 분석 연결", "project": "PoseUp · 비공개 실험", "detail": "카메라 입력을 자세 분석과 운동 상태로 연결합니다.", "links": []}, {"id": "navigation", "name": "Navigation", "mark": "↗", "group": "android", "use": "앱의 화면과 하위 흐름 구성", "project": "PoseUp · 이미지 탐색 앱", "detail": "PoseUp에는 Navigation 3, 이미지 탐색 앱에는 Navigation Compose 구성이 있습니다.", "links": [["공개 Android 프로젝트", "https://github.com/UiHyeon-Kim/PrographyProject"]]}, {"id": "fcm", "name": "Firebase · FCM", "mark": "F", "group": "android", "use": "로컬 알림과 푸시 알림", "project": "구름한장", "detail": "구름한장에서 로컬 알림과 FCM 푸시 알림 기능을 구현했습니다.", "links": [["팀 문서의 담당 역할", "https://github.com/LIKELION-Android-Bootcamp-4th/FinalProject-GureumPage-HIHIHIHI#담당-역할"]]}, {"id": "test", "name": "JUnit · MockK", "mark": "✓", "group": "tools", "use": "상태·데이터 로직의 테스트", "project": "PoseUp · Rodi", "detail": "PoseUp의 단위 테스트와 Rodi의 테스트·CI 흐름을 다룹니다.", "links": [["공개 CI 변경", "https://github.com/Central-MakeUs/Rodi-Android/pull/188"]]}, {"id": "git", "name": "Git · GitHub", "mark": "G", "group": "tools", "use": "협업 규칙·브랜치·코드 리뷰·CI", "project": "구름한장 · Rodi", "detail": "구름한장의 Git 협업 규칙·문서화·코드 리뷰에 참여했습니다.", "links": [["공개 팀 문서", "https://github.com/LIKELION-Android-Bootcamp-4th/FinalProject-GureumPage-HIHIHIHI#담당-역할"]]}, {"id": "gradle", "name": "Gradle · KTS", "mark": ">_", "group": "tools", "use": "Android 모듈·빌드·검증 구성", "project": "PoseUp · Rodi", "detail": "PoseUp의 convention 플러그인과 Rodi의 CI 구성으로 Android 모듈 빌드와 검증 흐름을 다룹니다.", "links": [["Rodi CI 검증 작업", "https://github.com/Central-MakeUs/Rodi-Android/pull/188"]]}]};
-const APP_LIST=[{id:'about',title:'나',caption:'화면과 상태를 다루는 사람',icon:'person',color:'mint'},{id:'stack',title:'기술 스택',caption:'어디에 어떻게 썼는지',icon:'layers',color:'blue'},{id:'projects',title:'프로젝트',caption:'함께 만든 것과 현재 실험',icon:'grid',color:'purple'},{id:'notes',title:'개발 기록',caption:'문제에서 변경으로',icon:'code',color:'amber'}];
-const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-function icon(name){const paths={person:'<circle cx="12" cy="8" r="3"/><path d="M5 21v-3a7 7 0 0 1 14 0v3"/>',layers:'<path d="m12 3 10 5-10 5L2 8l10-5ZM2 12l10 5 10-5M2 16l10 5 10-5"/>',grid:'<rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/>',code:'<path d="m8 6-6 6 6 6m8-12 6 6-6 6m-3-15-2 18"/>',route:'<circle cx="5" cy="18" r="2"/><circle cx="19" cy="5" r="2"/><path d="M5 16V9a4 4 0 0 1 8 0v6a3 3 0 0 0 6 0V7"/>',cloud:'<path d="M6 19a5 5 0 0 1-1-10 7 7 0 0 1 13-2 6 6 0 0 1 0 12H6Z"/>',tree:'<rect x="9" y="2" width="6" height="5" rx="1"/><rect x="2" y="17" width="6" height="5" rx="1"/><rect x="16" y="17" width="6" height="5" rx="1"/><path d="M12 7v5H5v5m7-5h7v5"/>',image:'<rect x="2" y="3" width="20" height="18" rx="3"/><circle cx="8" cy="9" r="2"/><path d="m3 19 6-6 4 4 4-7 5 8"/>',pose:'<circle cx="12" cy="4" r="2"/><path d="m3 9 9 2 9-2m-9 2v6m0 0-6 5m6-5 6 5"/>',back:'<path d="m14 5-7 7 7 7"/>',home:'<rect x="5" y="5" width="14" height="14" rx="5"/>',list:'<path d="M7 5h15M7 12h15M7 19h15M2 5h1M2 12h1M2 19h1"/>'};return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(paths[name]||paths.grid)+'</svg>'}
-const link=(href,title)=>'<a href="'+esc(href)+'" target="_blank" rel="noopener noreferrer">'+esc(title)+' ↗</a>';
-const tags=items=>'<div class="pill-row">'+items.map(x=>'<span class="pill">'+esc(x)+'</span>').join('')+'</div>';
-const evidence=items=>items.length?'<aside class="evidence"><span>관련 링크</span>'+items.map(x=>link(x[1],x[0])).join('')+'</aside>':'';
-function normalizeRoute(raw){let r=String(raw||'').replace(/^#\/?/,'').replace(/^\//,'');if(['home','about','stack','projects','notes'].includes(r))return r;if(r.startsWith('project/')&&DATA.projects.some(p=>p.id===r.slice(8)))return r;if(r.startsWith('tech/')&&DATA.techs.some(p=>p.id===r.slice(5)))return r;if(r==='note/location'||r==='note/reuse'||r==='note/ci')return r;return 'home'}
-function parentRoute(raw){const r=normalizeRoute(raw);if(r.startsWith('project/'))return 'projects';if(r.startsWith('tech/'))return 'stack';if(r.startsWith('note/'))return 'notes';return 'home'}
-function heading(over,title){return '<p class="overline">'+esc(over)+'</p><h2 id="content-start" tabindex="-1">'+esc(title)+'</h2>'}
-function homePage(plain){if(plain)return '<section class="page plain-home">'+heading('UiHyeon / Android Developer','김의현의 앱 서랍')+'<p>각 메뉴에서 작업의 맥락과 사용 사례를 볼 수 있습니다.</p><ul>'+APP_LIST.map(a=>'<li><a href="#/'+a.id+'">'+esc(a.title)+'<small>'+esc(a.caption)+'</small></a></li>').join('')+'</ul></section>';return '<section class="home"><p class="kicker">ANDROID DEVELOPER / KIM UIHYEON</p><h2 id="content-start" tabindex="-1">Hello,<br>I’m UiHyeon.</h2><p class="subtitle">Kotlin · Jetpack Compose · SSAFY 16기</p><div class="home-widget"><span>WORK IN FOCUS</span><p>화면에서 만난 문제를<br><b>다시 쓸 수 있는 코드</b>로.</p></div><ul class="app-grid" aria-label="프로필 앱">'+APP_LIST.map(a=>'<li><a class="app-link" href="#/'+a.id+'" aria-label="'+esc(a.title)+' 앱 열기"><span class="app-icon '+a.color+'">'+icon(a.icon)+'</span><span class="app-label">'+esc(a.title)+'</span></a></li>').join('')+'</ul><p class="home-bottom">4 APPS / A FEW STORIES</p></section>'}
-function projectRow(p){return '<a class="row-link" href="#/project/'+p.id+'"><span class="mini-icon '+p.color+'">'+icon(p.symbol)+'</span><span class="row-text"><strong>'+esc(p.title)+'</strong><small>'+esc(p.kind)+'</small></span><span class="chevron" aria-hidden="true">›</span></a>'}
-function techRow(t){return '<a class="row-link" href="#/tech/'+t.id+'"><span class="tech-mark" aria-hidden="true">'+esc(t.mark)+'</span><span class="row-text"><strong>'+esc(t.name)+'</strong><small>'+esc(t.use)+'</small></span><span class="chevron" aria-hidden="true">›</span></a>'}
-function noteRow(id,title,caption){return '<a class="row-link" href="#/note/'+id+'"><span class="row-text"><strong>'+esc(title)+'</strong><small>'+esc(caption)+'</small></span><span class="chevron" aria-hidden="true">›</span></a>'}
-function renderRoute(raw,plain=false){const r=normalizeRoute(raw);if(r==='home')return homePage(plain);let content='';
-if(r==='about')content=heading('01 / About','화면과 그 뒤의 상태')+'<p class="intro-copy">안녕하세요.<br>Android 개발자 김의현입니다.</p><p>공통 디자인 시스템과 화면을 만들고, 입력 조건과 예외 상태가 사용자 흐름으로 이어지는 과정을 다룹니다.</p><div class="fact"><strong>작업이 이어지는 방식</strong><p>구름한장의 마인드맵 경험에서 출발해 compose-mindmap의 재사용 API를 정리하고 있습니다.</p></div><div class="fact"><strong>현재의 실험</strong><p>PoseUp의 카메라 자세 분석과 고정 경로 안내 PoC.</p></div><div class="fact"><strong>교육</strong><p>SSAFY 16기</p></div>'+link('https://github.com/UiHyeon-Kim','공개 GitHub 프로필');
-else if(r==='stack')content=heading('02 / Stack','기술 이름, 그다음은?')+'<p>아이콘을 누르면 프로젝트와 사용 사례가 이어집니다.</p><h3 class="section-label">ANDROID CORE</h3>'+DATA.techs.filter(t=>t.group==='android').map(techRow).join('')+'<h3 class="section-label">BUILD & COLLABORATION</h3>'+DATA.techs.filter(t=>t.group==='tools').map(techRow).join('');
-else if(r==='projects')content=heading('03 / Projects','무엇을 다뤘는지')+'<p>프로젝트를 열면 담당 범위와 작업 기록을 볼 수 있습니다.</p>'+DATA.projects.map(projectRow).join('');
-else if(r.startsWith('project/')){const p=DATA.projects.find(x=>x.id===r.slice(8));content=heading(p.kind,p.title)+'<div class="project-hero"><span class="app-icon '+p.color+'">'+icon(p.symbol)+'</span></div><p class="intro-copy">'+esc(p.summary)+'</p>'+tags(p.tags)+'<p>'+esc(p.body)+'</p>'+evidence(p.evidence);}
-else if(r.startsWith('tech/')){const t=DATA.techs.find(x=>x.id===r.slice(5));content=heading('Stack / Use case',t.name)+'<p class="intro-copy">'+esc(t.use)+'</p><div class="fact"><strong>연결된 프로젝트</strong><p>'+esc(t.project)+'</p></div><p>'+esc(t.detail)+'</p>'+evidence(t.links);}
-else if(r==='notes')content=heading('04 / Notes','문제에서 변경으로')+'<p>작업을 설명하는 세 가지 짧은 기록입니다.</p>'+noteRow('location','위치가 없는데, 계속 로딩 중이라면','Rodi · 대기와 사용 불가를 나눈 변경')+noteRow('reuse','앱의 마인드맵을 라이브러리로','구름한장 → compose-mindmap')+noteRow('ci','화면 밖에서 다듬는 개발 흐름','Rodi · 테스트·CI·빌드');
-else if(r==='note/location')content=heading('Note / Rodi','대기와 사용 불가는 다르다')+'<p class="intro-copy">“아직 기다리는 중”과<br>“사용할 수 없음”을 구분하기.</p><p>위치가 확보되지 않았을 때 홈이 계속 로딩되는 문제를 다룬 변경입니다. Pending과 Unavailable 상태를 나누고, 위치를 사용할 수 없을 때는 현재 지도 영역을 기준으로 조회하도록 했습니다.</p><pre class="code-note">위치를 기다림 → Pending\n위치를 사용할 수 없음 → Unavailable\n\n서로 다른 상태에\n서로 다른 화면 반응</pre>'+evidence([['변경 내용과 검증 기록',PUBLIC_BASE+'Central-MakeUs/Rodi-Android/pull/87']]);
-else if(r==='note/reuse')content=heading('Note / Compose','앱 기능에서 API로')+'<p class="intro-copy">그 앱의 화면을 넘어,<br>다른 화면에서도 쓰려면.</p><p>구름한장에서 시작한 마인드맵을 트리 데이터, 레이아웃, 노드·엣지 렌더링, 편집, viewport로 나누어 정리합니다. 특정 디자인과 데이터 소유권을 라이브러리에 고정하지 않는 방향입니다.</p>'+tags(['트리 모델','편집','Pan / Zoom','검증'])+evidence([['설계와 사용 예제',PUBLIC_BASE+'UiHyeon-Kim/compose-mindmap']]);
-else if(r==='note/ci')content=heading('Note / Delivery','검증이 이어지는 구조')+'<p class="intro-copy">화면을 고치는 일과<br>확인하는 흐름을 함께.</p><p>Rodi에서 benchmark APK 빌드 검증 등 CI 구성을 개선했습니다.</p>'+evidence([['CI 검증 변경 PR',PUBLIC_BASE+'Central-MakeUs/Rodi-Android/pull/188']]);
-return '<article class="page">'+content+'</article>'}
-const PUBLIC_BASE='https://github.com/';
-globalThis.PhoneDraft={normalizeRoute,parentRoute,renderRoute,DATA,APP_LIST};
-if(typeof document!=='undefined'){
-let plain=false;const phone=document.getElementById('phone'),normal=document.getElementById('plain'),phoneContent=document.getElementById('phone-content'),listContent=document.getElementById('list-content'),toggle=document.getElementById('mode-toggle'),back=document.getElementById('back');
-back.innerHTML=icon('back');document.getElementById('home-button').innerHTML=icon('home');document.getElementById('list-button').innerHTML=icon('list');
-function render(focus=false){const route=normalizeRoute(location.hash);const host=plain?listContent:phoneContent;host.innerHTML=renderRoute(route,plain);(plain?phoneContent:listContent).textContent='';back.disabled=route==='home';host.scrollTop=0;document.title=(route==='home'?'Pocket Profile':route.split('/')[0])+' · UiHyeon';if(focus){const heading=host.querySelector('#content-start');if(heading)heading.focus({preventScroll:true});}}
-function setMode(){plain=!plain;phone.hidden=plain;normal.hidden=!plain;document.getElementById('layout').classList.toggle('list-mode',plain);toggle.textContent=plain?'폰 모양으로 돌아가기':'폰 대신 목록으로 보기';toggle.setAttribute('aria-pressed',String(plain));render(true)}
-toggle.addEventListener('click',setMode);document.getElementById('list-button').addEventListener('click',setMode);
-back.addEventListener('click',()=>{location.hash='/'+parentRoute(location.hash)});
-window.addEventListener('hashchange',()=>render(true));
-document.addEventListener('keydown',event=>{if(event.key==='Escape'&&normalizeRoute(location.hash)!=='home'){event.preventDefault();location.hash='/'+parentRoute(location.hash)}if(!plain&&event.target.matches('.app-link')&&['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(event.key)){const links=[...phoneContent.querySelectorAll('.app-link')];const offset=event.key==='ArrowLeft'?-1:event.key==='ArrowRight'?1:event.key==='ArrowUp'?-2:2;const i=links.indexOf(event.target);links[(i+offset+links.length)%links.length].focus();event.preventDefault();}});
-if(new URLSearchParams(location.search).get('view')==='list')setMode();else render();
+const IMG = 'assets/poseup/';
+const PROJECTS = [
+  { id: 'rodi', title: 'Rodi', kind: 'CMC · Android 1인 · Google Play', summary: '초보 운전자가 연습할 길을 찾고, 실제 주행 연습까지 이어가는 앱.',
+    body: '왕복 코스에서 출발하자마자 도착 판정이 나는 걸 보고, ‘지점에 도착했는가’가 아니라 ‘경로를 따라 이동했는가’로 판정하자고 팀에 제안했습니다. 기본 바텀시트의 한계는 기획이 고를 수 있는 말로 설명한 뒤 직접 만든 시트로 바꿨고, 팀원마다 다르게 그리던 코스 경로는 앱과 같은 기준으로 그리는 내부 도구로 맞췄습니다.',
+    meta: [['기간', '2026.05 – 2026.09'], ['역할', 'Android 1인 (팀: 기획 · 디자인 · iOS · 백엔드)']],
+    gallery: [['rodi-home', '홈: 지도와 추천 코스 목록'], ['rodi-detail', '코스 상세: 경로와 연습 시작'], ['rodi-course-map', '코스 등록: 지도에서 경로 그리기'], ['rodi-course-form', '코스 등록: 기본 정보 입력']],
+    tags: ['위치·지도', 'Foreground Service', 'Compose', 'UI 테스트'], notes: ['policy', 'tradeoff', 'routetool', 'emoji'],
+    links: [['PR #108 경로 진행 추적', 'https://github.com/Central-MakeUs/Rodi-Android/pull/108'], ['PR #77 바텀시트', 'https://github.com/Central-MakeUs/Rodi-Android/pull/77'], ['레포지토리', 'https://github.com/Central-MakeUs/Rodi-Android'], ['Google Play', 'https://play.google.com/store/apps/details?id=com.dororong.rodi']] },
+  { id: 'gureum', title: '구름한장', kind: '멋쟁이사자처럼 · 4인 팀 부팀장', summary: '책을 읽으며 떠오른 생각을 마인드맵·필사·통계로 정리하는 독서 기록 앱.',
+    body: '마인드맵을 UI부터 서버 연동까지 맡았습니다. 동작 단위로 되돌리기를 만들었다가 부모·자식이 얽혀 복구가 깨지는 문제를 겪고, 트리 전체를 스냅샷으로 기억하도록 바꿨습니다. 서버에는 편집이 끝날 때 바뀐 노드만 보냅니다. 공통 테마·디자인 시스템, 통계, 알림도 담당했습니다.',
+    meta: [['기간', '2025.07 – 2025.09'], ['역할', 'Android 4인 팀 부팀장'], ['팀 성과', 'Google Play 출시 · 최우수 프로젝트']],
+    gallery: [['gureum-home', '홈: 읽는 중인 책과 오늘 목표'], ['gureum-mindmap-added', '마인드맵: 노드를 추가한 상태'], ['gureum-statistics', '독서 통계: 장르 · 시간대 · 주간 페이지']],
+    galleryNote: '예시 데이터로 다시 실행한 화면입니다. 통계 수치도 예시입니다.',
+    tags: ['마인드맵', '상태 복원', 'Firebase', '디자인 시스템'], notes: ['snapshot'],
+    links: [['팀 문서의 담당 역할', 'https://github.com/LIKELION-Android-Bootcamp-4th/FinalProject-GureumPage-HIHIHIHI#담당-역할'], ['PR #93 마인드맵', 'https://github.com/LIKELION-Android-Bootcamp-4th/FinalProject-GureumPage-HIHIHIHI/pull/93'], ['Google Play', 'https://play.google.com/store/apps/details?id=com.hihihihi.gureumpage']] },
+  { id: 'poseup', title: 'PoseUp', kind: '개인 · 소스 비공개', summary: '카메라로 자세를 분석해 푸시업 횟수·세트·휴식을 안내하는 운동 코칭 앱.',
+    body: '직접 푸시업을 하다 음성 안내가 상황과 다른 말을 하는 걸 발견했습니다. 로그로 원인을 좁혀 보니 고정 각도 구간이 하강의 양 끝을 놓치고 있었고, 각도 대신 움직임 방향으로 하강 전체를 재도록 판정을 바꿨습니다. 표준·무릎·슬로우·파이크가 같은 판정 엔진을 설정만 바꿔 쓰고, 영상 처리는 모두 기기 안에서 합니다.',
+    meta: [['역할', '1인 기획 · 디자인 · 개발']], shots: true,
+    tags: ['CameraX', 'MediaPipe', '판정 로직', 'Room'], notes: ['direction'], links: [] },
+  { id: 'pickle', title: 'Pickle', kind: 'DND · Android 2인', summary: '소비 기록을 친구와 공유하고 서로 ‘심판’해 주는 가계부 앱.',
+    body: '화면 하나를 그리려고 여러 API를 조합하던 문제를 팀에 꺼내, 화면에 맞는 응답으로 묶자고 제안했습니다. 최종 결정은 백엔드에 맡겼고, 심판 응답에 가계부·배심원 정보가 함께 오게 됐습니다. 여러 요청이 동시에 401을 받아도 토큰 갱신은 한 번만 일어나도록 직렬화했습니다.',
+    meta: [['기간', '2026.01 – 2026.02'], ['역할', '로그인 · 디자인 시스템 · 설정 · 소비 심판']],
+    gallery: [['pickle-login', '로그인: Kakao · Google'], ['pickle-home', '홈: 월별 소비 캘린더'], ['pickle-ledger', '가계부 등록: 금액과 카테고리'], ['pickle-mypage', '마이페이지: 지출 통계']],
+    tags: ['API 협업', '인증', 'Coroutines'], notes: ['response'],
+    links: [['레포지토리', 'https://github.com/UiHyeon-Kim/Pickle-Android'], ['배심원 응답 매핑 커밋', 'https://github.com/UiHyeon-Kim/Pickle-Android/commit/c5e943e34c5c3f34853b8887ff1ebc21a636158d']] },
+  { id: 'mindmap', title: 'compose-mindmap', kind: '개인 오픈소스 · 0.1.1', summary: '직접 찾다 포기했던 Android 마인드맵 라이브러리를 만들었다.',
+    body: '구름한장 때 쓸 만한 Android 마인드맵 라이브러리가 없어 직접 만들어 공개했습니다. 데이터는 앱이 관리하고 라이브러리는 그리기만 하도록 방향을 잡았습니다. 두 방향 트리 레이아웃, 세 가지 연결선, 드래그 편집, 되돌리기, 핀치 줌을 지원합니다.',
+    meta: [['기간', '2026.05 – 2026.06']], gallery: [['mindmap-edit.gif', '노드 추가와 편집 동작'], ['mindmap-sample', '샘플 앱: 트리 레이아웃과 조작 버튼']], tags: ['Compose', 'Canvas', '오픈소스'], notes: [],
+    links: [['레포지토리', 'https://github.com/UiHyeon-Kim/compose-mindmap']] },
+  { id: 'prography', title: '이미지 탐색 앱', kind: '개인 · 성장 기록', summary: '동아리 지원 과제로 시작해, 과제가 끝난 뒤에도 계속 다듬은 이미지 탐색 앱.',
+    body: '기기 두 대 중 하나에서만 저장한 이미지가 갤러리에 안 보여, 코드 대신 OS 버전 차이를 의심해 Scoped Storage 문제를 찾았습니다. API 사용량을 보고 캐시를 넣되 제공자의 캐시 규칙을 따랐고, 중첩 스크롤 측정 오류를 풀며 Compose의 측정 원리를 파고들었습니다.',
+    meta: [['기간', '2025.02 – 2025.12']],
+    gallery: [['prography-home', '홈: 최신 이미지 그리드'], ['prography-detail', '사진 상세: 다운로드와 북마크'], ['prography-bookmark', '북마크한 사진이 홈 위쪽에 표시']],
+    galleryNote: 'API 응답만 예시 사진으로 바꿔 다시 실행한 화면입니다. 북마크는 실제 Room 저장입니다.',
+    tags: ['Compose', 'MediaStore', 'Coil', 'Paging'], notes: ['osversion', 'cache'],
+    links: [['레포지토리', 'https://github.com/UiHyeon-Kim/PrographyProject']] }
+];
+const NOTES = [
+  { id: 'policy', project: 'rodi', fig: { svg: 'policy', one: true, pics: [['rodi-practice-sim', '연습 주행: 경로 진행률 표시']], note: '보존된 과거 시연 화면입니다. 가상 위치로 진행했고 실제 주행이 아닙니다.' }, title: '코드보다 먼저 바꿔야 했던 것은 정책이었다', caption: 'Rodi · 왕복 코스 도착 판정',
+    lead: '왕복 코스에서는\n출발하자마자 ‘도착’이었다.',
+    body: '차가 없어 직접 걸으며 임의 코스를 테스트하다, 출발지와 도착지가 같은 코스에서 시작과 동시에 도착 판정이 나는 걸 발견했습니다. 당시 정책은 ‘도착 지점에 들어왔는가’만 봤기 때문입니다. 지점 도착이 아니라 경로를 따라 이동했는지를 봐야 한다고 판단해 팀 회의에 정책 변경을 제안했고, 코스 경로 위의 진행 위치를 앞으로만 추적하는 방식으로 바꿨습니다.',
+    team: '완료 기준(코스의 40%, 최대 5km)은 GPS 오차와 배터리를 고려한 iOS 개발자의 제안을 기획이 결정했고, 저는 팀 결정을 따랐습니다.',
+    limit: '도보로 테스트해서, 차량 속도에서의 GPS 튐은 아직 검증하지 못했습니다.',
+    links: [['PR #108', 'https://github.com/Central-MakeUs/Rodi-Android/pull/108']] },
+  { id: 'direction', project: 'poseup', fig: { svg: 'direction' }, title: '각도가 아니라 방향으로 세기로 했다', caption: 'PoseUp · 슬로우 푸시업 판정',
+    lead: '천천히 했는데\n‘너무 빠르다’고 했다.',
+    body: '직접 슬로우 푸시업을 하다 음성 안내가 상황과 다른 말을 하는 걸 발견했습니다. 로그를 넣어 보니 2~3초 걸린 하강이 1초도 안 되게 측정되고 있었습니다. 고정 각도 구간이 하강의 시작과 끝을 놓쳤기 때문입니다. 슬로우 푸시업은 천천히 내려가다 방향을 바꿔 올라오는 동작이라, 정점에서 내려가기 시작한 때와 방향을 바꾼 때를 기준으로 하강 전체를 재도록 바꿨습니다. 기준 시간은 직접, 그리고 친구와 함께 해 보며 정했습니다.',
+    land: ['workout', 1],
+    limit: '검증은 저와 친구 두 명뿐이고, 방향 전환을 여러 프레임에 걸쳐 확인하느라 판정이 조금 늦어지는 점은 당시 고려하지 못했습니다.',
+    links: [] },
+  { id: 'snapshot', project: 'gureum', fig: { cmp: [['Before', '동작 단위 되돌리기', ['지운 노드 하나만 다시 붙임', '자식 없이 복구되거나 앱이 종료됨']], ['After', '트리 전체 스냅샷', ['편집 직전 트리를 통째로 복원', '편집이 끝나면 바뀐 노드만 서버로']]], pics: [['gureum-mindmap-added', '노드 추가 후'], ['gureum-mindmap-undo', '되돌리기 후']], note: '예시 상태로 다시 실행한 화면입니다. 되돌리면 추가한 노드가 사라지고 다시 실행 버튼이 켜집니다.' }, title: '노드 하나가 아니라 트리 전체를 기억하게 했다', caption: '구름한장 · 마인드맵 되돌리기',
+    lead: '되돌리기를 눌렀더니\n자식 노드가 사라졌다.',
+    body: '처음엔 브라우저의 뒤로·앞으로처럼 동작 단위로 되돌리기를 만들었습니다. 그런데 부모와 자식이 얽힌 트리라, 지운 노드를 되살리면 자식 없이 복구되거나 앱이 종료되는 경우가 있었습니다. 같은 날 방식을 바꿔, 편집 직전의 트리 전체를 깊은 복사한 스냅샷으로 되돌리게 했습니다. 화면의 되돌리기와 서버 저장은 다른 문제로 나눠, 편집 모드가 끝날 때 바뀐 노드만 서버에 보냅니다.',
+    links: [['PR #93', 'https://github.com/LIKELION-Android-Bootcamp-4th/FinalProject-GureumPage-HIHIHIHI/pull/93']] },
+  { id: 'tradeoff', project: 'rodi', fig: { pics: [['rodi-sheet-collapsed', '접힌 시트'], ['rodi-sheet-expanded', '펼친 시트']], cmp: [['Before', '기본 바텀시트', ['목록 스크롤과 시트 드래그가 같은 손가락 움직임을 다툼']], ['After', '직접 만든 시트', ['헤더를 끌면 시트가 움직임', '목록은 시트와 따로 스크롤']]] }, title: '기획이 고를 수 있게 trade‑off를 설명했다', caption: 'Rodi · 지도 위 바텀시트',
+    lead: '목록을 살리면 시트가 튀고,\n시트를 살리면 목록이 멈췄다.',
+    body: '지도 위 코스 목록은 기본 바텀시트 안의 스크롤이라, 목록 스크롤과 시트 드래그를 둘 다 부드럽게 만들 수 없었습니다. 구현 초기에 이 한계를 알렸지만 그대로 가기로 했고, 나중에 기획이 동작을 물었을 때 무엇을 얻고 잃는지 다시 설명하며 바꿀 수 있다고 제안했습니다. 변경 요청을 받은 뒤, 헤더만 시트를 끌고 목록은 따로 스크롤하는 시트를 직접 만들었습니다.',
+    limit: '다시 한다면 처음부터 이 방식을 먼저 제안하겠습니다. 사용하기 편한 게 우선이라고 생각하기 때문입니다.',
+    links: [['PR #77', 'https://github.com/Central-MakeUs/Rodi-Android/pull/77']] },
+  { id: 'routetool', project: 'rodi', land: ['route', 0], fig: { chain: ['도구로 바뀐 코스 제작 흐름', ['지도에서 경로를 그리고 고치기', '앱과 같은 길찾기 기준으로 계산', '파일로 내보내기', '팀원 모두 같은 기준으로 코스 제작']] }, title: '앱이 그리는 방식에 데이터를 맞췄다', caption: 'Rodi · 팀 코스 정리 도구',
+    lead: '같은 코스인데\n앱에서는 다른 길이 그려졌다.',
+    body: '팀원들이 각자 다른 지도와 길찾기로 코스를 그리다 보니, 같은 코스도 앱에서는 다른 경로로 그려졌습니다. 저도 코스를 모으며 여러 사이트를 오가는 비효율을 겪었습니다. Android 담당 밖의 일이었지만, 앱과 같은 길찾기 기준으로 경로를 그리고 고치며 파일로 내보내는 내부 도구를 만들어 팀에 배포했습니다.',
+    limit: '도구 저장소는 아직 비공개입니다. 위 화면은 기존 도구를 로컬에서 다시 실행한 것으로, 최신 배포본과 같다고 보장하지 않습니다.',
+    links: [] },
+  { id: 'response', project: 'pickle', fig: { cmp: [['Before', '화면이 직접 조합', ['내 프로필', '상대 프로필', '서로 요청한 심판', '심판 결과']], ['After', '화면에 맞는 응답', ['심판 응답 안에 가계부 정보', '심판 응답 안에 배심원 정보']]] }, title: '화면마다 API를 조합하는 대신, 화면에 맞는 응답을 요청했다', caption: 'Pickle · 백엔드와 응답 조정',
+    lead: '화면 하나에\nAPI 여러 개.',
+    body: '심판 화면 하나를 그리려면 내 프로필, 상대 프로필, 서로 요청한 심판, 결과를 따로 받아 조합해야 했습니다. 같은 팀 Android 개발자와 먼저 이야기한 뒤 백엔드에 화면에 맞게, 다시 쓸 수 있게 묶어 달라고 제안했고, 어느 선까지 묶을지는 함께 맞추고 최종 결정은 백엔드에 맡겼습니다. 지금은 심판 응답에 가계부와 배심원 정보가 함께 옵니다.',
+    limit: '다시 한다면 디자인을 함께 보며 응답 형태를 처음부터 같이 정하겠습니다.',
+    links: [['배심원 응답 매핑 커밋', 'https://github.com/UiHyeon-Kim/Pickle-Android/commit/c5e943e34c5c3f34853b8887ff1ebc21a636158d']] },
+  { id: 'osversion', project: 'prography', fig: { cmp: [['Android 10+', 'MediaStore로 저장', ['저장 중 표시(IS_PENDING)를 걸고 쓰기', '다 쓰면 갤러리에 공개']], ['Android 9 이하', '기존 방식', ['저장소 경로에 직접 저장']]] }, title: '코드가 아니라 OS 버전을 의심했다', caption: '이미지 탐색 앱 · 갤러리 저장',
+    lead: '저장은 성공했는데\n한 기기에서만 안 보였다.',
+    body: '이미지 다운로드는 성공인데 두 기기 중 하나에서만 갤러리에 보이지 않았습니다. 한쪽에서는 되니 코드보다 기기 차이를 먼저 의심했고, Android 버전이 다르다는 걸 확인해 Android 10부터 바뀐 저장소 정책(Scoped Storage)이 원인임을 찾았습니다. 10 이상은 MediaStore로, 9 이하는 기존 방식으로 저장하도록 나눴습니다.',
+    limit: '검증은 기기 두 대뿐이고, 다운로드 도중 실패했을 때 임시 항목을 지우는 처리는 아직 없습니다.',
+    links: [['레포지토리', 'https://github.com/UiHyeon-Kim/PrographyProject']] },
+  { id: 'emoji', project: 'rodi', fig: { cmp: [['Before', '단위가 두 개', ['😀 하나 = 보이는 글자 1, UTF‑16 2칸', '화면은 30/30, 저장 전에 UTF‑16으로 다시 자름', '15개만 남음']], ['After', '보이는 글자로 통일', ['화면과 저장 검증이 같은 기준', '30개 그대로 저장']]] }, title: '이모지 하나는 정말 1글자일까?', caption: 'Rodi · 입력 글자 수 단위',
+    lead: '30 / 30으로 보였는데\n저장하면 15개만 남았다.',
+    body: '이모지 30개를 입력하면 화면에는 30 / 30으로 보였지만, 저장하고 나면 절반만 남았습니다. 화면은 사람이 보는 글자 단위로 셌고, 저장 전 검증은 UTF‑16 코드 단위로 다시 잘랐기 때문입니다. 이모지는 UTF‑16에서 두 칸을 차지해 두 번 깎인 셈이었습니다. 입력 길이를 사람이 보는 글자 기준으로 통일하고 Android의 BreakIterator로 세도록 바꿨습니다. 이 코드는 순수 Kotlin 모듈이 아니라 Android에 의존할 수 있는 UI 모듈에 두었습니다.',
+    check: '이모지 30개가 그대로 저장되는 테스트를 추가했습니다.',
+    links: [['PR #91', 'https://github.com/Central-MakeUs/Rodi-Android/pull/91']] },
+  { id: 'cache', project: 'prography', fig: { chain: ['이미지를 찾는 순서', ['메모리 캐시', '디스크 캐시', '둘 다 없을 때만 네트워크']] }, title: 'API 사용량 그래프를 보고 캐시를 설계했다', caption: '이미지 탐색 앱 · 이미지 캐시',
+    lead: '더 오래 캐시할 수 있었지만,\n제공자의 규칙을 따랐다.',
+    body: 'Unsplash API 사용량이 계속 차오르는 걸 보고 원인을 찾았습니다. 사진은 자주 바뀌지 않는데, 화면에 들어올 때마다 전부 새로 불러오고 있었습니다. 실제 출시한 앱이었다면 사용자가 조금만 늘어도 비용이 커질 구조라 이미지 캐시와 HTTP 캐시를 넣었습니다. 처음엔 캐시 시간을 6시간으로 강제했지만, API 제공자의 캐시 가이드보다 길게 늘린 것이어서 출시하지 않을 앱이라도 규칙을 따르는 게 맞다고 보고 강제 캐시를 뺐습니다. 이미지 요청에는 API 키가 붙지 않도록 클라이언트도 나눴습니다.',
+    links: [['레포지토리', 'https://github.com/UiHyeon-Kim/PrographyProject']] }
+];
+const TECHS = [
+  { id: 'compose', g: 'android', mark: 'K', name: 'Kotlin · Jetpack Compose', use: '직접 만든 바텀시트, 공통 디자인 시스템', p: ['rodi', 'gureum', 'mindmap'] },
+  { id: 'flow', g: 'android', mark: '≋', name: 'Coroutines · Flow', use: '최신 요청만 반영하는 지도 조회, 토큰 갱신 직렬화', p: ['rodi', 'pickle'] },
+  { id: 'location', g: 'android', mark: 'L', name: 'Location · Foreground Service', use: '주행 중 경로 진행 추적', p: ['rodi'] },
+  { id: 'map', g: 'android', mark: 'M', name: 'Kakao Map · Directions', use: '지도 탐색과 코스 경로', p: ['rodi'] },
+  { id: 'camera', g: 'android', mark: '◎', name: 'CameraX · MediaPipe', use: '기기 안 자세 분석과 횟수 판정', p: ['poseup'] },
+  { id: 'nav', g: 'android', mark: '↗', name: 'Navigation 3', use: '타입 안전한 화면 이동', p: ['rodi', 'poseup'] },
+  { id: 'hilt', g: 'android', mark: 'H', name: 'Hilt', use: '의존성 주입', p: ['rodi', 'pickle', 'prography'] },
+  { id: 'network', g: 'android', mark: '↔', name: 'Retrofit · OkHttp', use: '동시 401에서 토큰 갱신을 한 번으로', p: ['pickle', 'prography'] },
+  { id: 'local', g: 'android', mark: 'D', name: 'Room · DataStore', use: '운동 기록 보관과 재저장, 북마크', p: ['poseup', 'prography'] },
+  { id: 'coil', g: 'android', mark: 'C', name: 'Coil', use: 'API 규칙을 따른 이미지 캐시', p: ['prography'] },
+  { id: 'firebase', g: 'android', mark: 'F', name: 'Firebase · FCM', use: '알림, 마인드맵 데이터', p: ['gureum'] },
+  { id: 'test', g: 'tools', mark: '✓', name: 'JUnit · MockK · Turbine', use: '상태·판정 로직 단위 테스트', p: ['rodi', 'poseup'] },
+  { id: 'uitest', g: 'tools', mark: '▣', name: 'Compose UI Test · Roborazzi', use: '실제 swipe와 스크린샷 회귀 테스트', p: ['rodi'] },
+  { id: 'bench', g: 'tools', mark: '⏱', name: 'Macrobenchmark · Baseline Profile', use: '콜드 스타트 측정 환경 구성', p: ['rodi'] },
+  { id: 'ci', g: 'tools', mark: '>_', name: 'GitHub Actions · Gradle', use: 'PR마다 테스트·Lint·빌드 검증', p: ['rodi'] },
+  { id: 'git', g: 'tools', mark: 'G', name: 'Git · GitHub', use: '브랜치 전략·컨벤션·코드 리뷰', p: ['gureum'] }
+];
+const AI_INTRO = 'AI를 개발 과정에 연결하고, 결과를 검증하는 방식을 정리했습니다. 프로젝트 맥락 관리, 구현과 리뷰의 역할 분리, 반복 작업 자동화를 실제 작업에 적용하고 있습니다. 요구사항과 범위, 최종 반영 여부는 직접 판단합니다.';
+const AI = [
+  { id: 'vault', name: 'AI-Vault · 프로젝트 맥락 관리', use: '세션이 바뀌어도 결정 이유와 남은 작업을 이어가는 개발 기록',
+    detail: 'Obsidian 기반 AI-Vault와 Basic Memory를 활용해 프로젝트의 결정사항, 검증 근거, 남은 작업을 정리합니다. Claude와 Codex가 이전 작업을 이어갈 때 필요한 맥락을 참고할 수 있도록 구성했습니다. 코드와 프로젝트 문서를 기준으로 삼고, Vault에는 선택 이유와 시행착오를 남깁니다.',
+    role: [['활용', 'Obsidian · Basic Memory'], ['구성', 'Vault 구조와 기록 규칙']],
+    flowLabel: '기록 한 건의 구성', flow: ['문제', '선택한 방식', '검증 결과', '다음 작업'],
+    cases: { label: '실제 기록', pics: [['vault-record', 'relay 사용 근거를 점검한 기록 (공개용 일부)']], note: '실제 노트를 열어 캡처했고, 비공개 사이드바는 잘라냈습니다.' } },
+  { id: 'relay', name: 'Claude · Codex 작업 연계', tools: 'Agent Queue → relay', use: 'Claude와 Codex 사이의 구현, 리뷰, 수정 작업을 연결한 과정',
+    detail: '처음에는 Agent Queue와 인계 문서를 중심으로 작업 범위와 진행 상태를 전달했습니다. 이후 relay 스킬을 활용하는 방식으로 발전시키며 구현 결과를 다른 에이전트가 검토하고, 수정과 재검증으로 이어지는 흐름을 구성했습니다. AI 간 의견이 다르거나 요구사항이 충돌하면 범위를 다시 정하고, 최종 반영 여부를 판단합니다.',
+    role: [['구성', '인계 흐름 (Agent Queue → relay)'], ['활용', 'relay 스킬'], ['직접 판단', '범위 조정과 최종 반영']],
+    evolve: [['처음', 'Agent Queue와 인계 문서로 범위와 진행 상태 전달'], ['지금', 'relay 스킬로 구현 → 리뷰 → 수정 → 재검증 연결']],
+    flowLabel: 'PoseUp에서의 흐름', flow: ['구현 결과 검토', '수정 요구', 'Codex 수정', 'Claude 에뮬레이터 화면 재검증'],
+    cases: { label: '실제 기록 · PoseUp', land: ['relay', 0], pics: [['poseup-hist-before', '수정 전: 버튼이 안내 문구를 가림'], ['poseup-hist-after', '수정 후: 안내 문구 전체 표시'], ['poseup-hist-rest', '휴식 화면: 버튼이 처음부터 보임']], note: '2026.08 PoseUp 작업의 인계 원문을 다시 열어 캡처했습니다. 화면 3장은 당시 에뮬레이터에서 남긴 캡처입니다.' } },
+  { id: 'skills', name: '프로젝트 지침 · Skills', use: '코드 규칙과 검증 절차를 반복해서 사용할 수 있도록 정리',
+    detail: 'AGENTS.md와 CLAUDE.md에 프로젝트별 작업 규칙을 정리하고, 반복되는 개발과 검증 절차는 스킬로 활용합니다. Android 코드 규칙, 디자인과 구현 비교, 테스트 확인처럼 작업마다 다시 설명해야 했던 기준을 재사용합니다. 작업 완료 여부는 생성된 코드뿐 아니라 빌드, 테스트, 화면 확인 결과를 구분해 판단합니다.',
+    role: [['직접 작성', 'AGENTS.md · CLAUDE.md 작업 지침'], ['활용 · 수정', '외부 스킬과 직접 다듬은 스킬']],
+    flowLabel: '완료를 판단하는 기준', flow: ['빌드', '테스트', '화면 확인'],
+    cases: { label: '실제 지침', pics: [['agents-rules', 'PoseUp AGENTS.md 일부: 빌드와 테스트 명령']], note: '완료 판단 기록은 Claude · Codex 작업 연계의 완료 검증 단계에서 볼 수 있습니다.', more: ['#/ai/relay', '완료 검증 기록 보기 →'] } },
+  { id: 'meeting', name: '회의 기록 자동화', use: '녹음부터 전사, 요약, 프로젝트별 아카이빙까지 연결',
+    detail: 'Craig 녹음을 Whisper로 전사하고, 로컬 Qwen을 활용한 요약과 Notion 기록으로 이어지는 작업 흐름을 구성했습니다. 발언자 정보를 연결하고 프로젝트별로 기록을 분류해 회의 내용을 다시 찾기 쉽게 정리합니다. 자동 요약의 결정사항과 담당자, 기한은 전사 원문과 대조할 수 있도록 관리합니다.',
+    role: [['활용', 'Craig · Whisper · 로컬 Qwen · Notion'], ['구성', '녹음에서 아카이브까지의 흐름']],
+    flowLabel: '기록이 흘러가는 순서', flow: ['녹음 파일', '발언자별 전사', '요약', 'Notion 아카이브'] }
+];
+const AI_ICONS = {
+  vault: '<path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3V4Z"/><path d="M5 17a3 3 0 0 1 3-3h11"/><path d="M9 8h6"/>',
+  relay: '<circle cx="6" cy="7" r="2.5"/><circle cx="18" cy="17" r="2.5"/><path d="M8.5 7H14a3 3 0 0 1 3 3v4.5M15.5 17H10a3 3 0 0 1-3-3V9.5"/><path d="m15 12.5 2 2 2-2M9 11.5l-2-2-2 2"/>',
+  skills: '<path d="M6 3h9l4 4v14H6V3Z"/><path d="M14 3v5h5"/><path d="m9 14 2 2 4-4.5"/>',
+  meeting: '<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M8.5 21h7"/>'
+};
+const aiIcon = id => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + (AI_ICONS[id] || '') + '</svg>';
+const WAYS = [
+  ['직접 써 보며 문제를 찾는다', '코스를 직접 걸어 보다 도착 오판정을, 직접 푸시업을 하다 판정 오류를 찾았습니다.'],
+  ['기술 문제를 팀이 결정할 수 있는 말로 올린다', '도착 판정 정책, 바텀시트 trade‑off, 화면 단위 응답을 제안하고 결정권은 존중했습니다.'],
+  ['담당 밖의 병목도 메운다', '팀의 코스 정리를 늦추던 작업을 내부 도구로 해결했습니다.'],
+  ['AI와 일하는 방식', '문제를 찾고 기준을 정하는 건 제가, 구현은 AI와 나눠서, 결과는 실제 기기와 테스트로 제가 확인합니다.', '#/ai']
+];
+const ACTIVITY = [
+  ['2026.07 –', 'SSAFY 16기 · Java / Spring 백엔드 학습'],
+  ['2026.05 – 09', 'CMC · Rodi Android'],
+  ['2026.05 – 06', 'compose-mindmap 공개'],
+  ['2026.04 – 06', 'OSSCA 체험형 수료'],
+  ['2026.01 – 02', 'DND · Pickle Android'],
+  ['2025.03 – 09', '멋쟁이사자처럼 Android 스쿨 4기']
+];
+const SHOTS = [['select', '푸시업 종류 선택: 표준·무릎·슬로우·파이크'], ['result', '운동 완료: 총 31개와 세트별 기록'], ['challenge', '6주 챌린지 진행 화면'], ['stats', '주간 통계 화면']];
+const FRAMESETS = {
+  workout: { aria: 'PoseUp 운동 화면 가로 보기', seg: '판정 예시', items: [[IMG + 'workout-good.webp', '정상 판정', '정상 판정: 4/10, 좋아요', 1400, 510], [IMG + 'workout-slow.webp', '너무 빠른 하강', '너무 빠른 하강: 천천히 내려가세요, 방금 동작은 세지 않았어요', 1400, 510]] },
+  relay: { aria: 'PoseUp relay 기록 가로 보기', seg: 'relay 단계', items: [['assets/shots/relay-review.webp', '1 리뷰 지적', 'relay 1단계 원문: 버튼이 안내 문구를 가리는 문제를 지적하고 NEEDS_CHANGES 판정', 1352, 772], ['assets/shots/relay-revision.webp', '2 Codex 수정', 'relay 2단계 원문: 수정한 파일과 빌드 · 테스트 결과', 1352, 835], ['assets/shots/relay-final.webp', '3 완료 검증', 'relay 3단계 원문: 에뮬레이터 재검증 후 APPROVE', 1352, 772]] },
+  route: { aria: 'Rodi 경로 도구 가로 보기', items: [['assets/shots/rodi-route-tool.webp', '경로 도구', 'Rodi 경로 도구: 지도에서 출발과 도착을 찍어 경로를 그리고 코스 정보를 입력하는 화면', 1400, 715]] }
+};
+const TABS = { about: '나', stack: '기술 스택', projects: '프로젝트', notes: '개발 기록' };
+
+const AVATAR = '<a class="avatar" href="https://github.com/UiHyeon-Kim" target="_blank" rel="noopener noreferrer" aria-label="GitHub 프로필 열기 (새 탭)"><span aria-hidden="true">UH</span><img src="https://github.com/UiHyeon-Kim.png?size=96" alt="" width="36" height="36" onerror="this.remove()"><span class="go" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>';
+const TECH_ICONS = {
+  compose: '<rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18M9 9v11"/>',
+  flow: '<path d="M3 8c3 0 3-3 6-3s3 3 6 3 3-3 6-3"/><path d="M3 14c3 0 3-3 6-3s3 3 6 3 3-3 6-3"/><path d="M3 20c3 0 3-3 6-3s3 3 6 3 3-3 6-3"/>',
+  location: '<path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/>',
+  map: '<path d="M9 4 3 6.5v13.5L9 17.5l6 2.5 6-2.5V4l-6 2.5L9 4Z"/><path d="M9 4v13.5M15 6.5V20"/>',
+  camera: '<path d="M4 8h3l2-3h6l2 3h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1Z"/><circle cx="12" cy="13" r="3.5"/>',
+  nav: '<rect x="2.5" y="5" width="7" height="14" rx="2"/><rect x="14.5" y="5" width="7" height="14" rx="2"/><path d="M10.5 12h3M12 10.5 13.5 12 12 13.5"/>',
+  hilt: '<path d="M9 3v4M15 3v4"/><path d="M6 7h12v4a6 6 0 0 1-12 0V7Z"/><path d="M12 17v4"/>',
+  network: '<path d="M7 7h11l-3-3M17 17H6l3 3"/>',
+  local: '<ellipse cx="12" cy="5.5" rx="7.5" ry="2.5"/><path d="M4.5 5.5v13c0 1.4 3.4 2.5 7.5 2.5s7.5-1.1 7.5-2.5v-13"/><path d="M4.5 12c0 1.4 3.4 2.5 7.5 2.5s7.5-1.1 7.5-2.5"/>',
+  coil: '<rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5-9 9"/>',
+  firebase: '<path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15L6 16Z"/><path d="M10 20.5a2 2 0 0 0 4 0"/>',
+  test: '<circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.8 2.8L16.5 9.5"/>',
+  uitest: '<rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="m9.5 12 1.8 1.8 3.4-3.6"/>',
+  bench: '<path d="M4.5 17a8.5 8.5 0 1 1 15 0"/><path d="m12 13.5 4-4"/><circle cx="12" cy="13.5" r="1.2"/>',
+  ci: '<circle cx="5" cy="12" r="2.5"/><circle cx="19" cy="6" r="2.5"/><circle cx="19" cy="18" r="2.5"/><path d="M7.5 12h4l5-5.2M11.5 12l5 5.2"/>',
+  git: '<circle cx="6" cy="5" r="2.2"/><circle cx="6" cy="19" r="2.2"/><circle cx="18" cy="8" r="2.2"/><path d="M6 7.2v9.6M18 10.2c0 4-6 3-11 6.8"/>'
+};
+const techIcon = id => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + (TECH_ICONS[id] || '') + '</svg>';
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const pad = n => (n < 10 ? '0' : '') + n;
+const byId = (list, id) => list.find(x => x.id === id);
+const icon = d => '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + d + '</svg>';
+const ICONS = {
+  about: '<circle cx="12" cy="8" r="3.4"/><path d="M5 20.5v-1.5a7 7 0 0 1 14 0v1.5"/>',
+  stack: '<path d="m12 3 10 5-10 5L2 8l10-5ZM2 12l10 5 10-5M2 16l10 5 10-5"/>',
+  projects: '<rect x="3" y="3" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="2"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="2"/>',
+  notes: '<path d="m8 6-6 6 6 6m8-12 6 6-6 6"/>'
+};
+
+const state = { plain: false, filter: 'android', landscape: false, set: 'workout', idx: 0, mx: 0.1, my: -0.04 };
+
+function parse(hash) {
+  const r = String(hash || '').replace(/^#\/?/, '');
+  if (r === '' || r === 'home') return { tab: 'about' };
+  if (TABS[r]) return { tab: r };
+  if (r === 'stack/tools') return { tab: 'stack', group: 'tools' };
+  if (r === 'ai') return { tab: 'stack', group: 'ai' };
+  const [kind, id] = r.split('/');
+  if (kind === 'ai' && byId(AI, id)) return { tab: 'stack', detail: 'ai', id, group: 'ai' };
+  if (kind === 'project' && byId(PROJECTS, id)) return { tab: 'projects', detail: 'project', id };
+  if (kind === 'note' && byId(NOTES, id)) return { tab: 'notes', detail: 'note', id };
+  if (kind === 'tech' && byId(TECHS, id)) return { tab: 'stack', detail: 'tech', id, group: byId(TECHS, id).g };
+  if (kind === 'project' || kind === 'note' || kind === 'tech') return { tab: { project: 'projects', note: 'notes', tech: 'stack' }[kind] };
+  return { tab: 'about' };
 }
-</script></body></html>
+const parentHash = r => r.tab === 'stack' ? ({ tools: '#/stack/tools', ai: '#/ai' }[r.group] || '#/stack') : '#/' + r.tab;
+
+const liLink = (href, lead, t, s, raw) => '<a class="li" href="' + href + '"><span class="li-lead" aria-hidden="true">' + (raw ? lead : esc(lead)) + '</span><span style="flex:1;min-width:0"><span class="li-t">' + esc(t) + '</span>' + (s ? '<span class="li-s">' + esc(s) + '</span>' : '') + '</span></a>';
+const extLink = l => '<a class="link" href="' + esc(l[1]) + '" target="_blank" rel="noopener noreferrer">' + esc(l[0]) + '<span aria-hidden="true">↗</span></a>';
+const metaRows = m => m.map(x => '<div class="row"><span>' + esc(x[0]) + '</span><span>' + esc(x[1]) + '</span></div>').join('');
+const landButton = (set, idx) => { const F = FRAMESETS[set], it = F.items[idx || 0]; return '<button class="land-cta" type="button" data-action="landscape" data-set="' + set + '" data-idx="' + (idx || 0) + '" aria-label="' + esc(F.aria) + '"><img src="' + it[0] + '" alt="' + esc(it[2]) + '" width="' + it[3] + '" height="' + it[4] + '"><span class="land-tag">' + '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg>' + (state.plain ? '크게 보기' : (F.items.length > 1 ? F.items.length + '장 가로로 보기' : '가로로 돌려 보기')) + '</span></button>'; };
+
+function aboutBody() {
+  return '<div class="hero"><div class="mono" style="font-size:10px;letter-spacing:.12em;color:#9FD9C0">ANDROID DEVELOPER</div>' +
+    '<div style="font-size:24px;font-weight:700;margin-top:8px">김의현</div>' +
+    '<div style="font-size:12px;color:#CBD5E1;margin-top:2px">Kotlin · Jetpack Compose · SSAFY 16기</div>' +
+    '<div style="font-size:13px;line-height:1.6;margin-top:12px;color:#E2E8F0">앱을 직접 써 보며 문제를 찾는 Android 개발자입니다.</div></div>' +
+    '<p class="sec">일하는 방식</p>' +
+    WAYS.map(w => '<div class="tonal"><div class="tonal-k">' + esc(w[0]) + '</div><div class="tonal-v">' + esc(w[1]) + '</div>' + (w[2] ? '<a class="more" href="' + w[2] + '">AI 활용 방식과 적용 사례 보기 →</a>' : '') + '</div>').join('') +
+    '<p class="sec">활동</p><div>' + metaRows(ACTIVITY) + '</div>' +
+    '<a class="link" href="https://github.com/UiHyeon-Kim" target="_blank" rel="noopener noreferrer">GitHub · UiHyeon-Kim<span aria-hidden="true">↗</span></a>' +
+    '<div class="link"><span class="sel">hyunkim6790@gmail.com</span><button type="button" class="copy" data-action="copy" data-copy="hyunkim6790@gmail.com" aria-label="이메일 주소 복사">복사</button></div>';
+}
+function stackBody(r) {
+  const g = r.group || 'android';
+  const chip = (href, key, label) => '<a class="fchip" href="' + href + '"' + (g === key ? ' aria-current="page"' : '') + '>' + label + '</a>';
+  let h = '<nav class="chips" aria-label="기술 분류">' + chip('#/stack', 'android', 'Android') + chip('#/stack/tools', 'tools', '테스트 · 빌드 · 협업') + chip('#/ai', 'ai', 'AI 활용') + '</nav>';
+  if (g === 'ai') return h + '<p class="txt">' + esc(AI_INTRO) + '</p><div class="list">' + AI.map(a => liLink('#/ai/' + a.id, aiIcon(a.id), a.name, a.use, true)).join('') + '</div>';
+  h += '<div class="list">' + TECHS.filter(t => t.g === g).map(t => liLink('#/tech/' + t.id, techIcon(t.id), t.name, t.use, true)).join('') + '</div>';
+  if (g === 'tools') h += '<p class="txt" style="font-size:12px">학습 중 · Java · Spring (SSAFY)</p>';
+  return h;
+}
+function aiBody(a) {
+  let h = '<span class="tech-hero" aria-hidden="true">' + aiIcon(a.id) + '</span><span class="eyebrow">AI 활용' + (a.tools ? ' · ' + esc(a.tools) : '') + '</span><p class="lead">' + esc(a.use) + '</p>';
+  h += '<p class="txt">' + esc(a.detail) + '</p>';
+  h += '<p class="sec">내가 한 일</p><div>' + metaRows(a.role) + '</div>';
+  if (a.evolve) h += '<p class="sec">발전 과정</p><div>' + metaRows(a.evolve) + '</div>';
+  h += '<p class="sec">' + esc(a.flowLabel) + '</p><ol class="flow">' + a.flow.map(f => '<li>' + esc(f) + '</li>').join('') + '</ol>';
+  const c = a.cases;
+  if (c) {
+    h += '<p class="sec">' + esc(c.label) + '</p>';
+    if (c.land) h += landButton(c.land[0], c.land[1]);
+    h += '<figure class="fig">' + pics(c.pics) + (c.note ? '<p class="fig-note">' + esc(c.note) + '</p>' : '') + '</figure>';
+    if (c.more) h += '<a class="more" href="' + c.more[0] + '">' + esc(c.more[1]) + '</a>';
+  }
+  return h;
+}
+function projectsBody() {
+  return PROJECTS.map((p, i) => '<a class="card" href="#/project/' + p.id + '"><span class="eyebrow">' + pad(i + 1) + ' · ' + esc(p.kind) + '</span><span class="card-t">' + esc(p.title) + '</span><span class="card-s">' + esc(p.summary) + '</span></a>').join('');
+}
+function notesBody() {
+  return '<p class="txt">문제를 어떻게 발견했고, 무엇을 판단했는지에 대한 짧은 기록입니다.</p><div class="list">' +
+    NOTES.map((n, i) => liLink('#/note/' + n.id, pad(i + 1), n.title, n.caption)).join('') + '</div>';
+}
+function projectBody(p) {
+  let h = '<span class="eyebrow">' + esc(p.kind) + '</span><p class="lead">' + esc(p.summary) + '</p>';
+  if (p.gallery) h += gallery(p.gallery, p.title + ' 화면 모음') + (p.galleryNote ? '<p class="fig-note">' + esc(p.galleryNote) + '</p>' : '');
+  if (p.shots) h += landButton('workout', 0) + '<div class="shots" tabindex="0" aria-label="PoseUp 화면 모음">' + SHOTS.map(s => '<img class="shot" src="' + IMG + s[0] + '.webp" alt="' + esc(s[1]) + '" width="540" height="1118" loading="lazy">').join('') + '</div>';
+  h += '<div class="chips">' + p.tags.map(t => '<span class="mchip">' + esc(t) + '</span>').join('') + '</div>';
+  h += '<p class="txt">' + esc(p.body) + '</p><div>' + metaRows(p.meta) + '</div>';
+  if (p.notes.length) h += '<p class="sec">이 프로젝트의 기록</p><div class="list">' + p.notes.map(id => { const n = byId(NOTES, id); return liLink('#/note/' + n.id, pad(NOTES.indexOf(n) + 1), n.title, ''); }).join('') + '</div>';
+  h += p.links.map(extLink).join('');
+  return h;
+}
+const SHOT = f => 'assets/shots/' + (f.indexOf('.') > 0 ? f : f + '.webp');
+const gallery = (list, label) => '<div class="shots" tabindex="0" aria-label="' + esc(label) + '">' + list.map(g => '<img class="shot" src="' + SHOT(g[0]) + '" alt="' + esc(g[1]) + '" loading="lazy">').join('') + '</div>';
+const SVGS = {
+  policy: '<svg class="fig-svg" viewBox="0 0 268 168" role="img" aria-label="Before: 출발지와 도착지가 같은 코스에서 도착 반경만 보면 출발하자마자 도착으로 판정됨. After: 코스 경로를 따라 진행한 위치를 앞쪽 일부 구간만 확인하며 추적함.">' +
+    '<text x="64" y="12" class="t-k" text-anchor="middle">Before · 지점 도착</text><text x="204" y="12" class="t-k" text-anchor="middle">After · 경로 진행</text>' +
+    '<path d="M24 128V44q0-16 16-16h48q16 0 16 16v68q0 16-16 16Z" class="route"/>' +
+    '<circle cx="24" cy="128" r="20" class="radius"/><circle cx="24" cy="128" r="5" class="pin"/>' +
+    '<text x="64" y="160" class="t-s" text-anchor="middle">출발하자마자 ‘도착’</text>' +
+    '<path d="M164 128V44q0-16 16-16h48q16 0 16 16v68q0 16-16 16Z" class="route"/>' +
+    '<path d="M164 112V44q0-16 16-16h38" class="window"/>' +
+    '<path d="M164 128V44q0-16 16-16h14" class="progress"/><circle cx="194" cy="28" r="5" class="pin"/><circle cx="164" cy="128" r="4" class="start"/>' +
+    '<text x="204" y="74" class="t-s" text-anchor="middle">앞쪽 일부만</text><text x="204" y="88" class="t-s" text-anchor="middle">확인하며 추적</text>' +
+    '<text x="204" y="160" class="t-s" text-anchor="middle">경로를 따라가야 완료</text></svg>',
+  direction: '<svg class="fig-svg" viewBox="0 0 268 168" role="img" aria-label="개념도. 팔꿈치 각도가 시간에 따라 내려갔다 올라오는 곡선. Before는 150도에서 100도 사이 고정 구간만 재서 하강의 일부만 측정됨. After는 내려가기 시작한 정점부터 방향이 바뀌는 최저점까지 전체 하강을 잼.">' +
+    '<text x="2" y="10" class="t-s">팔꿈치 각도</text><text x="266" y="10" class="t-s" text-anchor="end">개념도</text>' +
+    '<rect x="34" y="40" width="226" height="50" class="band"/><text x="30" y="43" class="t-s" text-anchor="end">150°</text><text x="30" y="93" class="t-s" text-anchor="end">100°</text>' +
+    '<path d="M34 22H74C110 24 150 80 184 102C190 106 196 106 200 104C210 96 225 60 236 22H260" class="curve"/>' +
+    '<path d="M108 116v6h50v-6" class="br-before"/><text x="133" y="134" class="t-s" text-anchor="middle">Before: 고정 구간만</text>' +
+    '<path d="M74 144v6h122v-6" class="br-after"/><text x="135" y="163" class="t-k" text-anchor="middle">After: 정점부터 방향 전환까지</text></svg>'
+};
+function figureHTML(f) {
+  if (!f) return '';
+  let h = '<figure class="fig">';
+  if (f.svg) h += SVGS[f.svg];
+  if (f.pics) h += pics(f.pics, f.one ? ' one' : '');
+  if (f.cmp) h += '<div class="cmp">' + f.cmp.map((c, i) => '<div class="cmp-box' + (i ? ' after' : '') + '"><div class="cmp-k"><b>' + esc(c[0]) + '</b> ' + esc(c[1]) + '</div><ul>' + c[2].map(x => '<li>' + esc(x) + '</li>').join('') + '</ul></div>').join('') + '</div>';
+  if (f.chain) h += '<div class="cmp-k" style="margin-bottom:8px">' + esc(f.chain[0]) + '</div><ol class="flow">' + f.chain[1].map(x => '<li>' + esc(x) + '</li>').join('') + '</ol>';
+  if (f.note) h += '<p class="fig-note">' + esc(f.note) + '</p>';
+  return h + '</figure>';
+}
+function pics(list, mod) {
+  const cls = mod || (list.length === 1 ? ' wide' : list.length === 3 ? ' three' : '');
+  return '<div class="fig-pics' + cls + '">' + list.map(p => {
+    const img = '<img src="' + SHOT(p[0]) + '" alt="' + esc(p[1]) + '" loading="lazy">';
+    return '<figure>' + (cls === ' wide' ? '<a class="zoom" href="' + SHOT(p[0]) + '" target="_blank" rel="noopener noreferrer" aria-label="' + esc(p[1]) + ' 원본 크게 보기 (새 탭)">' + img + '<span class="zoom-tag" aria-hidden="true">크게 보기 ↗</span></a>' : img) + '<figcaption>' + esc(p[1]) + '</figcaption></figure>';
+  }).join('') + '</div>';
+}
+function noteBody(n) {
+  const p = byId(PROJECTS, n.project);
+  let h = '<span class="eyebrow">' + esc(n.caption) + '</span><h3 class="h">' + esc(n.title) + '</h3><p class="lead" style="white-space:pre-line">' + esc(n.lead) + '</p>';
+  if (n.land) h += landButton(n.land[0], n.land[1]);
+  h += figureHTML(n.fig);
+  h += '<p class="txt">' + esc(n.body) + '</p>';
+  if (n.team) h += '<div class="tonal"><div class="tonal-k">팀의 결정</div><div class="tonal-v">' + esc(n.team) + '</div></div>';
+  if (n.check) h += '<div class="tonal"><div class="tonal-k">확인한 것</div><div class="tonal-v">' + esc(n.check) + '</div></div>';
+  if (n.limit) h += '<div class="tonal"><div class="tonal-k">한계와 다음</div><div class="tonal-v">' + esc(n.limit) + '</div></div>';
+  h += '<a class="link" href="#/project/' + p.id + '">' + esc(p.title) + ' 프로젝트 보기<span aria-hidden="true">→</span></a>';
+  h += n.links.map(extLink).join('');
+  return h;
+}
+function techBody(t) {
+  return '<span class="tech-hero" aria-hidden="true">' + techIcon(t.id) + '</span><span class="eyebrow">STACK · USE CASE</span><p class="lead">' + esc(t.use) + '</p><p class="sec">쓴 프로젝트</p><div class="list">' +
+    t.p.map(id => { const p = byId(PROJECTS, id); return liLink('#/project/' + p.id, pad(PROJECTS.indexOf(p) + 1), p.title, p.summary); }).join('') + '</div>';
+}
+
+function screenHTML(r) {
+  let title, body;
+  if (r.detail === 'project') { const p = byId(PROJECTS, r.id); title = p.title; body = projectBody(p); }
+  else if (r.detail === 'note') { const n = byId(NOTES, r.id); title = n.title; body = noteBody(n); }
+  else if (r.detail === 'tech') { const t = byId(TECHS, r.id); title = t.name; body = techBody(t); }
+  else if (r.detail === 'ai') { const a = byId(AI, r.id); title = a.name; body = aiBody(a); }
+  else { title = TABS[r.tab]; body = { about: aboutBody, stack: stackBody, projects: projectsBody, notes: notesBody }[r.tab](r); }
+  const bar = r.detail
+    ? '<div class="bar detail"><a class="back" href="' + parentHash(r) + '" aria-label="뒤로">' + '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6"/></svg></a><h2 class="bar-title" id="app-title" tabindex="-1">' + esc(title) + '</h2></div>'
+    : '<div class="bar"><h2 class="bar-title" id="app-title" tabindex="-1">' + esc(title) + '</h2>' + AVATAR + '</div>';
+  return { bar, body: '<div class="body">' + body + '</div>' };
+}
+
+function landHTML() {
+  const F = FRAMESETS[state.set] || FRAMESETS.workout, it = F.items[state.idx] || F.items[0];
+  return '<div class="land" role="dialog" aria-label="' + esc(F.aria) + '"' + (state.switching ? ' style="animation:none"' : '') + '><img src="' + it[0] + '" alt="' + esc(it[2]) + '">' +
+    '<button class="land-x" type="button" data-action="portrait" aria-label="세로로 돌아가기"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>' +
+    '<a class="land-open" href="' + it[0] + '" target="_blank" rel="noopener noreferrer">원본 크게 보기 ↗</a>' +
+    (F.items.length > 1 ? '<div class="land-seg" role="group" aria-label="' + esc(F.seg) + '">' + F.items.map((x, k) => '<button type="button" data-action="frame" data-idx="' + k + '" aria-pressed="' + (k === state.idx) + '">' + esc(x[1]) + '</button>').join('') + '</div>' : '') + '</div>';
+}
+
+const el = id => document.getElementById(id);
+const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+const finePointer = window.matchMedia('(pointer: fine) and (min-width: 1001px)');
+
+function applyTransform() {
+  const rig = el('rig');
+  const tilt = finePointer.matches && !reduce.matches;
+  const rx = tilt ? (-state.my * 8).toFixed(1) : 0;
+  const ry = tilt ? (-5 + state.mx * 14).toFixed(1) : (finePointer.matches ? -5 : 0);
+  rig.style.transform = 'perspective(1800px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg)' + (state.landscape ? ' rotateZ(-90deg) scale(.84)' : '');
+  el('glare').style.backgroundPosition = (55 - state.mx * 80).toFixed(1) + '% 0';
+}
+function fit() {
+  const stage = el('stage');
+  const w = stage.clientWidth;
+  const base = state.landscape ? 640 : (window.innerWidth <= 1000 ? 400 : 640);
+  const f = Math.min(1, w / base);
+  stage.style.setProperty('--fit', f.toFixed(3));
+}
+
+function render(focus) {
+  const r = parse(location.hash);
+  document.querySelectorAll('.pill[data-tab]').forEach(a => { if (a.dataset.tab === r.tab) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
+  const s = screenHTML(r);
+  if (state.plain) {
+    el('plain').innerHTML = '<nav class="plain-nav" aria-label="목록 메뉴">' + Object.keys(TABS).map(k => '<a class="pill" href="#/' + k + '"' + (k === r.tab ? ' aria-current="page"' : '') + '>' + TABS[k] + '</a>').join('') + '</nav>' + s.bar + s.body;
+    el('screen').innerHTML = '';
+  } else {
+    const nav = '<nav class="nav" aria-label="앱 탭">' + Object.keys(TABS).map(k => '<a class="nv" href="#/' + k + '"' + (k === r.tab ? ' aria-current="page"' : '') + '><span class="ind">' + icon(ICONS[k]) + '</span>' + { about: '나', stack: '스택', projects: '프로젝트', notes: '기록' }[k] + '</a>').join('') + '</nav>';
+    el('screen').innerHTML = '<span class="cam" aria-hidden="true"></span>' + (state.landscape ? landHTML() : '') + s.bar + s.body + nav + '<div class="gesture" aria-hidden="true"><span></span></div>';
+    el('plain').innerHTML = '';
+  }
+  document.title = (r.detail ? s.bar.replace(/<[^>]+>/g, '') + ' · ' : (r.tab === 'about' ? '' : TABS[r.tab] + ' · ')) + '김의현 · Android Developer';
+  applyTransform(); fit();
+  if (focus) { const t = el('app-title'); if (t) t.focus({ preventScroll: true }); }
+}
+
+function setMode(plain) {
+  state.plain = plain; state.landscape = false;
+  el('stage').hidden = plain; el('plain').hidden = !plain;
+  const b = el('mode'); b.textContent = plain ? '폰 모양으로 돌아가기' : '폰 대신 목록으로 보기'; b.setAttribute('aria-pressed', String(plain));
+  render(true);
+}
+
+el('stats').innerHTML = [['projects', PROJECTS.length, '프로젝트'], ['stack', TECHS.length, '기술 스택'], ['notes', NOTES.length, '개발 기록']]
+  .map(s => '<a class="stat" href="#/' + s[0] + '"><b>' + pad(s[1]) + '</b><span>' + s[2] + '</span></a>').join('');
+
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-action]');
+  if (!b) return;
+  const a = b.dataset.action;
+  if (a === 'landscape') {
+    state.set = FRAMESETS[b.dataset.set] ? b.dataset.set : 'workout'; state.idx = +b.dataset.idx || 0;
+    if (state.plain) { window.open(FRAMESETS[state.set].items[state.idx][0], '_blank', 'noopener'); return; }
+    state.landscape = true; render(false); el('screen').querySelector('.land-x')?.focus();
+  }
+  if (a === 'copy') {
+    const done = t => { b.textContent = t; setTimeout(() => { b.textContent = '복사'; }, 1500); };
+    const fallback = () => { const r = document.createRange(); r.selectNodeContents(b.previousElementSibling); const sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r); done('선택됨'); };
+    try { navigator.clipboard.writeText(b.dataset.copy).then(() => done('복사됨'), fallback); } catch (err) { fallback(); }
+  }
+  if (a === 'portrait') { state.landscape = false; render(false); el('screen').querySelector('.land-cta')?.focus(); }
+  if (a === 'frame') { state.idx = +b.dataset.idx || 0; state.switching = true; render(false); state.switching = false; el('screen').querySelector('.land-seg [aria-pressed="true"]')?.focus(); }
+});
+el('mode').addEventListener('click', () => setMode(!state.plain));
+window.addEventListener('hashchange', () => { state.landscape = false; render(true); });
+window.addEventListener('resize', fit);
+document.addEventListener('keydown', e => {
+  if (e.key !== 'Escape') return;
+  if (state.landscape) { state.landscape = false; render(false); return; }
+  const r = parse(location.hash);
+  if (r.detail) location.hash = parentHash(r);
+});
+let raf = 0;
+el('page').addEventListener('pointermove', e => {
+  if (!finePointer.matches || reduce.matches || raf) return;
+  raf = requestAnimationFrame(() => {
+    raf = 0;
+    state.mx = e.clientX / window.innerWidth - 0.5;
+    state.my = e.clientY / window.innerHeight - 0.5;
+    applyTransform();
+  });
+});
+el('page').addEventListener('pointerleave', () => { state.mx = 0.1; state.my = -0.04; applyTransform(); });
+
+if (new URLSearchParams(location.search).get('view') === 'list') setMode(true); else render(false);
+</script>
+</body>
+</html>
